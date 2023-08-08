@@ -1,0 +1,42 @@
+.footer-top{
+    background-color: #F5FBFB;
+}
+
+.social-icons{
+    width: fit-content;
+    margin-left: 1.5rem;
+}
+
+
+
+.link {
+  display: inline-block;
+  position: relative;
+  color: #757575;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #757575;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.icon{
+    transition: transform 0.25s ease-out;
+}
+
+.icon:hover{
+    color: black;
+}
