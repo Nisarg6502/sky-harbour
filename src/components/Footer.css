@@ -1,3 +1,9 @@
+.footer-whole{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 .footer-top{
     background-color: #F5FBFB;
 }

@@ -1,0 +1,53 @@
+.main-navbar{
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar-items{
+  justify-content: end;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  color: #757575;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  background-color: #757575;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.box {
+  border: 0px none;
+  height: 2rem;
+  width: 11.375rem;
+}
+
+.box .brand-logo {
+  height: 2rem;
+  left: 0;
+  object-fit: cover;
+  position: fixed;
+  width: 11.375rem;
+}
+
+@media (max-width: 640px) {
+  .box .brand-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
