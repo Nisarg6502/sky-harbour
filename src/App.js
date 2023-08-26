@@ -1,6 +1,7 @@
 // import './App.css';
 import Footer from './components/Footer';
 import NavbarMain from './components/NavbarMain';
+import Landing from './components/Landing';
 // import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     // <NextUIProvider>
     <div className="App">
       <NavbarMain></NavbarMain>
+      <Landing></Landing>
       {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

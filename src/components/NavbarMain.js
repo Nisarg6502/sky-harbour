@@ -1,4 +1,5 @@
 import "./NavbarMain.css"
+import Logo from "../images/Logo.png"
 
 import React, { useState } from 'react';
 import {
@@ -9,7 +10,6 @@ import {
     MDBNavbarItem,
     MDBNavbarLink,
     MDBCollapse,
-    MDBBtn,
     MDBIcon,
     MDBNavbarNav,
 } from 'mdb-react-ui-kit';
@@ -19,9 +19,9 @@ function NavbarMain() {
 
     return (
         <>
-            <MDBNavbar className="main-navbar" expand='sm' light>
+            <MDBNavbar className="main-navbar mt-2" expand='lg' light>
                 <MDBContainer fluid>
-                    <MDBNavbarBrand href='#'>Navbar</MDBNavbarBrand>
+                    <MDBNavbarBrand href='#'><img src={Logo} class="img-fluid logo" /></MDBNavbarBrand>
                     <MDBNavbarToggler
                         type='button'
                         data-target='#navbarTogglerDemo02'

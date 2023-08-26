@@ -1,4 +1,5 @@
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import Logo from "../images/Logo.png"
 // import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Footer.css"
 
@@ -30,10 +31,7 @@ function Footer() {
                 <MDBContainer className='text-center text-md-start mt-5'>
                     <MDBRow className='mt-3'>
                         <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>
-                                <MDBIcon icon="gem" className="me-3" />
-                                Company name
-                            </h6>
+                            <img src={Logo} class="img-fluid" />
                             <p>
                                 At Sky Harbour Impex, we are passionate about delivering the freshest and finest selection of vegetables, fruits, and spices to global markets, cultivating flavors that transcend borders.
                             </p>

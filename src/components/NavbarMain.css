@@ -1,6 +1,19 @@
 .main-navbar{
-  background-color: transparent;
+  background: none;
+  position: absolute;
   box-shadow: none;
+  z-index: 99;
+  width: 100%;
+  /* margin: 0 0 1em 0; */
+}
+
+.logo{
+  height: 2rem;
+  object-fit: cover;
+  position: fixed;
+  width: auto;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .navbar-items{
@@ -11,6 +24,8 @@
   display: inline-block;
   position: relative;
   color: #757575;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .link::after {
