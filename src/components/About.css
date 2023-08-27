@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ab{
+    background-color: rgba(208, 244, 200, 0.182);
+}

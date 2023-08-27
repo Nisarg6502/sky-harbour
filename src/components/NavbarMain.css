@@ -1,6 +1,6 @@
 .main-navbar{
   background: none;
-  position: absolute;
+  /* position: absolute; */
   box-shadow: none;
   z-index: 99;
   width: 100%;
@@ -10,7 +10,7 @@
 .logo{
   height: 2rem;
   object-fit: cover;
-  position: fixed;
+  /* position: fixed; */
   width: auto;
   margin-left: 1.5rem;
   margin-top: 0.5rem;
@@ -23,7 +23,7 @@
 .link {
   display: inline-block;
   position: relative;
-  color: #757575;
+  color: #000000;
   margin-left: 1em;
   margin-right: 1em;
 }
