@@ -14,14 +14,23 @@ import {
     MDBNavbarNav,
 } from 'mdb-react-ui-kit';
 
+
+
 function NavbarMain() {
     const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
-
+    // var navBar = document.querySelector(".main-navbar");
+    // window.onscroll = function () {
+    //     if (window.scrollY > 22) {
+    //         navBar.classList.add("scrolled");
+    //     } else {
+    //         navBar.classList.remove("scrolled");
+    //     }
+    // };
     return (
 
-        <MDBNavbar className="main-navbar mt-2" expand='lg' light>
+        <MDBNavbar className="main-navbar shadow" expand='lg' light>
             <MDBContainer fluid>
-                <MDBNavbarBrand href='#'><img src={Logo} class="img-fluid logo" /></MDBNavbarBrand>
+                <MDBNavbarBrand href=''><img src={Logo} class="img-fluid logo" /></MDBNavbarBrand>
                 <MDBNavbarToggler
                     type='button'
                     data-target='#navbarTogglerDemo02'
@@ -35,12 +44,12 @@ function NavbarMain() {
                 <MDBCollapse navbar show={showNavNoTogglerSecond}>
                     <MDBNavbarNav className='ml-auto mb-2 mb-lg-0 navbar-items'>
                         <MDBNavbarItem>
-                            <MDBNavbarLink className="link" href='#'>
+                            <MDBNavbarLink className="link" href=''>
                                 Home
                             </MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
-                            <MDBNavbarLink className="link" href='#'>About</MDBNavbarLink>
+                            <MDBNavbarLink className="link" href='#about'>About</MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
                             <MDBNavbarLink className="link" href='#'>

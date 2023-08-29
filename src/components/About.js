@@ -7,7 +7,7 @@ import Efficiency from '../images/efficiency.png';
 
 export default function About() {
     return (
-        <div>
+        <div id='about'>
             <section class="text-gray-600 body-font ab">
                 <div class="container px-5 py-24">
                     <div class="text-center mb-5">
