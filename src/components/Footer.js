@@ -8,7 +8,7 @@ function Footer() {
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted footer-whole'>
             <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom footer-top'>
                 <div className='me-5 d-none d-lg-block'>
-                    <span>Get connected with us on social networks:</span>
+                    <span>Get connected with us on social networks: Add Certificates as well</span>
                 </div>
 
                 <div className='social-icons'>
@@ -40,17 +40,17 @@ function Footer() {
                         {/*Products*/}
                         <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-                            <p>
+                            <p className='my-2'>
                                 <a href='#!' className='text-reset link'>
                                     Fruits
                                 </a>
                             </p>
-                            <p>
+                            <p className='my-2'>
                                 <a href='#!' className='text-reset link'>
                                     Vegetables
                                 </a>
                             </p>
-                            <p>
+                            <p className='my-2'>
                                 <a href='#!' className='text-reset link'>
                                     Spices
                                 </a>
@@ -60,23 +60,23 @@ function Footer() {
                         {/*Useful Links */}
                         <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Useful Links</h6>
-                            <p>
+                            <p className='my-2'>
                                 <a href='' className='text-reset link'>
                                     Home
                                 </a>
                             </p>
-                            <p>
-                                <a href='#!' className='text-reset link'>
+                            <p className='my-2'>
+                                <a href='#about' className='text-reset link'>
                                     About Us
                                 </a>
                             </p>
-                            <p>
-                                <a href='#!' className='text-reset link'>
-                                    Orders
+                            <p className='my-2'>
+                                <a href='#productsection' className='text-reset link'>
+                                    Products
                                 </a>
                             </p>
-                            <p>
-                                <a href='#!' className='text-reset link'>
+                            <p className='my-2'>
+                                <a href='https://wa.me/+919421556115' className='text-reset link'>
                                     Contact Us
                                 </a>
                             </p>
@@ -85,15 +85,15 @@ function Footer() {
                         {/*Contact Details*/}
                         <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-                            <p>
+                            <p className='my-2'>
                                 <MDBIcon icon="map-marker-alt" size='lg' className="me-3" />
                                 New York, NY 10012, US
                             </p>
-                            <p>
+                            <p className='my-2'>
                                 <MDBIcon icon="envelope" className="me-3" />
                                 info@example.com
                             </p>
-                            <p>
+                            <p className='my-2'>
                                 <MDBIcon icon="phone" className="me-3" /><a href="tel:+917899933077" style={{
                                     textDecoration: "none", color: "inherit",
                                 }}>+91 7899933077</a>

@@ -14,23 +14,20 @@ import {
     MDBNavbarNav,
 } from 'mdb-react-ui-kit';
 
+import { Link } from 'react-router-dom';
 
 
 function NavbarMain() {
     const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
-    // var navBar = document.querySelector(".main-navbar");
-    // window.onscroll = function () {
-    //     if (window.scrollY > 22) {
-    //         navBar.classList.add("scrolled");
-    //     } else {
-    //         navBar.classList.remove("scrolled");
-    //     }
-    // };
     return (
 
         <MDBNavbar className="main-navbar shadow" expand='lg' light>
             <MDBContainer fluid>
-                <MDBNavbarBrand href=''><img src={Logo} class="img-fluid logo" /></MDBNavbarBrand>
+                <MDBNavbarBrand>
+                    <Link to="/">
+                        <img src={Logo} class="img-fluid logo" />
+                    </Link>
+                </MDBNavbarBrand>
                 <MDBNavbarToggler
                     type='button'
                     data-target='#navbarTogglerDemo02'
@@ -44,25 +41,25 @@ function NavbarMain() {
                 <MDBCollapse navbar show={showNavNoTogglerSecond}>
                     <MDBNavbarNav className='ml-auto mb-2 mb-lg-0 navbar-items'>
                         <MDBNavbarItem>
-                            <MDBNavbarLink className="link" href=''>
-                                Home
+                            <MDBNavbarLink className="link" href="">
+                                <Link to="/">Home</Link>
                             </MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
                             <MDBNavbarLink className="link" href='#about'>About</MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
-                            <MDBNavbarLink className="link" href='#'>
+                            <MDBNavbarLink className="link" href='#productsection'>
                                 Products
                             </MDBNavbarLink>
                         </MDBNavbarItem>
-                        <MDBNavbarItem>
+                        {/* <MDBNavbarItem>
                             <MDBNavbarLink className="link" href='#'>
                                 Gallery
                             </MDBNavbarLink>
-                        </MDBNavbarItem>
+                        </MDBNavbarItem> */}
                         <MDBNavbarItem>
-                            <MDBNavbarLink className="link" href='#'>
+                            <MDBNavbarLink className="link" href="https://wa.me/+919421556115">
                                 Contact Us
                             </MDBNavbarLink>
                         </MDBNavbarItem>

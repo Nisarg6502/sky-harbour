@@ -5,13 +5,15 @@ import {
     MDBTabsLink,
     MDBTabsContent,
     MDBTabsPane,
+    MDBRow,
+    MDBCol,
     MDBCard,
+    MDBCardImage,
+    MDBCardBody,
     MDBCardTitle,
     MDBCardText,
-    MDBCardBody,
-    MDBCardImage,
-    MDBRow,
-    MDBCol
+
+
 } from 'mdb-react-ui-kit';
 import './Products.css';
 
@@ -29,7 +31,12 @@ export default function Product() {
     return (
         <div id='productsection'>
             <div className='container p-5'>
-                <MDBTabs fill className='mt-5 tab mx-3 success'>
+                <div class="text-center mb-5 mt-5">
+                    <h1 className='title px-5'>Explore Our Exquisite Products</h1>
+                    <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">Welcome to our product showcase where every flavor, color, and aroma tells a story of quality and authenticity. At SkyHarbour Impex, we take immense pride in offering a diverse range of premium fruits, vegetables, and spices that redefine culinary experiences.</p>
+                </div>
+
+                <MDBTabs fill className='mt-5 tab mx-3 success mb-5'>
                     <MDBTabsItem>
                         <MDBTabsLink onClick={() => handleFillClick('tab1')} active={fillActive === 'tab1'}>
                             Fruits
@@ -49,28 +56,202 @@ export default function Product() {
 
                 <MDBTabsContent className=' mb-3  mx-3'>
                     <MDBTabsPane show={fillActive === 'tab1'}>
-                        <MDBCard className='w-50 m-5'>
-                            <MDBRow className='g-0'>
-                                <MDBCol md='4'>
-                                    <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-                                </MDBCol>
-                                <MDBCol md='8'>
+                        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/041.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
                                     <MDBCardBody>
                                         <MDBCardTitle>Card title</MDBCardTitle>
                                         <MDBCardText>
-                                            This is a wider card with supporting text below as a natural lead-in to additional content. This
-                                            content is a little bit longer.
-                                        </MDBCardText>
-                                        <MDBCardText>
-                                            <small className='text-muted'>Last updated 3 mins ago</small>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.
                                         </MDBCardText>
                                     </MDBCardBody>
-                                </MDBCol>
-                            </MDBRow>
-                        </MDBCard>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/042.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>This is a short card.</MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/043.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/044.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
                     </MDBTabsPane>
-                    <MDBTabsPane show={fillActive === 'tab2'}>Tab 2 content</MDBTabsPane>
-                    <MDBTabsPane show={fillActive === 'tab3'}>Tab 3 content</MDBTabsPane>
+
+
+                    <MDBTabsPane show={fillActive === 'tab2'}>
+                        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/041.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/042.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>This is a short card.</MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/043.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/044.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBTabsPane>
+
+
+
+                    <MDBTabsPane show={fillActive === 'tab3'}>
+                        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/041.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/042.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>This is a short card.</MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/043.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <MDBCard className='h-100'>
+                                    <MDBCardImage
+                                        src='https://mdbootstrap.com/img/new/standard/city/044.webp'
+                                        alt='...'
+                                        position='top'
+                                    />
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Card title</MDBCardTitle>
+                                        <MDBCardText>
+                                            This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBTabsPane>
                 </MDBTabsContent>
             </div>
         </div>
