@@ -6,23 +6,23 @@ import "./Footer.css"
 function Footer() {
     return (
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted footer-whole'>
-            <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom footer-top'>
-                <div className='me-5 d-none d-lg-block'>
-                    <span>Get connected with us on social networks: Add Certificates as well</span>
+            <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom footer-top text-light'>
+                <div className='me-5 d-none d-md-block'>
+                    <span>Get connected with us on social networks:</span>
                 </div>
 
-                <div className='social-icons'>
-                    <a href='' className='me-5 text-reset icon'>
-                        <MDBIcon fab icon="facebook-f" size="xl" />
+                <div className='social-icons px-3'>
+                    <a href='' className='me-5 text-reset '>
+                        <MDBIcon fab icon="facebook-f" className='icon' size="xl" />
                     </a>
-                    <a href='' className='me-5 text-reset icon'>
-                        <MDBIcon fab icon="twitter" size="xl" />
+                    <a href='' className='me-5 text-reset'>
+                        <MDBIcon fab icon="twitter" className='icon' size="xl" />
                     </a>
-                    <a href='' className='me-5 text-reset icon'>
-                        <MDBIcon fab icon="instagram" size="xl" />
+                    <a href='' className='me-5 text-reset'>
+                        <MDBIcon fab icon="instagram" className='icon' size="xl" />
                     </a>
-                    <a href='' className='me-5 text-reset icon'>
-                        <MDBIcon fab icon="linkedin" size="xl" />
+                    <a href='' className='me-5 text-reset'>
+                        <MDBIcon fab icon="linkedin" className='icon' size="xl" />
                     </a>
                 </div>
             </section>
