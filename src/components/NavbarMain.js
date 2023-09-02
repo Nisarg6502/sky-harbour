@@ -59,7 +59,7 @@ function NavbarMain() {
                             </MDBNavbarLink>
                         </MDBNavbarItem> */}
                         <MDBNavbarItem>
-                            <MDBNavbarLink className="link" href="https://wa.me/+919421556115">
+                            <MDBNavbarLink className="link" href="https://wa.me/+917899933077">
                                 Contact Us
                             </MDBNavbarLink>
                         </MDBNavbarItem>

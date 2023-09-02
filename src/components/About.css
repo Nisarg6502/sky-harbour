@@ -33,7 +33,15 @@ src:url("./rounded elegance.ttf")format('truetype') ;/* font-weight: bold; */
 background: #dcfce7;
 box-shadow:  20px 20px 60px #cbcfc9,
              -20px -20px 60px #ffffff;
+      transition: box-shadow .2s;
+
 }
+
+.abitem:hover{
+    box-shadow:  10px 10px 30px #cbcfc9,
+             -10px -10px 30px #ffffff;
+}
+
 
 #abcontainer{
      padding-left: 5.25rem/* 20px */;
@@ -43,6 +51,7 @@ box-shadow:  20px 20px 60px #cbcfc9,
 .para{
     font-size: large;
 }
+
 
 @media (max-width: 1026px) {
     #abcontainer{
