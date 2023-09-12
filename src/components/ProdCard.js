@@ -24,7 +24,7 @@ function ProdCard(props) {
         <div>
             <MDBCard className='h-100 prodcard'>
                 <MDBCardImage
-                    src='https://mdbootstrap.com/img/new/standard/city/041.webp'
+                    src={props.Image}
                     alt='...'
                     position='top'
                 />
