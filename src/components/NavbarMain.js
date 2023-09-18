@@ -14,7 +14,7 @@ import {
     MDBNavbarNav,
 } from 'mdb-react-ui-kit';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function NavbarMain() {
@@ -24,9 +24,9 @@ function NavbarMain() {
         <MDBNavbar className="main-navbar shadow" expand='lg' light>
             <MDBContainer fluid>
                 <MDBNavbarBrand>
-                    <Link to="/">
-                        <img src={Logo} class="img-fluid logo" />
-                    </Link>
+                    {/* <Link to="/"> */}
+                    <img src={Logo} class="img-fluid logo" />
+                    {/* </Link> */}
                 </MDBNavbarBrand>
                 <MDBNavbarToggler
                     type='button'
@@ -42,7 +42,8 @@ function NavbarMain() {
                     <MDBNavbarNav className='ml-auto mb-2 mb-lg-0 navbar-items'>
                         <MDBNavbarItem>
                             <MDBNavbarLink className="link" href="">
-                                <Link to="/">Home</Link>
+                                {/* <Link to="/">Home</Link> */}
+                                <a href="/">Home</a>
                             </MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>

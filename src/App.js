@@ -6,24 +6,24 @@ import Whatsapp from './components/Whatsapp';
 import ScrollTop from './components/ScrollTop';
 // import Contact from './pages/Contact';
 
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+// import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
 
     <div className="App">
-      <BrowserRouter>
-        <NavbarMain></NavbarMain>
+      {/* <BrowserRouter> */}
+      <NavbarMain></NavbarMain>
 
-        <Routes>
-          {/* <Route exact path="/contact" element={<Contact />} /> */}
+      {/* <Routes>
           <Route exact path="/" element={<Home />} />
 
-        </Routes>
-        <Footer></Footer>
-        <Whatsapp></Whatsapp>
-        <ScrollTop></ScrollTop>
-      </BrowserRouter>
+        </Routes> */}
+      <Home></Home>
+      <Footer></Footer>
+      <Whatsapp></Whatsapp>
+      <ScrollTop></ScrollTop>
+      {/* </BrowserRouter> */}
     </div>
 
   );
