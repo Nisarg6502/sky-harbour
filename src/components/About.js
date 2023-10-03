@@ -11,13 +11,13 @@ export default function About() {
             <section class="text-gray-600 body-font ab">
                 <div class="container py-24">
                     <div class="text-center mb-5">
-                        <h1 className='title px-5'>Sky Harbour</h1>
-                        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we stand as a beacon of quality and authenticity in the world of spices, fruits, and vegetables. With an unwavering commitment to excellence, we meticulously source and deliver premium products that enrich culinary experiences. Based in India, Sky Harbour's journey is rooted in connecting global tables with the finest flavors from our farms.</p>
+                        <h1 data-aos="zoom-in-up" data-aos-duration="1000" className='title px-5'>Sky Harbour</h1>
+                        <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we stand as a beacon of quality and authenticity in the world of spices, fruits, and vegetables. With an unwavering commitment to excellence, we meticulously source and deliver premium products that enrich culinary experiences. Based in India, Sky Harbour's journey is rooted in connecting global tables with the finest flavors from our farms.</p>
                     </div>
                     <hr className='mb-5 w-50 mx-auto horiline' />
                     <center>
                         <div id='abcontainer' class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 abcard">
-                            <div class="p-4 md:w-1/2 flex flex-col text-center items-center">
+                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
                                 <div className='abitem'>
                                     <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
                                         <img src={Farm} alt='farm' />
@@ -29,7 +29,7 @@ export default function About() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-4 md:w-1/2 flex flex-col text-center items-center">
+                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
                                 <div className='abitem'>
                                     <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
                                         <img src={Quality} alt='Quality' />
@@ -42,7 +42,7 @@ export default function About() {
                                 </div>
                             </div>
 
-                            <div class="p-4 md:w-1/2 flex flex-col text-center items-center">
+                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
                                 <div className='abitem'>
                                     <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
                                         <img src={Handshake} alt='Handshake' />
@@ -55,7 +55,7 @@ export default function About() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-4 md:w-1/2 flex flex-col text-center items-center">
+                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
                                 <div className='abitem'>
                                     <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
                                         <img src={Efficiency} alt='Efficiency' />

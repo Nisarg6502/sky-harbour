@@ -1,8 +1,8 @@
 import React from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
-import bg1 from '../images/fruits-vegetables-floating.png'
-import FiveSpice from '../images/five-spice-ingredients.png'
-import HotSpice from '../images/hot-spices-wooden-spoon.png'
+import bg1 from '../images/fruits-vegetables-floating.jpg'
+import FiveSpice from '../images/five-spice-ingredients.jpg'
+import HotSpice from '../images/hot-spices-wooden-spoon.jpg'
 
 import './Landing.css';
 
@@ -11,9 +11,9 @@ export default function Landing() {
         <div>
             <MDBContainer fluid className='landing'>
                 <MDBRow className='mt-5'>
-                    <MDBCol lg='6' md='6' className='bg1cont'>
+                    <MDBCol lg='6' md='6' className='bg1cont' data-aos="fade-up" data-aos-duration="1000">
                         {/* <img className='img-fluid bg1' src={bg1} alt='Fruits and Vegetables floating' /> */}
-                        <MDBCarousel className='img-fluid bg1'>
+                        <MDBCarousel fade className='img-fluid bg1' data-bs-interval="1000">
                             <MDBCarouselItem
                                 className='w-100 d-block'
                                 itemId={1}
@@ -34,14 +34,16 @@ export default function Landing() {
                             />
                         </MDBCarousel>
                     </MDBCol>
-                    <MDBCol lg='6' md='6' sm="12" className='text'>
-                        <h1 className='title'>YOUR GATEWAY TO FRESH HORIZONS</h1>
-                        {/* <h4 className='subtitle'>Exporting the Finest Selection of Fruits, Vegetables, and Spices Worldwide.</h4> */}
-                        <h4 className='subtitle' id='subtitle'>Exporting
-                            <span> the finest Selection of Fruits, Vegetables, and Spices Worldwide. From Our Farms to Your Table, Excellence is our Trademark.</span>
-                        </h4>
+                    <MDBCol lg='6' md='6' sm="12" className='text' id='landtext'>
+                        <MDBRow className='w-90 mr-4' data-aos="fade-up" data-aos-duration="1000">
+                            <h1 className='title' >YOUR GATEWAY TO FRESH HORIZONS</h1>
+                            {/* <h4 className='subtitle'>Exporting the Finest Selection of Fruits, Vegetables, and Spices Worldwide.</h4> */}
+                            <h4 className='subtitle' id='subtitle'>Exporting
+                                <span> the finest Selection of Fruits, Vegetables, and Spices Worldwide. From Our Farms to Your Table, Excellence is our Trademark.</span>
+                            </h4>
+                        </MDBRow>
                         <br />
-                        <MDBBtn className='mt-2 bg-success'>Explore Products</MDBBtn>
+                        <a href='#productsection' ><MDBBtn outline color='success' data-aos="fade-up" data-aos-duration="1000" className='mt-2 rounded-xl' id='exp-button'>Explore Products</MDBBtn></a>
 
                     </MDBCol>
                 </MDBRow>

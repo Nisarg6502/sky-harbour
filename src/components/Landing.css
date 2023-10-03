@@ -6,16 +6,18 @@
 
 #subtitle{
   /* display:inline-block; */
-  overflow:hidden;
+  /* overflow:hidden; */
+  font-size: larger;
   /* white-space:nowrap; */
-  height: 3.5rem;
-
+  /* height: 3.5rem;x  */
 }
 
-#subtitle:first-of-type {    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
-                       it's okaish for now */
+#exp-button{
+  position: relative;
+}
+
+
+/* #subtitle:first-of-type {    
   animation: showup 10s infinite;
 }
 
@@ -49,7 +51,7 @@
     30% {width:90%;}
     80% {opacity:1;}
     100% {opacity:0;width:90%;}
-}
+} */
 
 
 .text{
@@ -59,7 +61,10 @@
 
 .title{
     font-size: 3rem;
+    font-weight: bold;
     color: #2A545B;
+    /* width: 30rem; */
+    text-wrap:wrap;
 }
 
 .bg1{
@@ -79,9 +84,9 @@
   .text{
     padding-left: 2rem;
 }
-#subtitle{
+/* #subtitle{
   height: 4.8rem;
-}
+} */
 .bg1{
     margin-top:3rem;
 }
@@ -91,6 +96,11 @@
     padding-top: 3rem;
     padding-bottom: 7rem;
 }
+
+/* #landtext{
+  opacity: 0;
+            transition: opacity 3s;
+} */
 
 }
 @media (max-width: 768px) {
@@ -134,7 +144,7 @@
 }
 
 @media (max-width: 450px) {
-  #subtitle{
+  /* #subtitle{
     height: 5em;
-  }
+  } */
 }

@@ -90,7 +90,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "0.3g/100g",
             "Fats": "0.4g/100g",
-            "Description": "An apple is an edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today.",
+            "Description": "Crisp and refreshing, our apples are a quintessential fruit experience. Bursting with natural sweetness and a touch of tartness, each bite is a delightful journey through orchards kissed by the sun. Perfect for snacking or adding a crisp crunch to your favorite recipes, our apples are not only delicious but also packed with fiber and vitamins, making them a wholesome choice for your health.",
             "Image": Apples,
 
         },
@@ -105,7 +105,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "0.9g/100g",
             "Fats": "0.1g/100g",
-            "Description": "The orange is the fruit of various citrus species in the family Rutaceae; it primarily refers to Citrus × sinensis, which is also called sweet orange, to distinguish it from the related Citrus × aurantium, referred to as bitter orange.",
+            "Description": "Our oranges are a burst of sunshine in every bite that you take. Juicy, tangy, and packed with vitamin C, they invigorate your taste buds and boost your immune system. Whether you're savoring them as a healthy snack or transforming them into freshly squeezed juice, our oranges are a zesty delight that supports your well-being in the long run.",
             "Image": Oranges,
         },
         {
@@ -119,7 +119,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.7g/100g",
             "Fats": "1.2g/100g",
-            "Description": "The pomegranate, botanical name Punica granatum, is a fruit-bearing deciduous shrub or small tree in the family Lythraceae that grows between 5 and 10 m tall. The fruit is typically in season in the Northern Hemisphere from September to February, and in the Southern Hemisphere from March to May.",
+            "Description": "Experience the exotic allure of our pomegranates. Each jewel-like aril is a burst of sweet and tart flavor, loaded with antioxidants and nutrients. Whether you sprinkle them on salads, blend them into smoothies, or enjoy them on their own, our pomegranates not only tantalize your palate but also promote heart health and provide a wealth of essential nutrients.",
             "Image": Pomegranate,
         },
         {
@@ -133,7 +133,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "0.7g/100g",
             "Fats": "0.4g/100g",
-            "Description": "A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis. Grapes can be eaten fresh as table grapes or they can be used for making wine, jam, grape juice, jelly, grape seed extract, raisins, vinegar, and grape seed oil.",
+            "Description": " Plump, juicy, and irresistible, our grapes are a timeless classic. Bursting with natural sugars and a hint of earthiness, they're the perfect snack for all occasions. Whether you're enjoying them fresh, or incorporating them into your culinary creations, our grapes are a celebration of vineyard perfection. Plus, they're rich in antioxidants, supporting your overall health and well-being.",
             "Image": Grapes,
         },
 
@@ -152,7 +152,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "7.8g/100g",
             "Fats": "9.9g/100g",
-            "Description": "Turmeric is a flowering plant, Curcuma longa of the ginger family, Zingiberaceae, the roots of which are used in cooking. The plant is a perennial, rhizomatous, herbaceous plant native to the Indian subcontinent and Southeast Asia, that requires temperatures between 20 and 30 °C and a considerable amount of annual rainfall to thrive.",
+            "Description": "Our turmeric is a golden treasure, known for its earthy flavor and vibrant color. Beyond its culinary charm, turmeric boasts remarkable health benefits. Rich in curcumin, a potent antioxidant and anti-inflammatory compound, it supports joint health, aids digestion, and may even have positive effects on brain function. Enhance both your dishes and well-being with our premium turmeric.",
             "Image": Turmeric
         },
         {
@@ -166,7 +166,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.9g/100g",
             "Fats": "0.4g/100g",
-            "Description": "The chili pepper, from Nahuatl chīlli, is the fruit of plants from the genus Capsicum which are members of the nightshade family, Solanaceae. Chili peppers are widely used in many cuisines as a spice to add heat to dishes.",
+            "Description": "Spice up your culinary adventures with our red chillies. Their fiery heat adds excitement to dishes from around the world. But there's more to them than just their spicy kick. Red chillies are a source of capsaicin, a compound known for its metabolism-boosting properties and potential pain relief. Discover the thrill of flavor and health with our red chillies.",
             "Image": RedChillies
 
         },
@@ -181,7 +181,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.8g/100g",
             "Fats": "0.8g/100g",
-            "Description": "Ginger is a flowering plant whose rhizome, ginger root or ginger, is widely used as a spice and a folk medicine. It is a herbaceous perennial which grows annual pseudostems about one meter tall bearing narrow leaf blades.",
+            "Description": "Our ginger is a zesty wonder, known for its distinctive aroma and bold taste. In addition to its culinary versatility, ginger is renowned for its potential health benefits. It's been used for centuries to ease digestive discomfort, reduce inflammation, and boost the immune system. Whether you're crafting a spicy stir-fry or soothing tea, our ginger adds depth to your dishes and supports your well-being.",
             "Image": Ginger
 
         }
@@ -200,7 +200,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "2g/100g",
             "Fats": "0.1g/100g",
-            "Description": "The potato is a root vegetable native to the Americas, a starchy tuber of the plant Solanum tuberosum, and the plant itself, a perennial in the family Solanaceae.",
+            "Description": "Versatile and comforting, our potatoes are a kitchen staple that never goes out of style. With a creamy texture and a hearty flavor, they're perfect for mashing, roasting, or frying to crispy perfection. Beyond their delicious taste, potatoes provide a healthy dose of carbohydrates and fiber, offering sustained energy and digestive benefits for a well-rounded diet.",
             "Image": Potatoes,
 
         },
@@ -215,7 +215,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.1g/100g",
             "Fats": "0.1g/100g",
-            "Description": "The onion, also known as the bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus Allium. Its close relatives include the garlic, scallion, shallot, leek, chive, and Chinese onion.",
+            "Description": "Our onions are the aromatic foundation of countless dishes across the world. Their sweet and pungent flavor enhances everything from soups to salads. Beyond their culinary magic, onions are known for their potential health benefits, including anti-inflammatory and antioxidant properties. Add depth and goodness to your recipes with our premium onions.",
             "Image": Onion,
         },
         {
@@ -229,7 +229,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "2.8g/100g",
             "Fats": "0.4g/100g",
-            "Description": "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea.",
+            "Description": "Crisp and vibrant, our broccoli is a nutritional powerhouse. Bursting with vitamins, minerals, and antioxidants, it's a green gem that adds a healthy crunch to your plate. Whether you steam it, roast it, or toss it into your favorite stir-fry, our broccoli supports your immune system and overall well-being, making it a must-have for health-conscious foodies.",
             "Image": Broccoli,
         },
         {
@@ -243,7 +243,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.9g/100g",
             "Fats": "0.3g/100g",
-            "Description": "Cauliflower is one of several vegetables in the species Brassica oleracea in the genus Brassica, which is in the Brassicaceae family. It is an annual plant that reproduces by seed. Typically, only the head is eaten – the edible white flesh sometimes called curd.",
+            "Description": "Versatile and nutritious, our cauliflower is a low-carb superstar. Its mild, slightly nutty flavor makes it a versatile ingredient for everything from cauliflower rice to pizza crust. Packed with vitamins, fiber, and antioxidants, our cauliflower not only elevates your meals but also supports your health and well-being. Enjoy the goodness of this cruciferous gem in every bite.",
             "Image": Cauliflower,
         }
 
@@ -252,15 +252,15 @@ export default function Product() {
 
     return (
         <div id='productsection'>
-            <div className='container p-5'>
+            <div className='container'>
                 <div class="text-center mb-5 mt-5">
-                    <h1 className='title px-5'>Explore Our Exquisite Products</h1>
-                    <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">Welcome to our product showcase where every flavor, color, and aroma tells a story of quality and authenticity. At SkyHarbour Impex, we take immense pride in offering a diverse range of premium fruits, vegetables, and spices that redefine culinary experiences.</p>
+                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title px-5'>Explore Our Exquisite Products</h1>
+                    <p data-aos="fade-up" data-aos-duration="1000" class="p-4 text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">Welcome to our product showcase where every flavor, color, and aroma tells a story of quality and authenticity. At SkyHarbour Impex, we take immense pride in offering a diverse range of premium fruits, vegetables, and spices that redefine culinary experiences.</p>
                 </div>
 
                 <hr className='mb-5 w-50 mx-auto horiline' id='prodhr' />
 
-                <MDBTabs fill className='mt-5 tab mx-3 mb-5'>
+                <MDBTabs data-aos="zoom-in" data-aos-duration="1000" fill className='mt-5 tab mx-3 mb-5'>
                     <MDBTabsItem className='proditem'>
                         <MDBTabsLink onClick={() => handleFillClick('tab1')} active={fillActive === 'tab1'}>
                             Fruits
@@ -272,7 +272,7 @@ export default function Product() {
                         </MDBTabsLink>
                     </MDBTabsItem>
                     <MDBTabsItem className='proditem'>
-                        <MDBTabsLink onClick={() => handleFillClick('tab3')} active={fillActive === 'tab3'}>
+                        <MDBTabsLink onClick={() => { handleFillClick('tab3'); }} active={fillActive === 'tab3'}>
                             Spices
                         </MDBTabsLink>
                     </MDBTabsItem>
@@ -280,12 +280,12 @@ export default function Product() {
 
                 <MDBTabsContent className=' mb-3  mx-3'>
                     <MDBTabsPane show={fillActive === 'tab1'}>
-                        <div className='container mb-5'>
-                            <h1 className='title py-2 w-fit'>Fruits</h1>
-                            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara typing-demo">Indulge in the vibrant sweetness of our handpicked fruits, a harmonious blend of nature's finest flavors. Our fruits bring the essence of sun-soaked orchards to your table.</p>
+                        <div className='container mb-5 text-center'>
+                            <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Fruits</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara mx-auto typing-demo">Welcome to SkyHarbour's bountiful Fruits section, where nature's finest offerings await your indulgence. Our commitment to delivering the freshest and most exquisite fruits is unwavering.<br /><br />Sourced directly from sun-kissed farms, our fruits, including juicy oranges bursting with vitamin C, crisp apples that redefine freshness, and exotic pomegranates filled with antioxidants, are a celebration of nature's bounty. <br /><br />Each bite is not only a journey through flavor but also a step towards a healthier you. Join us in savoring these irresistible treasures brought right from the farms to your table.</p>
                         </div>
-                        <MDBRow className='row-cols-1 row-cols-md-3 mt g-4'>
-                            <MDBCol>
+                        <MDBRow className='row-cols-1 row-cols-md-3 mt g-4 prodrow'>
+                            <MDBCol className='prodcol flex'>
                                 <ProdCard
                                     Title={FruitSpecifications[0].Name}
                                     Nutrients={FruitSpecifications[0].Nutrients}
@@ -299,7 +299,7 @@ export default function Product() {
                                     setOptSmModal={setOptSmModal1}
                                 ></ProdCard>
                             </MDBCol>
-                            <MDBCol>
+                            <MDBCol className='prodcol flex'>
                                 <ProdCard
                                     Title={FruitSpecifications[1].Name}
                                     Nutrients={FruitSpecifications[1].Nutrients}
@@ -314,7 +314,7 @@ export default function Product() {
                                     setOptSmModal={setOptSmModal2}
                                 ></ProdCard>
                             </MDBCol>
-                            <MDBCol>
+                            <MDBCol className='prodcol flex'>
                                 <ProdCard
                                     Title={FruitSpecifications[2].Name}
                                     Nutrients={FruitSpecifications[2].Nutrients}
@@ -381,9 +381,9 @@ export default function Product() {
 
 
                     <MDBTabsPane show={fillActive === 'tab2'}>
-                        <div className='container mb-5'>
-                            <h1 className='title py-2 w-fit'>Vegetables</h1>
-                            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara typing-demo">Our vegetables are a celebration of the earth's bounty, a testament to the richness of the soil. From the humble potato to the exotic broccoli, our vegetables are a feast for the senses.</p>
+                        <div className='container mb-5 text-center'>
+                            <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Vegetables</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Dive into the world of farm-fresh vegetables at Sky Harbour. Our Vegetable section is a tribute to the earth's richness, offering you an array of goodness grown in pristine farms. <br /><br />From versatile potatoes that promise comfort in every bite to vibrant broccoli, a nutritional powerhouse, our vegetables are a culinary canvas waiting for your creativity. <br /><br />We take pride in sourcing directly from farms to ensure you receive the highest quality. Make every meal a celebration of health and taste with our farm-fresh vegetables.</p>
                         </div>
                         <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
                             <MDBCol>
@@ -483,9 +483,9 @@ export default function Product() {
 
 
                     <MDBTabsPane show={fillActive === 'tab3'}>
-                        <div className='container mb-5'>
-                            <h1 className='title py-2 w-fit'>Spices</h1>
-                            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara typing-demo">Spices are the soul of every dish, and ours are a symphony of flavors, carefully selected from the heart of India's spice lands.</p>
+                        <div className='container mb-5 text-center'>
+                            <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2 '>Spices</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara mx-auto typing-demo">In our Spices section, we unveil a world of flavor, color, and health benefits that only the finest spices can provide. At Sky Harbour, we source our spices directly from India's spice heartland, where tradition meets quality. <br /><br />Our turmeric, renowned for its vibrant color and potential health benefits, joins fiery red chillies that add excitement to your dishes. And let's not forget ginger, a zesty wonder with numerous culinary and wellness uses. <br /><br />These spices are more than ingredients; they are the essence of taste and health, brought directly from the farms to your spice rack. Explore our Spice section and elevate your culinary creations to new heights.</p>
                         </div>
                         <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
                             <MDBCol>

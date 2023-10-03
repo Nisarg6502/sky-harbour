@@ -9,6 +9,15 @@
     margin: 1rem;
 }
 
+/* .prodrow{
+    display: flex;
+} */
+.prodcol{
+    align-items: stretch;
+    
+ 
+}
+
 
 .arrow-icon{
     transition: all 0.5s linear;

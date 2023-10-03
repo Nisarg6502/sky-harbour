@@ -76,7 +76,7 @@ function Footer() {
                                 </a>
                             </p>
                             <p className='my-2'>
-                                <a href='https://wa.me/+919421556115' className='text-reset link'>
+                                <a href='https://wa.me/+917899933077' className='text-reset link'>
                                     Contact Us
                                 </a>
                             </p>

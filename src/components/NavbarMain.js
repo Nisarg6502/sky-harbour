@@ -25,7 +25,8 @@ function NavbarMain() {
             <MDBContainer fluid>
                 <MDBNavbarBrand>
                     {/* <Link to="/"> */}
-                    <img src={Logo} class="img-fluid logo" />
+                    <a href="/"><img src={Logo} class="img-fluid logo" alt="Logo" /></a>
+
                     {/* </Link> */}
                 </MDBNavbarBrand>
                 <MDBNavbarToggler

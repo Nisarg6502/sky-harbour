@@ -9,7 +9,6 @@ import {
     MDBModalBody,
     MDBTable,
     MDBTableBody,
-    MDBTableHead,
     MDBCard,
     MDBCardImage,
     MDBCardBody,
@@ -17,19 +16,20 @@ import {
     MDBCardText,
 
 } from 'mdb-react-ui-kit';
+import './ProdCard.css';
 
 function ProdCard(props) {
 
     return (
-        <div>
-            <MDBCard className='h-100 prodcard'>
+        <div className='flex-grow-1'>
+            <MDBCard className='prodcard'>
                 <MDBCardImage
                     src={props.Image}
-                    alt='...'
+                    alt={props.Title + '-Image'}
                     position='top'
                 />
                 <MDBCardBody>
-                    <MDBCardTitle>{props.Title}</MDBCardTitle>
+                    <MDBCardTitle className='prodcardtitle fs-3 fw-bold'>{props.Title}</MDBCardTitle>
                     <MDBCardText>
                         {props.Description}
                     </MDBCardText>
@@ -40,7 +40,7 @@ function ProdCard(props) {
                         <MDBModalDialog size='lg' centered>
                             <MDBModalContent>
                                 <MDBModalHeader>
-                                    <MDBModalTitle>Specifications</MDBModalTitle>
+                                    <MDBModalTitle className='mx-auto text-center w-full fw-bold fs-4'>Specifications</MDBModalTitle>
                                     <MDBBtn className='btn-close' color='none' onClick={props.toggleShow}></MDBBtn>
                                 </MDBModalHeader>
                                 <MDBModalBody>
@@ -53,11 +53,11 @@ function ProdCard(props) {
                 </MDBTableHead> */}
                                         <MDBTableBody>
                                             <tr>
-                                                <th scope='row'>Name</th>
+                                                <th className='fw-bold' scope='row'>Name</th>
                                                 <td>{props.Title}</td>
                                             </tr>
                                             <tr>
-                                                <th scope='row'>Nutrients</th>
+                                                <th className='fw-bold' scope='row'>Nutrients</th>
                                                 <td>
                                                     <ul>
                                                         <li>Calories: {props.Nutrients.Calories}</li>
@@ -67,15 +67,15 @@ function ProdCard(props) {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope='row'>Vitamins</th>
+                                                <th className='fw-bold' scope='row'>Vitamins</th>
                                                 <td>{props.Vitamins}</td>
                                             </tr>
                                             <tr>
-                                                <th scope='row'>Proteins</th>
+                                                <th className='fw-bold' scope='row'>Proteins</th>
                                                 <td>{props.Proteins}</td>
                                             </tr>
                                             <tr>
-                                                <th scope='row'>Fats</th>
+                                                <th className='fw-bold' scope='row'>Fats</th>
                                                 <td>{props.Fats}</td>
                                             </tr>
                                         </MDBTableBody>

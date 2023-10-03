@@ -19,6 +19,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
 
         </Routes> */}
+
       <Home></Home>
       <Footer></Footer>
       <Whatsapp></Whatsapp>
