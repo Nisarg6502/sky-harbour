@@ -11,8 +11,8 @@ export default function About() {
             <section class="text-gray-600 body-font ab">
                 <div class="container py-24">
                     <div class="text-center mb-5">
-                        <h1 data-aos="zoom-in-up" data-aos-duration="1000" className='title px-5'>Sky Harbour</h1>
-                        <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we stand as a beacon of quality and authenticity in the world of spices, fruits, and vegetables. With an unwavering commitment to excellence, we meticulously source and deliver premium products that enrich culinary experiences. Based in India, Sky Harbour's journey is rooted in connecting global tables with the finest flavors from our farms.</p>
+                        <h1 data-aos="zoom-in-up" data-aos-duration="1000" className='title px-5'>SkyHarbour</h1>
+                        <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we stand as a beacon of quality and authenticity in the world of spices, fruits, and vegetables. With an unwavering commitment to excellence, we meticulously source and deliver premium products that enrich culinary experiences. Based in India, SkyHarbour's journey is rooted in connecting global tables with the finest flavors from our farms.</p>
                     </div>
                     <hr className='mb-5 w-50 mx-auto horiline' />
                     <center>

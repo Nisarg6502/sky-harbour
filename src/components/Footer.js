@@ -15,9 +15,9 @@ function Footer() {
                     <a href='' className='me-5 text-reset '>
                         <MDBIcon fab icon="facebook-f" className='icon' size="xl" />
                     </a>
-                    <a href='' className='me-5 text-reset'>
+                    {/* <a href='' className='me-5 text-reset'>
                         <MDBIcon fab icon="twitter" className='icon' size="xl" />
-                    </a>
+                    </a> */}
                     <a href='' className='me-5 text-reset'>
                         <MDBIcon fab icon="instagram" className='icon' size="xl" />
                     </a>
@@ -33,8 +33,10 @@ function Footer() {
                         <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                             <img src={Logo} class="img-fluid" />
                             <p>
-                                At Sky Harbour Impex, we are passionate about delivering the freshest and finest selection of vegetables, fruits, and spices to global markets, cultivating flavors that transcend borders.
+                                At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of vegetables, fruits, and spices to global markets, cultivating flavors that transcend borders.
                             </p>
+                            <br />
+                            <p><b>CIN NO:</b> U47990KA2023PTC175888<br /><b>GST NO:</b> 29ABLCS2303K1Z4</p>
                         </MDBCol>
 
                         {/*Products*/}
@@ -87,11 +89,14 @@ function Footer() {
                             <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                             <p className='my-2'>
                                 <MDBIcon icon="map-marker-alt" size='lg' className="me-3" />
-                                New York, NY 10012, US
+                                No.1-1165/1, Aiwan-E-Shahi, GB court, Gulbarga pincode - 585102 <br />State: Karnataka
+                                <br />Country: India
                             </p>
                             <p className='my-2'>
                                 <MDBIcon icon="envelope" className="me-3" />
-                                info@example.com
+                                <a href="mailto:skyharbour.impex@gmail.com" style={{ textDecoration: "none", color: "inherit" }}>
+                                    skyharbour.impex@gmail.com
+                                </a>
                             </p>
                             <p className='my-2'>
                                 <MDBIcon icon="phone" className="me-3" /><a href="tel:+917899933077" style={{
