@@ -44,7 +44,7 @@ function NavbarMain() {
                         <MDBNavbarItem>
                             <MDBNavbarLink className="link" href="">
                                 {/* <Link to="/">Home</Link> */}
-                                <a href="/">Home</a>
+                                Home
                             </MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>

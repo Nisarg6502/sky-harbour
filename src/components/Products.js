@@ -16,6 +16,7 @@ import './Products.css';
 // import { color } from 'framer-motion';
 // import Table from './Table.js'
 import ProdCard from './ProdCard.js';
+import TurmericCard from './TurmericCard';
 import Turmeric from '../images/turmeric-powder.jpg';
 import RedChillies from '../images/red-chili-peppers.jpg';
 import Ginger from '../images/ginger.jpg';
@@ -24,12 +25,13 @@ import Pomegranate from '../images/pomegranate.jpg';
 import Grapes from '../images/grapes.jpg';
 import Apples from '../images/apples.jpg';
 import Broccoli from '../images/broccoli.jpg';
-import Onion from '../images/onion.jpg';
-import Cauliflower from '../images/cauliflower.jpg';
-import Potatoes from '../images/potatoes.jpg';
+import Mushroom from '../images/mushroom.jpg';
+import Capsicum from '../images/ColourCapsicum.jpg';
+import BabyCorn from '../images/babycorn.jpg';
 
 export default function Product() {
     const [fillActive, setFillActive] = useState('tab1');
+    const [fillActiveSpices, setFillActiveSpices] = useState('Spicetab1');
 
     const handleFillClick = (value) => {
         if (value === fillActive) {
@@ -38,12 +40,24 @@ export default function Product() {
 
         setFillActive(value);
     };
+
+
+    const handleFillClickSpices = (value) => {
+        if (value === fillActiveSpices) {
+            return;
+        }
+
+        setFillActiveSpices(value);
+    };
+    //turmeric modal
     const [optSmModal1, setOptSmModal1] = useState(false);
     const [optSmModal2, setOptSmModal2] = useState(false);
     const [optSmModal3, setOptSmModal3] = useState(false);
     const [optSmModal4, setOptSmModal4] = useState(false);
     const [optSmModal5, setOptSmModal5] = useState(false);
     const [optSmModal6, setOptSmModal6] = useState(false);
+
+
     const [optSmModal7, setOptSmModal7] = useState(false);
     const [optSmModal8, setOptSmModal8] = useState(false);
     const [optSmModal9, setOptSmModal9] = useState(false);
@@ -54,12 +68,15 @@ export default function Product() {
     const [optSmModal14, setOptSmModal14] = useState(false);
     const [optSmModal15, setOptSmModal15] = useState(false);
 
+    //turmeric toggle
     const toggleShow1 = () => setOptSmModal1(!optSmModal1);
     const toggleShow2 = () => setOptSmModal2(!optSmModal2);
     const toggleShow3 = () => setOptSmModal3(!optSmModal3);
     const toggleShow4 = () => setOptSmModal4(!optSmModal4);
     const toggleShow5 = () => setOptSmModal5(!optSmModal5);
     const toggleShow6 = () => setOptSmModal6(!optSmModal6);
+
+
     const toggleShow7 = () => setOptSmModal7(!optSmModal7);
     const toggleShow8 = () => setOptSmModal8(!optSmModal8);
     const toggleShow9 = () => setOptSmModal9(!optSmModal9);
@@ -69,6 +86,7 @@ export default function Product() {
     const toggleShow13 = () => setOptSmModal13(!optSmModal13);
     const toggleShow14 = () => setOptSmModal14(!optSmModal14);
     const toggleShow15 = () => setOptSmModal15(!optSmModal15);
+
 
     const [showShow, setShowShow] = useState(false);
     const [showShow2, setShowShow2] = useState(false);
@@ -143,7 +161,8 @@ export default function Product() {
     const SpiceSpecifications = [
         {
             "id": 1,
-            "Name": "Turmeric",
+            "Name": "Lakadong Turmeric",
+            "Circumin": "6% - 9%",
             "Nutrients": {
                 "Calories": 354,
                 "Carbs": 65,
@@ -152,7 +171,7 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "7.8g/100g",
             "Fats": "9.9g/100g",
-            "Description": "Our turmeric is a golden treasure, known for its earthy flavor and vibrant color. Beyond its culinary charm, turmeric boasts remarkable health benefits. Rich in curcumin, a potent antioxidant and anti-inflammatory compound, it supports joint health, aids digestion, and may even have positive effects on brain function. Enhance both your dishes and well-being with our premium turmeric.",
+            "Description": "Our premium turmeric comes in three varieties, varying in curcumin content, sourced from Meghalaya, Arunachal, Manipur, and Nagaland. Available in sliced, dried, and powdered forms, it's 100% naturally grown without any chemical traces. Beyond its rich earthy flavor and vibrant color, turmeric is known for its potential health benefits. Rich in curcumin, an antioxidant and anti-inflammatory compound, it supports joint health, aids digestion, and may have positive effects on brain function. Enhance your dishes and well-being with our pure turmeric.",
             "Image": Turmeric
         },
         {
@@ -187,11 +206,105 @@ export default function Product() {
         }
     ];
 
+    //generate specification for turmeric
+    const TurmericSpecifications = [
+        {
+            "id": 1,
+            "Name": "Lakadong Turmeric",
+            "Curcumin": "6% - 9%",
+            "Origin": "Meghalaya",
+            "Intro": "The world's best with high curcumin content, perfect for home remedies and Ayurvedic marvels.",
+            "Description": "This variety comes from Meghalaya and is considered to be the world’s best turmeric variety due to its very high curcumin content, which can range from 7-12%. It has a dark yellow colour and a pungent taste. It is used for making various home remedies and Ayurvedic medicines.",
+            "Benefits": {
+                "first": "Anti-Inflammatory: Aids in reducing inflammation in the body, potentially easing conditions like arthritis.",
+                "second": "Powerful Antioxidant: Acts as a strong antioxidant, protecting cells from damage and supporting overall well-being.",
+                "third": "Joint Health: Supports joint health and may alleviate joint pain and stiffness.",
+                "fourth": "Digestive Aid: Helps with digestion and soothes digestive issues.",
+            },
+            "Image": Turmeric
+        },
+        {
+            "id": 2,
+            "Name": "Yaingang Turmeric",
+            "Curcumin": "4% - 6%",
+            "Origin": "Manipur",
+            "Intro": "A golden treasure with gentle curcumin content, ideal for traditional remedies and culinary delights.",
+            "Description": " From the picturesque landscapes of Manipur, Yaingang Turmeric is a cherished gem. This exceptional variety boasts a curcumin content ranging from 4 to 6%, making it a valuable addition to your pantry. With its warm, golden color and a gentle, earthy taste, Yaingang Turmeric has been a traditional choice for crafting home remedies and Ayurvedic medicines for generations. Embrace the potential of this golden treasure for both your wellness and culinary creations.",
+            "Benefits": {
+                "first": "Mild Flavor: With a gentle, earthy taste, it enhances a variety of dishes.",
+                "second": "Antioxidant Power: Acts as an antioxidant, protecting against cell damage and supporting well-being.",
+                "third": "Traditional Remedies: A popular choice for crafting traditional home remedies and Ayurvedic medicines.",
+                "fourth": "Anti-Inflammatory: Aids in reducing inflammation and promoting joint health.",
+            },
+            "Image": Turmeric
+        },
+        {
+            "id": 3,
+            "Name": "Ta-ngian Turmeric",
+            "Curcumin": "2% - 4%",
+            "Origin": "Arunachal Pradesh",
+            "Intro": "A unique spice from Arunachal Pradesh, offering mild yet distinctive flavors and potential health benefits.",
+            "Description": "Grown in the lush valleys of Arunachal Pradesh, Tangian Turmeric is a unique treasure. With a curcumin content ranging from 2 to 4%, it offers a mild yet distinct flavor profile. Tangian Turmeric has been a culinary and medicinal staple in the region for generations. Its subtle, earthy taste complements a wide range of dishes, and it is prized for its potential health benefits, making it a delightful addition to traditional remedies and Ayurvedic practices.",
+            "Benefits": {
+                "first": "Wellness Potential: May provide various health benefits, making it a valuable addition to your diet.",
+                "second": "Culinary Versatility: Enhances a wide range of dishes with its subtle, earthy taste.",
+                "third": "Traditional Remedy: Used for generations in traditional remedies and Ayurvedic practices.",
+                "fourth": "Distinct Flavor: Offers a mild and unique flavor profile.",
+            },
+            "Image": Turmeric
+        },
+        {
+            "id": 4,
+            "Name": "Alleppey Finger Turmeric",
+            "Curcumin": "5%",
+            "Origin": "Kerala",
+            "Intro": "Renowned for its vibrant yellow hue and strong anti-inflammatory properties, it's your culinary and wellness companion.",
+            "Description": "From Kerala, this vibrant variety is celebrated for its high curcumin content, which grants it a bright yellow hue and strong anti-inflammatory properties. With about 5% curcumin, it surpasses most other varieties, offering both culinary and wellness potential.",
+            "Benefits": {
+                "first": "Anticancer: Curcumin has been shown to have anticancer properties. It can help to kill cancer cells and prevent the growth of new tumors.",
+                "second": "Cardioprotective: Curcumin c3n help to protect the heart from disease. It can lower cholesterol levels, improve blood circulation, and reduce inflammation.",
+                "third": "Neuroprotective: It can improve cognitive function and reduce the risk of developing Alzheimer's disease and other neurodegenerative disorders.",
+                "fourth": "Anti-inflammatory:  It can help to reduce inflammation throughout the body, which can be beneficial for a variety of conditions, including arthritis, asthma, and inflammatory bowel disease.",
+            },
+        },
+        {
+            "id": 5,
+            "Name": "Erode and Salem Turmeric",
+            "Curcumin": "3% - 4%",
+            "Origin": "Tamil Nadu",
+            "Intro": " Erode, one of India's most exported turmeric varieties, and Salem, with a prestigious Geographical Indication (GI) tag in 2019, promising unique quality and reputation.",
+            "Description": "These varieties come from Tamil Nadu and are widely used in cooking and medicine. They have a lighter yellow colour and a mild flavour. Erode turmeric is one of the most exported varieties of turmeric in India. Salem turmeric received a Geographical Indication (GI) tag in 2019, which means that it has a unique quality and reputation due to its origin.",
+            "Benefits": {
+                "first": "Anti-Inflammatory: Aids in reducing inflammation in the body, potentially easing conditions like arthritis.",
+                "second": "Powerful Antioxidant: Acts as a strong antioxidant, protecting cells from damage and supporting overall well-being.",
+                "third": "Joint Health: Supports joint health and may alleviate joint pain and stiffness.",
+                "fourth": "Digestive Aid: Helps with digestion and soothes digestive issues.",
+            },
+        },
+        {
+            "id": 6,
+            "Name": "Rajapore and Sangli Turmeric",
+            "Curcumin": "3% - 4.5%",
+            "Origin": "Maharashtra",
+            "Intro": "Hailing from Maharashtra, these varieties are renowned for their deep-orange hue and robust aroma, are favored for exports.",
+            "Description": "These varieties come from Maharashtra and are also popular for export. They have a deep-orange colour and a strong aroma. Rajapore turmeric is preferred for making curry powder, while Sangli turmeric is often used for medicinal purposes. Sangli turmeric also received a GI tag in 2018",
+            "Benefits": {
+                "first": "Geographical Indication (GI): Sangli Turmeric received a prestigious GI tag in 2018, signifying its unique quality and reputation due to its origin.",
+                "second": "Deep-Orange Color: Adds a rich and vibrant hue to dishes, enhancing their visual appeal.",
+                "third": "Culinary Excellence: Rajapore is preferred for making curry powder, elevating the taste of various dishes.",
+                "fourth": "Digestive Aid: Helps with digestion and soothes digestive issues.",
+            },
+
+        }
+
+
+    ]
+
     //generate specification for vegetables
     const VegetableSpecifications = [
         {
             "id": 1,
-            "Name": "Potato",
+            "Name": "Colour Capsicum",
             "Nutrients": {
                 "Calories": 77,
                 "Carbs": 17,
@@ -200,13 +313,13 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "2g/100g",
             "Fats": "0.1g/100g",
-            "Description": "Versatile and comforting, our potatoes are a kitchen staple that never goes out of style. With a creamy texture and a hearty flavor, they're perfect for mashing, roasting, or frying to crispy perfection. Beyond their delicious taste, potatoes provide a healthy dose of carbohydrates and fiber, offering sustained energy and digestive benefits for a well-rounded diet.",
-            "Image": Potatoes,
+            "Description": "Our capsicums are a colorful addition to your culinary creations. Bursting with flavor and nutrients, they're a versatile ingredient that adds a pop of color to your dishes. Whether you're roasting them to perfection or adding them to your favorite stir-fry, our capsicums are a celebration of freshness and flavor. Plus, they're rich in antioxidants, supporting your overall health and well-being.",
+            "Image": Capsicum,
 
         },
         {
             "id": 2,
-            "Name": "Onion",
+            "Name": "Mushroom",
             "Nutrients": {
                 "Calories": 40,
                 "Carbs": 9,
@@ -215,8 +328,9 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.1g/100g",
             "Fats": "0.1g/100g",
-            "Description": "Our onions are the aromatic foundation of countless dishes across the world. Their sweet and pungent flavor enhances everything from soups to salads. Beyond their culinary magic, onions are known for their potential health benefits, including anti-inflammatory and antioxidant properties. Add depth and goodness to your recipes with our premium onions.",
-            "Image": Onion,
+            "Description": "Our mushrooms are a culinary delight, known for their earthy flavor and meaty texture. Whether you're adding them to your favorite pasta or sautéing them with garlic and herbs, our mushrooms are a versatile ingredient that elevates your dishes. Plus, they're rich in antioxidants and nutrients, supporting your overall health and well-being."
+            ,
+            "Image": Mushroom,
         },
         {
             "id": 3,
@@ -234,7 +348,7 @@ export default function Product() {
         },
         {
             "id": 4,
-            "Name": "Cauliflower",
+            "Name": "Baby Corn",
             "Nutrients": {
                 "Calories": 25,
                 "Carbs": 5,
@@ -243,8 +357,8 @@ export default function Product() {
             "Vitamins": "Vitamin A, Vitamin C",
             "Proteins": "1.9g/100g",
             "Fats": "0.3g/100g",
-            "Description": "Versatile and nutritious, our cauliflower is a low-carb superstar. Its mild, slightly nutty flavor makes it a versatile ingredient for everything from cauliflower rice to pizza crust. Packed with vitamins, fiber, and antioxidants, our cauliflower not only elevates your meals but also supports your health and well-being. Enjoy the goodness of this cruciferous gem in every bite.",
-            "Image": Cauliflower,
+            "Description": "Our baby corn is a culinary delight, known for its delicate flavor and tender texture. Whether you're adding it to your favorite stir-fry or tossing it into a salad, our baby corn is a versatile ingredient that adds a healthy crunch to your dishes. Plus, it's rich in antioxidants and nutrients, supporting your overall health and well-being.",
+            "Image": BabyCorn,
         }
 
     ];
@@ -255,15 +369,15 @@ export default function Product() {
             <div className='container'>
                 <div class="text-center mb-5 mt-5">
                     <h1 data-aos="fade-up" data-aos-duration="1000" className='title px-5'>Explore Our Exquisite Products</h1>
-                    <p data-aos="fade-up" data-aos-duration="1000" class="p-4 text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">Welcome to our product showcase where every flavor, color, and aroma tells a story of quality and authenticity. At SkyHarbour Impex, we take immense pride in offering a diverse range of premium fruits, vegetables, and spices that redefine culinary experiences.</p>
+                    <p data-aos="fade-up" data-aos-duration="1000" class="p-4 text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">Welcome to our product showcase where every flavor, color, and aroma tells a story of quality and authenticity. At SkyHarbour Impex, we take immense pride in offering a diverse range of premium spices, vegetables, and fruits that redefine culinary experiences.</p>
                 </div>
 
                 <hr className='mb-5 w-50 mx-auto horiline' id='prodhr' />
 
                 <MDBTabs data-aos="zoom-in" data-aos-duration="1000" fill className='mt-5 tab mx-3 mb-5'>
                     <MDBTabsItem className='proditem'>
-                        <MDBTabsLink onClick={() => handleFillClick('tab1')} active={fillActive === 'tab1'}>
-                            Fruits
+                        <MDBTabsLink onClick={() => { handleFillClick('tab1'); }} active={fillActive === 'tab1'}>
+                            Spices
                         </MDBTabsLink>
                     </MDBTabsItem>
                     <MDBTabsItem className='proditem'>
@@ -272,14 +386,14 @@ export default function Product() {
                         </MDBTabsLink>
                     </MDBTabsItem>
                     <MDBTabsItem className='proditem'>
-                        <MDBTabsLink onClick={() => { handleFillClick('tab3'); }} active={fillActive === 'tab3'}>
-                            Spices
+                        <MDBTabsLink onClick={() => handleFillClick('tab3')} active={fillActive === 'tab3'}>
+                            Fruits
                         </MDBTabsLink>
                     </MDBTabsItem>
                 </MDBTabs>
 
                 <MDBTabsContent className=' mb-3  mx-3'>
-                    <MDBTabsPane show={fillActive === 'tab1'}>
+                    <MDBTabsPane show={fillActive === 'tab3'}>
                         <div className='container mb-5 text-center'>
                             <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Fruits</h1>
                             <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara mx-auto typing-demo">Welcome to SkyHarbour's bountiful Fruits section, where nature's finest offerings await your indulgence. Our commitment to delivering the freshest and most exquisite fruits is unwavering.<br /><br />Sourced directly from sun-kissed farms, our fruits, including juicy oranges bursting with vitamin C, crisp apples that redefine freshness, and exotic pomegranates filled with antioxidants, are a celebration of nature's bounty. <br /><br />Each bite is not only a journey through flavor but also a step towards a healthier you. Join us in savoring these irresistible treasures brought right from the farms to your table.</p>
@@ -354,24 +468,6 @@ export default function Product() {
                                         toggleShow={toggleShow4}
                                         optSmModal={optSmModal4}
                                         setOptSmModal={setOptSmModal4}
-                                    ></ProdCard>
-                                </MDBCollapse>
-                            </MDBCol>
-
-                            <MDBCol>
-                                <MDBCollapse show={showShow}>
-                                    <ProdCard
-                                        Title={FruitSpecifications[0].Name}
-                                        Nutrients={FruitSpecifications[0].Nutrients}
-                                        Vitamins={FruitSpecifications[0].Vitamins}
-                                        Proteins={FruitSpecifications[0].Proteins}
-                                        Fats={FruitSpecifications[0].Fats}
-                                        Description={FruitSpecifications[0].Description}
-                                        Image={FruitSpecifications[0].Image}
-
-                                        toggleShow={toggleShow5}
-                                        optSmModal={optSmModal5}
-                                        setOptSmModal={setOptSmModal5}
                                     ></ProdCard>
                                 </MDBCollapse>
                             </MDBCol>
@@ -459,7 +555,7 @@ export default function Product() {
                                 </MDBCollapse>
                             </MDBCol>
 
-                            <MDBCol>
+                            {/* <MDBCol>
                                 <MDBCollapse show={showShow2}>
                                     <ProdCard
                                         Title={VegetableSpecifications[0].Name}
@@ -475,21 +571,255 @@ export default function Product() {
                                         setOptSmModal={setOptSmModal10}
                                     ></ProdCard>
                                 </MDBCollapse>
-                            </MDBCol>
+                            </MDBCol> */}
 
                         </MDBRow>
                     </MDBTabsPane>
 
 
-
-                    <MDBTabsPane show={fillActive === 'tab3'}>
+                    {/*Spices*/}
+                    <MDBTabsPane show={fillActive === 'tab1'}>
                         <div className='container mb-5 text-center'>
                             <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2 '>Spices</h1>
-                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4  text-gray-500s my-3 para prodpara mx-auto typing-demo">In our Spices section, we unveil a world of flavor, color, and health benefits that only the finest spices can provide. At SkyHarbour, we source our spices directly from India's spice heartland, where tradition meets quality. <br /><br />Our turmeric, renowned for its vibrant color and potential health benefits, joins fiery red chillies that add excitement to your dishes. And let's not forget ginger, a zesty wonder with numerous culinary and wellness uses. <br /><br />These spices are more than ingredients; they are the essence of taste and health, brought directly from the farms to your spice rack. Explore our Spice section and elevate your culinary creations to new heights.</p>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-3/4 lg:w-3/4  text-gray-500s my-3 para prodpara mx-auto typing-demo">Welcome to our Spices section, where we unlock a world of flavor, color, and health benefits that only the finest spices can provide. At SkyHarbour, we pride ourselves on sourcing our spices directly from India's spice heartland, where age-old tradition seamlessly merges with uncompromised quality.<br /><br />
+
+                                Our treasury of spices includes offerings from the lush <b>North-Eastern</b> corners to the vibrant <b>South of India</b>. Our connection with local farmers from the heart of South India ensures that every spice carries the authentic essence of the land.<br /><br />
+
+                                Step into our Spice section, and you'll find treasures like our renowned turmeric, celebrated for its vibrant color and the potential health benefits it brings to your table. Joining the ensemble are fiery red chillies, adding a touch of excitement to your culinary creations. And let's not forget ginger, a versatile wonder that weaves its zesty charm through both your dishes and your wellness rituals.<br /><br />
+
+                                These spices are not just ingredients; they are the very soul of taste and health. Brought directly from the farms to your spice rack, each spice encapsulates the essence of its origin. Explore our Spice section and elevate your culinary creations to new heights with the authentic flavors of India's spice heartland.<br /><br />
+                            </p>
                         </div>
-                        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                        <center>
+                            <MDBTabs fill className='mb-3 mx-auto w-1/2'>
+                                <MDBTabsItem>
+                                    <MDBTabsLink onClick={() => handleFillClickSpices('Spicetab1')} active={fillActiveSpices === 'Spicetab1'}>
+                                        Turmeric
+                                    </MDBTabsLink>
+                                </MDBTabsItem>
+                                <MDBTabsItem>
+                                    <MDBTabsLink onClick={() => handleFillClickSpices('Spicetab2')} active={fillActiveSpices === 'Spicetab2'}>
+                                        Red Chillies
+                                    </MDBTabsLink>
+                                </MDBTabsItem>
+                                <MDBTabsItem>
+                                    <MDBTabsLink onClick={() => handleFillClickSpices('Spicetab3')} active={fillActiveSpices === 'Spicetab3'}>
+                                        Ginger
+                                    </MDBTabsLink>
+                                </MDBTabsItem>
+                            </MDBTabs>
+                        </center>
+
+
+                        {/*Turmeric */}
+                        <MDBTabsContent className='mt-4'>
+                            <MDBTabsPane show={fillActiveSpices === 'Spicetab1'}>
+                                <div className='container mb-5 text-center'>
+                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Turmeric</h1>
+                                    <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Our premium turmeric collection features unique varieties, distinguished by their curcumin content. Hailing from the picturesque landscapes of North-East India, these turmeric varieties are joined by the iconic Finger Turmeric from the vibrant South.<br /><br />You can savor these golden treasures in sliced, dried, or powdered forms, each naturally grown without a trace of chemicals. Besides their captivating earthy flavor and vibrant color, turmeric is renowned for its remarkable health benefits. <br /><br />Rich in curcumin, a powerful antioxidant and anti-inflammatory compound, it bolsters joint health, aids digestion, and may even have positive effects on brain function. Elevate your culinary creations and well-being with the pure goodness of our turmeric.</p>
+                                </div>
+                                <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                                    <MDBCol>
+                                        <TurmericCard
+                                            Title={TurmericSpecifications[0].Name}
+                                            Origin={TurmericSpecifications[0].Origin}
+                                            Curcumin={TurmericSpecifications[0].Curcumin}
+                                            Intro={TurmericSpecifications[0].Intro}
+                                            Description={TurmericSpecifications[0].Description}
+                                            Benefits={TurmericSpecifications[0].Benefits}
+                                            Image={SpiceSpecifications[0].Image}
+
+                                            toggleShow={toggleShow1}
+                                            optSmModal={optSmModal1}
+                                            setOptSmModal={setOptSmModal1}
+                                        ></TurmericCard>
+                                    </MDBCol>
+                                    <MDBCol>
+                                        <TurmericCard
+                                            Title={TurmericSpecifications[1].Name}
+                                            Origin={TurmericSpecifications[1].Origin}
+                                            Curcumin={TurmericSpecifications[1].Curcumin}
+                                            Intro={TurmericSpecifications[1].Intro}
+                                            Description={TurmericSpecifications[1].Description}
+                                            Benefits={TurmericSpecifications[1].Benefits}
+                                            Image={SpiceSpecifications[0].Image}
+
+                                            toggleShow={toggleShow2}
+                                            optSmModal={optSmModal2}
+                                            setOptSmModal={setOptSmModal2}
+                                        ></TurmericCard>
+                                    </MDBCol>
+                                    <MDBCol>
+                                        <TurmericCard
+                                            Title={TurmericSpecifications[2].Name}
+                                            Origin={TurmericSpecifications[2].Origin}
+                                            Curcumin={TurmericSpecifications[2].Curcumin}
+                                            Intro={TurmericSpecifications[2].Intro}
+                                            Description={TurmericSpecifications[2].Description}
+                                            Benefits={TurmericSpecifications[2].Benefits}
+                                            Image={SpiceSpecifications[0].Image}
+
+                                            toggleShow={toggleShow3}
+                                            optSmModal={optSmModal3}
+                                            setOptSmModal={setOptSmModal3}
+                                        ></TurmericCard>
+                                    </MDBCol>
+
+                                </MDBRow>
+                                {/*Toggle */}
+                                <center>
+                                    <MDBBtn className='my-5 togBut p-3' tag='a' onClick={toggleShowCollapse3}>
+                                        More
+
+                                        <MDBIcon icon={showShow3 ? 'angle-up' : 'angle-down'} className='ms-2 arrow-icon' />
+                                    </MDBBtn>
+                                </center>
+                                <MDBRow className='row-cols-1 row-cols-md-3 mt g-4'>
+
+                                    <MDBCol>
+                                        <MDBCollapse show={showShow3}>
+                                            <TurmericCard
+                                                Title={TurmericSpecifications[3].Name}
+                                                Origin={TurmericSpecifications[3].Origin}
+                                                Curcumin={TurmericSpecifications[3].Curcumin}
+                                                Intro={TurmericSpecifications[3].Intro}
+                                                Description={TurmericSpecifications[3].Description}
+                                                Benefits={TurmericSpecifications[3].Benefits}
+                                                Image={SpiceSpecifications[0].Image}
+
+                                                toggleShow={toggleShow4}
+                                                optSmModal={optSmModal4}
+                                                setOptSmModal={setOptSmModal4}
+                                            ></TurmericCard>
+                                        </MDBCollapse>
+                                    </MDBCol>
+
+                                    <MDBCol>
+                                        <MDBCollapse show={showShow3}>
+                                            <TurmericCard
+                                                Title={TurmericSpecifications[4].Name}
+                                                Origin={TurmericSpecifications[4].Origin}
+                                                Curcumin={TurmericSpecifications[4].Curcumin}
+                                                Intro={TurmericSpecifications[4].Intro}
+                                                Description={TurmericSpecifications[4].Description}
+                                                Benefits={TurmericSpecifications[4].Benefits}
+                                                Image={SpiceSpecifications[0].Image}
+
+                                                toggleShow={toggleShow5}
+                                                optSmModal={optSmModal5}
+                                                setOptSmModal={setOptSmModal5}
+                                            ></TurmericCard>
+                                        </MDBCollapse>
+                                    </MDBCol>
+
+                                    <MDBCol>
+                                        <MDBCollapse show={showShow3}>
+                                            <TurmericCard
+                                                Title={TurmericSpecifications[5].Name}
+                                                Origin={TurmericSpecifications[5].Origin}
+                                                Curcumin={TurmericSpecifications[5].Curcumin}
+                                                Intro={TurmericSpecifications[5].Intro}
+                                                Description={TurmericSpecifications[5].Description}
+                                                Benefits={TurmericSpecifications[5].Benefits}
+                                                Image={SpiceSpecifications[0].Image}
+
+                                                toggleShow={toggleShow6}
+                                                optSmModal={optSmModal6}
+                                                setOptSmModal={setOptSmModal6}
+                                            ></TurmericCard>
+                                        </MDBCollapse>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBTabsPane>
+
+
+                            {/*Red Chillies */}
+                            <MDBTabsPane show={fillActiveSpices === 'Spicetab2'}>
+                                <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                                    <MDBCol>
+                                        <ProdCard
+                                            Title={SpiceSpecifications[1].Name}
+                                            Nutrients={SpiceSpecifications[1].Nutrients}
+                                            Vitamins={SpiceSpecifications[1].Vitamins}
+                                            Proteins={SpiceSpecifications[1].Proteins}
+                                            Fats={SpiceSpecifications[1].Fats}
+                                            Description={SpiceSpecifications[1].Description}
+                                            Image={SpiceSpecifications[1].Image}
+
+                                            toggleShow={toggleShow12}
+                                            optSmModal={optSmModal12}
+                                            setOptSmModal={setOptSmModal12}
+                                        ></ProdCard>
+                                    </MDBCol>
+                                    <MDBCol>
+                                        <ProdCard
+                                            Title={SpiceSpecifications[2].Name}
+                                            Nutrients={SpiceSpecifications[2].Nutrients}
+                                            Vitamins={SpiceSpecifications[2].Vitamins}
+                                            Proteins={SpiceSpecifications[2].Proteins}
+                                            Fats={SpiceSpecifications[2].Fats}
+                                            Description={SpiceSpecifications[2].Description}
+                                            Image={SpiceSpecifications[2].Image}
+
+                                            toggleShow={toggleShow13}
+                                            optSmModal={optSmModal13}
+                                            setOptSmModal={setOptSmModal13}
+                                        ></ProdCard>
+                                    </MDBCol>
+                                </MDBRow>
+                                <center>
+                                    <MDBBtn className='my-5 togBut p-3' tag='a' onClick={toggleShowCollapse3}>
+                                        More
+
+                                        <MDBIcon icon={showShow3 ? 'angle-up' : 'angle-down'} className='ms-2 arrow-icon' />
+                                    </MDBBtn>
+                                </center>
+                                <MDBRow className='row-cols-1 row-cols-md-3 mt g-4'>
+
+                                    <MDBCol>
+                                        <MDBCollapse show={showShow3}>
+                                            <ProdCard
+                                                Title={SpiceSpecifications[0].Name}
+                                                Nutrients={SpiceSpecifications[0].Nutrients}
+                                                Vitamins={SpiceSpecifications[0].Vitamins}
+                                                Proteins={SpiceSpecifications[0].Proteins}
+                                                Fats={SpiceSpecifications[0].Fats}
+                                                Description={SpiceSpecifications[0].Description}
+                                                Image={SpiceSpecifications[0].Image}
+
+                                                toggleShow={toggleShow14}
+                                                optSmModal={optSmModal14}
+                                                setOptSmModal={setOptSmModal14}
+                                            ></ProdCard>
+                                        </MDBCollapse>
+                                    </MDBCol>
+
+                                    <MDBCol>
+                                        <MDBCollapse show={showShow3}>
+                                            <ProdCard
+                                                Title={SpiceSpecifications[0].Name}
+                                                Nutrients={SpiceSpecifications[0].Nutrients}
+                                                Vitamins={SpiceSpecifications[0].Vitamins}
+                                                Proteins={SpiceSpecifications[0].Proteins}
+                                                Fats={SpiceSpecifications[0].Fats}
+                                                Description={SpiceSpecifications[0].Description}
+                                                Image={SpiceSpecifications[0].Image}
+
+                                                toggleShow={toggleShow15}
+                                                optSmModal={optSmModal15}
+                                                setOptSmModal={setOptSmModal15}
+                                            ></ProdCard>
+                                        </MDBCollapse>
+                                    </MDBCol>
+                                </MDBRow>
+                            </MDBTabsPane>
+                            <MDBTabsPane show={fillActiveSpices === 'Spicetab3'}>Tab 3 content</MDBTabsPane>
+                        </MDBTabsContent>
+
+
+                        {/* <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
                             <MDBCol>
-                                <ProdCard
+                                <TurmericCard
                                     Title={SpiceSpecifications[0].Name}
                                     Nutrients={SpiceSpecifications[0].Nutrients}
                                     Vitamins={SpiceSpecifications[0].Vitamins}
@@ -501,7 +831,7 @@ export default function Product() {
                                     toggleShow={toggleShow11}
                                     optSmModal={optSmModal11}
                                     setOptSmModal={setOptSmModal11}
-                                ></ProdCard>
+                                ></TurmericCard>
                             </MDBCol>
                             <MDBCol>
                                 <ProdCard
@@ -578,7 +908,7 @@ export default function Product() {
                                     ></ProdCard>
                                 </MDBCollapse>
                             </MDBCol>
-                        </MDBRow>
+                        </MDBRow> */}
                     </MDBTabsPane>
                 </MDBTabsContent>
             </div>

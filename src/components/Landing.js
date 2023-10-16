@@ -39,7 +39,7 @@ export default function Landing() {
                             <h1 className='title' >YOUR GATEWAY TO FRESH HORIZONS</h1>
                             {/* <h4 className='subtitle'>Exporting the Finest Selection of Fruits, Vegetables, and Spices Worldwide.</h4> */}
                             <h4 className='subtitle' id='subtitle'>Exporting
-                                <span> the finest Selection of Fruits, Vegetables, and Spices Worldwide. From Our Farms to Your Table, Excellence is our Trademark.</span>
+                                <span> the finest Selection of Spices, Fruits, and Vegetables Worldwide. From Our Farms to Your Table, Excellence is our Trademark.</span>
                             </h4>
                         </MDBRow>
                         <br />
