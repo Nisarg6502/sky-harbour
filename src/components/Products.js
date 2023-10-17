@@ -19,6 +19,7 @@ import ProdCard from './ProdCard.js';
 import TurmericCard from './TurmericCard';
 import Turmeric from '../images/turmeric-powder.jpg';
 import RedChillies from '../images/red-chili-peppers.jpg';
+import RedChilliCard from './RedChilliCard';
 import Ginger from '../images/ginger.jpg';
 import Oranges from '../images/oranges.jpg';
 import Pomegranate from '../images/pomegranate.jpg';
@@ -50,42 +51,68 @@ export default function Product() {
         setFillActiveSpices(value);
     };
     //turmeric modal
-    const [optSmModal1, setOptSmModal1] = useState(false);
-    const [optSmModal2, setOptSmModal2] = useState(false);
-    const [optSmModal3, setOptSmModal3] = useState(false);
-    const [optSmModal4, setOptSmModal4] = useState(false);
-    const [optSmModal5, setOptSmModal5] = useState(false);
-    const [optSmModal6, setOptSmModal6] = useState(false);
+    const [optSmModalTurmeric1, setOptSmModalTurmeric1] = useState(false);
+    const [optSmModalTurmeric2, setOptSmModalTurmeric2] = useState(false);
+    const [optSmModalTurmeric3, setOptSmModalTurmeric3] = useState(false);
+    const [optSmModalTurmeric4, setOptSmModalTurmeric4] = useState(false);
+    const [optSmModalTurmeric5, setOptSmModalTurmeric5] = useState(false);
+    const [optSmModalTurmeric6, setOptSmModalTurmeric6] = useState(false);
+
+    //redchillies modal
+    const [optSmModalRedChilli1, setOptSmModalRedChilli1] = useState(false);
+    const [optSmModalRedChilli2, setOptSmModalRedChilli2] = useState(false);
+    const [optSmModalRedChilli3, setOptSmModalRedChilli3] = useState(false);
+
+    //ginger modal
+    const [optSmModalGinger1, setOptSmModalGinger1] = useState(false);
+    const [optSmModalGinger2, setOptSmModalGinger2] = useState(false);
 
 
-    const [optSmModal7, setOptSmModal7] = useState(false);
-    const [optSmModal8, setOptSmModal8] = useState(false);
-    const [optSmModal9, setOptSmModal9] = useState(false);
-    const [optSmModal10, setOptSmModal10] = useState(false);
-    const [optSmModal11, setOptSmModal11] = useState(false);
-    const [optSmModal12, setOptSmModal12] = useState(false);
-    const [optSmModal13, setOptSmModal13] = useState(false);
-    const [optSmModal14, setOptSmModal14] = useState(false);
-    const [optSmModal15, setOptSmModal15] = useState(false);
+    //fruits modal
+    const [optSmModalFruit1, setOptSmModalFruit1] = useState(false);
+    const [optSmModalFruit2, setOptSmModalFruit2] = useState(false);
+    const [optSmModalFruit3, setOptSmModalFruit3] = useState(false);
+    const [optSmModalFruit4, setOptSmModalFruit4] = useState(false);
+
+    //vegetable modal
+    const [optSmModalVegetable1, setOptSmModalVegetable1] = useState(false);
+    const [optSmModalVegetable2, setOptSmModalVegetable2] = useState(false);
+    const [optSmModalVegetable3, setOptSmModalVegetable3] = useState(false);
+    const [optSmModalVegetable4, setOptSmModalVegetable4] = useState(false);
+
+
 
     //turmeric toggle
-    const toggleShow1 = () => setOptSmModal1(!optSmModal1);
-    const toggleShow2 = () => setOptSmModal2(!optSmModal2);
-    const toggleShow3 = () => setOptSmModal3(!optSmModal3);
-    const toggleShow4 = () => setOptSmModal4(!optSmModal4);
-    const toggleShow5 = () => setOptSmModal5(!optSmModal5);
-    const toggleShow6 = () => setOptSmModal6(!optSmModal6);
+    const toggleShowTurmeric1 = () => setOptSmModalTurmeric1(!optSmModalTurmeric1);
+    const toggleShowTurmeric2 = () => setOptSmModalTurmeric2(!optSmModalTurmeric2);
+    const toggleShowTurmeric3 = () => setOptSmModalTurmeric3(!optSmModalTurmeric3);
+    const toggleShowTurmeric4 = () => setOptSmModalTurmeric4(!optSmModalTurmeric4);
+    const toggleShowTurmeric5 = () => setOptSmModalTurmeric5(!optSmModalTurmeric5);
+    const toggleShowTurmeric6 = () => setOptSmModalTurmeric6(!optSmModalTurmeric6);
 
 
-    const toggleShow7 = () => setOptSmModal7(!optSmModal7);
-    const toggleShow8 = () => setOptSmModal8(!optSmModal8);
-    const toggleShow9 = () => setOptSmModal9(!optSmModal9);
-    const toggleShow10 = () => setOptSmModal10(!optSmModal10);
-    const toggleShow11 = () => setOptSmModal11(!optSmModal11);
-    const toggleShow12 = () => setOptSmModal12(!optSmModal12);
-    const toggleShow13 = () => setOptSmModal13(!optSmModal13);
-    const toggleShow14 = () => setOptSmModal14(!optSmModal14);
-    const toggleShow15 = () => setOptSmModal15(!optSmModal15);
+    //redchillies toggle
+    const toggleShowRedChilli1 = () => setOptSmModalRedChilli1(!optSmModalRedChilli1);
+    const toggleShowRedChilli2 = () => setOptSmModalRedChilli2(!optSmModalRedChilli2);
+    const toggleShowRedChilli3 = () => setOptSmModalRedChilli3(!optSmModalRedChilli3);
+
+    //ginger toggle
+    const toggleShowGinger1 = () => setOptSmModalGinger1(!optSmModalGinger1);
+    const toggleShowGinger2 = () => setOptSmModalGinger2(!optSmModalGinger2);
+
+    //fruits toggle
+    const toggleShowFruit1 = () => setOptSmModalFruit1(!optSmModalFruit1);
+    const toggleShowFruit2 = () => setOptSmModalFruit2(!optSmModalFruit2);
+    const toggleShowFruit3 = () => setOptSmModalFruit3(!optSmModalFruit3);
+    const toggleShowFruit4 = () => setOptSmModalFruit4(!optSmModalFruit4);
+
+    //vegetables toggle
+    const toggleShowVegetable1 = () => setOptSmModalVegetable1(!optSmModalVegetable1);
+    const toggleShowVegetable2 = () => setOptSmModalVegetable2(!optSmModalVegetable2);
+    const toggleShowVegetable3 = () => setOptSmModalVegetable3(!optSmModalVegetable3);
+    const toggleShowVegetable4 = () => setOptSmModalVegetable4(!optSmModalVegetable4);
+
+
 
 
     const [showShow, setShowShow] = useState(false);
@@ -295,9 +322,35 @@ export default function Product() {
                 "fourth": "Digestive Aid: Helps with digestion and soothes digestive issues.",
             },
 
+        },
+    ]
+
+    const RedChilliesSpecifications = [
+        {
+            "id": 1,
+            "Name": "Byadgi Chilli",
+            "Origin": "Karnataka",
+            "Color": "Dark Red",
+            "Flavour": "Mildly Spicy",
+            "Pungency": "8000 - 12000 SHU",
+            "Styles": "Whole, Powder",
+            "Description": "Named after the town of Byadgi in Karnataka, this variety boasts a deep red color and a mild flavor, making it a less spicy alternative compared to other varieties. Its Scoville Heat Unit (SHU) ranges from 50,000 to 100,000, akin to the heat level of a Thai pepper. This mild yet flavorful chili is a versatile addition to your culinary adventures. It is used in making various spice blends and masalas.",
+            "Intro": "A vibrant chili variety with a deep red hue and mild flavor, perfect for a touch of spice without the heat. Discover its versatility in various spice blends and masalas for a flavorful culinary journey.",
+            "Image": RedChillies
+
+        },
+        {
+            "id": 2,
+            "Name": "Guntur Chilli",
+            "Origin": "Andhra Pradesh",
+            "Color": "Bright Red",
+            "Flavour": "Spicy",
+            "Pungency": "8000 - 12000 SHU",
+            "Styles": "Whole, Powder",
+            "Description": "Hailing from the spice-rich Guntur district of Andhra Pradesh, this fiery variety, known as Sannam S4 or Capsicum annuum var. longum, boasts a dark red color and a pungent flavor, delivering a fiery and hot spice profile. With a Scoville Heat Unit (SHU) ranging from 35,000 to 40,000, it surpasses the heat level of cayenne pepper. Guntur Chilli is synonymous with the bold, spicy flavors that define the cuisine of Andhra Pradesh.",
+            "Intro": "Spice up your culinary adventures with Guntur Chilli, known for its fiery heat and bold flavors. Straight from the spice hub of Andhra Pradesh, these dark red chilies pack a punch, elevating your dishes to a whole new level.",
+            "Image": RedChillies
         }
-
-
     ]
 
     //generate specification for vegetables
@@ -390,6 +443,11 @@ export default function Product() {
                             Fruits
                         </MDBTabsLink>
                     </MDBTabsItem>
+                    <MDBTabsItem className='proditem'>
+                        <MDBTabsLink onClick={() => handleFillClick('tab4')} active={fillActive === 'tab4'}>
+                            Bio-Degradable Cutlery
+                        </MDBTabsLink>
+                    </MDBTabsItem>
                 </MDBTabs>
 
                 <MDBTabsContent className=' mb-3  mx-3'>
@@ -408,9 +466,9 @@ export default function Product() {
                                     Fats={FruitSpecifications[0].Fats}
                                     Description={FruitSpecifications[0].Description}
                                     Image={FruitSpecifications[0].Image}
-                                    toggleShow={toggleShow1}
-                                    optSmModal={optSmModal1}
-                                    setOptSmModal={setOptSmModal1}
+                                    toggleShow={toggleShowFruit1}
+                                    optSmModal={optSmModalFruit1}
+                                    setOptSmModal={setOptSmModalFruit1}
                                 ></ProdCard>
                             </MDBCol>
                             <MDBCol className='prodcol flex'>
@@ -423,9 +481,9 @@ export default function Product() {
                                     Description={FruitSpecifications[1].Description}
                                     Image={FruitSpecifications[1].Image}
 
-                                    toggleShow={toggleShow2}
-                                    optSmModal={optSmModal2}
-                                    setOptSmModal={setOptSmModal2}
+                                    toggleShow={toggleShowFruit2}
+                                    optSmModal={optSmModalFruit2}
+                                    setOptSmModal={setOptSmModalFruit2}
                                 ></ProdCard>
                             </MDBCol>
                             <MDBCol className='prodcol flex'>
@@ -438,9 +496,9 @@ export default function Product() {
                                     Description={FruitSpecifications[2].Description}
                                     Image={FruitSpecifications[2].Image}
 
-                                    toggleShow={toggleShow3}
-                                    optSmModal={optSmModal3}
-                                    setOptSmModal={setOptSmModal3}
+                                    toggleShow={toggleShowFruit3}
+                                    optSmModal={optSmModalFruit3}
+                                    setOptSmModal={setOptSmModalFruit3}
                                 ></ProdCard>
                             </MDBCol>
 
@@ -465,9 +523,9 @@ export default function Product() {
                                         Description={FruitSpecifications[3].Description}
                                         Image={FruitSpecifications[3].Image}
 
-                                        toggleShow={toggleShow4}
-                                        optSmModal={optSmModal4}
-                                        setOptSmModal={setOptSmModal4}
+                                        toggleShow={toggleShowFruit4}
+                                        optSmModal={optSmModalFruit4}
+                                        setOptSmModal={setOptSmModalFruit4}
                                     ></ProdCard>
                                 </MDBCollapse>
                             </MDBCol>
@@ -475,7 +533,7 @@ export default function Product() {
                         </MDBRow>
                     </MDBTabsPane>
 
-
+                    {/*Vegetables */}
                     <MDBTabsPane show={fillActive === 'tab2'}>
                         <div className='container mb-5 text-center'>
                             <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Vegetables</h1>
@@ -492,9 +550,9 @@ export default function Product() {
                                     Description={VegetableSpecifications[0].Description}
                                     Image={VegetableSpecifications[0].Image}
 
-                                    toggleShow={toggleShow6}
-                                    optSmModal={optSmModal6}
-                                    setOptSmModal={setOptSmModal6}
+                                    toggleShow={toggleShowVegetable1}
+                                    optSmModal={optSmModalVegetable1}
+                                    setOptSmModal={setOptSmModalVegetable1}
                                 ></ProdCard>
                             </MDBCol>
                             <MDBCol>
@@ -507,9 +565,9 @@ export default function Product() {
                                     Description={VegetableSpecifications[1].Description}
                                     Image={VegetableSpecifications[1].Image}
 
-                                    toggleShow={toggleShow7}
-                                    optSmModal={optSmModal7}
-                                    setOptSmModal={setOptSmModal7}
+                                    toggleShow={toggleShowVegetable2}
+                                    optSmModal={optSmModalVegetable2}
+                                    setOptSmModal={setOptSmModalVegetable2}
                                 ></ProdCard>
                             </MDBCol>
                             <MDBCol>
@@ -522,9 +580,9 @@ export default function Product() {
                                     Description={VegetableSpecifications[2].Description}
                                     Image={VegetableSpecifications[2].Image}
 
-                                    toggleShow={toggleShow8}
-                                    optSmModal={optSmModal8}
-                                    setOptSmModal={setOptSmModal8}
+                                    toggleShow={toggleShowVegetable3}
+                                    optSmModal={optSmModalVegetable3}
+                                    setOptSmModal={setOptSmModalVegetable3}
                                 ></ProdCard>
                             </MDBCol>
                         </MDBRow>
@@ -548,9 +606,9 @@ export default function Product() {
                                         Description={VegetableSpecifications[3].Description}
                                         Image={VegetableSpecifications[3].Image}
 
-                                        toggleShow={toggleShow9}
-                                        optSmModal={optSmModal9}
-                                        setOptSmModal={setOptSmModal9}
+                                        toggleShow={toggleShowVegetable4}
+                                        optSmModal={optSmModalVegetable4}
+                                        setOptSmModal={setOptSmModalVegetable4}
                                     ></ProdCard>
                                 </MDBCollapse>
                             </MDBCol>
@@ -629,9 +687,9 @@ export default function Product() {
                                             Benefits={TurmericSpecifications[0].Benefits}
                                             Image={SpiceSpecifications[0].Image}
 
-                                            toggleShow={toggleShow1}
-                                            optSmModal={optSmModal1}
-                                            setOptSmModal={setOptSmModal1}
+                                            toggleShow={toggleShowTurmeric1}
+                                            optSmModal={optSmModalTurmeric1}
+                                            setOptSmModal={setOptSmModalTurmeric1}
                                         ></TurmericCard>
                                     </MDBCol>
                                     <MDBCol>
@@ -644,9 +702,9 @@ export default function Product() {
                                             Benefits={TurmericSpecifications[1].Benefits}
                                             Image={SpiceSpecifications[0].Image}
 
-                                            toggleShow={toggleShow2}
-                                            optSmModal={optSmModal2}
-                                            setOptSmModal={setOptSmModal2}
+                                            toggleShow={toggleShowTurmeric2}
+                                            optSmModal={optSmModalTurmeric2}
+                                            setOptSmModal={setOptSmModalTurmeric2}
                                         ></TurmericCard>
                                     </MDBCol>
                                     <MDBCol>
@@ -659,9 +717,9 @@ export default function Product() {
                                             Benefits={TurmericSpecifications[2].Benefits}
                                             Image={SpiceSpecifications[0].Image}
 
-                                            toggleShow={toggleShow3}
-                                            optSmModal={optSmModal3}
-                                            setOptSmModal={setOptSmModal3}
+                                            toggleShow={toggleShowTurmeric3}
+                                            optSmModal={optSmModalTurmeric3}
+                                            setOptSmModal={setOptSmModalTurmeric3}
                                         ></TurmericCard>
                                     </MDBCol>
 
@@ -687,9 +745,9 @@ export default function Product() {
                                                 Benefits={TurmericSpecifications[3].Benefits}
                                                 Image={SpiceSpecifications[0].Image}
 
-                                                toggleShow={toggleShow4}
-                                                optSmModal={optSmModal4}
-                                                setOptSmModal={setOptSmModal4}
+                                                toggleShow={toggleShowTurmeric4}
+                                                optSmModal={optSmModalTurmeric4}
+                                                setOptSmModal={setOptSmModalTurmeric4}
                                             ></TurmericCard>
                                         </MDBCollapse>
                                     </MDBCol>
@@ -705,9 +763,9 @@ export default function Product() {
                                                 Benefits={TurmericSpecifications[4].Benefits}
                                                 Image={SpiceSpecifications[0].Image}
 
-                                                toggleShow={toggleShow5}
-                                                optSmModal={optSmModal5}
-                                                setOptSmModal={setOptSmModal5}
+                                                toggleShow={toggleShowTurmeric5}
+                                                optSmModal={optSmModalTurmeric5}
+                                                setOptSmModal={setOptSmModalTurmeric5}
                                             ></TurmericCard>
                                         </MDBCollapse>
                                     </MDBCol>
@@ -723,9 +781,9 @@ export default function Product() {
                                                 Benefits={TurmericSpecifications[5].Benefits}
                                                 Image={SpiceSpecifications[0].Image}
 
-                                                toggleShow={toggleShow6}
-                                                optSmModal={optSmModal6}
-                                                setOptSmModal={setOptSmModal6}
+                                                toggleShow={toggleShowTurmeric6}
+                                                optSmModal={optSmModalTurmeric6}
+                                                setOptSmModal={setOptSmModalTurmeric6}
                                             ></TurmericCard>
                                         </MDBCollapse>
                                     </MDBCol>
@@ -735,39 +793,48 @@ export default function Product() {
 
                             {/*Red Chillies */}
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab2'}>
+                                <div className='container mb-5 text-center'>
+                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Red Chillies</h1>
+                                    <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Journey through the diverse landscapes of India with our red chilli collection. From the spicy dishes of Andhra Pradesh, we bring you Guntur Chilli, known for its fiery heat and exported worldwide. Byadgi chilli, from the charming town of Byadgi in Karnataka, offers a milder, more flavorful experience.  <br /><br /> But what's unique is that each of these red chillies comes with a Scoville Heat Unit (SHU) rating, which measures their spiciness. Our range spans from the milder Byadgi chilli with an SHU of 50,000 to 100,000, similar to a Thai pepper, to the fiery Guntur Chilli with an SHU of 35,000 to 40,000, hotter than cayenne pepper. <br /><br /> So, explore the regions, experience the flavors, and choose the spice level that suits your culinary adventures.</p>
+                                </div>
                                 <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
                                     <MDBCol>
-                                        <ProdCard
-                                            Title={SpiceSpecifications[1].Name}
-                                            Nutrients={SpiceSpecifications[1].Nutrients}
-                                            Vitamins={SpiceSpecifications[1].Vitamins}
-                                            Proteins={SpiceSpecifications[1].Proteins}
-                                            Fats={SpiceSpecifications[1].Fats}
-                                            Description={SpiceSpecifications[1].Description}
+                                        <RedChilliCard
+                                            Title={RedChilliesSpecifications[0].Name}
+                                            Origin={RedChilliesSpecifications[0].Origin}
+                                            Color={RedChilliesSpecifications[0].Color}
+                                            Intro={RedChilliesSpecifications[0].Intro}
+                                            Description={RedChilliesSpecifications[0].Description}
+                                            Flavour={RedChilliesSpecifications[0].Flavour}
+                                            Pungency={RedChilliesSpecifications[0].Pungency}
+                                            Styles={RedChilliesSpecifications[0].Styles}
                                             Image={SpiceSpecifications[1].Image}
 
-                                            toggleShow={toggleShow12}
-                                            optSmModal={optSmModal12}
-                                            setOptSmModal={setOptSmModal12}
-                                        ></ProdCard>
+                                            toggleShow={toggleShowRedChilli1}
+                                            optSmModal={optSmModalRedChilli1}
+                                            setOptSmModal={setOptSmModalRedChilli1}
+                                        ></RedChilliCard>
                                     </MDBCol>
                                     <MDBCol>
-                                        <ProdCard
-                                            Title={SpiceSpecifications[2].Name}
-                                            Nutrients={SpiceSpecifications[2].Nutrients}
-                                            Vitamins={SpiceSpecifications[2].Vitamins}
-                                            Proteins={SpiceSpecifications[2].Proteins}
-                                            Fats={SpiceSpecifications[2].Fats}
-                                            Description={SpiceSpecifications[2].Description}
-                                            Image={SpiceSpecifications[2].Image}
+                                        <RedChilliCard
+                                            Title={RedChilliesSpecifications[1].Name}
+                                            Origin={RedChilliesSpecifications[1].Origin}
+                                            Color={RedChilliesSpecifications[1].Color}
+                                            Intro={RedChilliesSpecifications[1].Intro}
+                                            Description={RedChilliesSpecifications[1].Description}
+                                            Flavour={RedChilliesSpecifications[1].Flavour}
+                                            Pungency={RedChilliesSpecifications[1].Pungency}
+                                            Styles={RedChilliesSpecifications[1].Styles}
+                                            Image={SpiceSpecifications[1].Image}
 
-                                            toggleShow={toggleShow13}
-                                            optSmModal={optSmModal13}
-                                            setOptSmModal={setOptSmModal13}
-                                        ></ProdCard>
+                                            toggleShow={toggleShowRedChilli2}
+                                            optSmModal={optSmModalRedChilli2}
+                                            setOptSmModal={setOptSmModalRedChilli2}
+                                        ></RedChilliCard>
                                     </MDBCol>
+
                                 </MDBRow>
-                                <center>
+                                {/* <center>
                                     <MDBBtn className='my-5 togBut p-3' tag='a' onClick={toggleShowCollapse3}>
                                         More
 
@@ -778,42 +845,44 @@ export default function Product() {
 
                                     <MDBCol>
                                         <MDBCollapse show={showShow3}>
-                                            <ProdCard
-                                                Title={SpiceSpecifications[0].Name}
-                                                Nutrients={SpiceSpecifications[0].Nutrients}
-                                                Vitamins={SpiceSpecifications[0].Vitamins}
-                                                Proteins={SpiceSpecifications[0].Proteins}
-                                                Fats={SpiceSpecifications[0].Fats}
-                                                Description={SpiceSpecifications[0].Description}
-                                                Image={SpiceSpecifications[0].Image}
 
-                                                toggleShow={toggleShow14}
-                                                optSmModal={optSmModal14}
-                                                setOptSmModal={setOptSmModal14}
-                                            ></ProdCard>
                                         </MDBCollapse>
                                     </MDBCol>
 
                                     <MDBCol>
                                         <MDBCollapse show={showShow3}>
-                                            <ProdCard
-                                                Title={SpiceSpecifications[0].Name}
-                                                Nutrients={SpiceSpecifications[0].Nutrients}
-                                                Vitamins={SpiceSpecifications[0].Vitamins}
-                                                Proteins={SpiceSpecifications[0].Proteins}
-                                                Fats={SpiceSpecifications[0].Fats}
-                                                Description={SpiceSpecifications[0].Description}
-                                                Image={SpiceSpecifications[0].Image}
 
-                                                toggleShow={toggleShow15}
-                                                optSmModal={optSmModal15}
-                                                setOptSmModal={setOptSmModal15}
-                                            ></ProdCard>
                                         </MDBCollapse>
                                     </MDBCol>
-                                </MDBRow>
+                        </MDBRow>*/}
                             </MDBTabsPane>
-                            <MDBTabsPane show={fillActiveSpices === 'Spicetab3'}>Tab 3 content</MDBTabsPane>
+
+                            {/*Ginger  */}
+                            <MDBTabsPane show={fillActiveSpices === 'Spicetab3'}>
+                                <div className='container mb-5 text-center'>
+                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Ginger</h1>
+                                    <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
+                                        Our ginger collection is a celebration of the spice's versatility. From the iconic Cochin Ginger, known for its pungent aroma and flavor, to the milder, more delicate varieties, our ginger collection offers a range of options to suit your culinary needs. <br /><br />Whether you're adding a zesty kick to your stir-fry or brewing a cup of ginger tea, our ginger collection is a must-have for every spice lover. <br /><br />Besides its culinary uses, ginger is also renowned for its potential health benefits. Rich in antioxidants, it supports your immune system and overall well-being. So, explore our ginger collection and add a zesty touch to your culinary creations and wellness rituals.</p>
+                                </div>
+                                <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                                    <MDBCol>
+                                        <ProdCard
+                                            Title={SpiceSpecifications[2].Name}
+                                            Nutrients={SpiceSpecifications[2].Nutrients}
+                                            Vitamins={SpiceSpecifications[2].Vitamins}
+                                            Proteins={SpiceSpecifications[2].Proteins}
+                                            Fats={SpiceSpecifications[2].Fats}
+                                            Description={SpiceSpecifications[2].Description}
+                                            Image={SpiceSpecifications[2].Image}
+
+                                            toggleShow={toggleShowGinger1}
+                                            optSmModal={optSmModalGinger1}
+                                            setOptSmModal={setOptSmModalGinger1}
+                                        ></ProdCard>
+                                    </MDBCol>
+                                </MDBRow>
+
+                            </MDBTabsPane>
                         </MDBTabsContent>
 
 
@@ -909,6 +978,62 @@ export default function Product() {
                                 </MDBCollapse>
                             </MDBCol>
                         </MDBRow> */}
+                    </MDBTabsPane>
+
+                    {/*Bio-Degradable Cutlery */}
+                    <MDBTabsPane show={fillActive === 'tab4'}>
+                        <div className='container mb-5 text-center'>
+                            <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Bio-Degradable Cutlery</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
+                                SkyHarbour's bio-degradable cutlery collection is a tribute to nature's bounty. Made from 100% natural materials, our cutlery is a sustainable alternative to plastic. <br /><br />From the earthy charm of coconut shells to the rustic elegance of bamboo, our cutlery collection is a celebration of nature's diversity. <br /><br />Whether you're hosting a party or enjoying a picnic, our cutlery collection is a must-have for every occasion. Explore our collection and add a touch of nature to your table.</p>
+                        </div>
+                        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+                            <MDBCol>
+                                <ProdCard
+                                    Title={VegetableSpecifications[0].Name}
+                                    Nutrients={VegetableSpecifications[0].Nutrients}
+                                    Vitamins={VegetableSpecifications[0].Vitamins}
+                                    Proteins={VegetableSpecifications[0].Proteins}
+                                    Fats={VegetableSpecifications[0].Fats}
+                                    Description={VegetableSpecifications[0].Description}
+                                    Image={VegetableSpecifications[0].Image}
+
+                                    toggleShow={toggleShowVegetable1}
+                                    optSmModal={optSmModalVegetable1}
+                                    setOptSmModal={setOptSmModalVegetable1}
+                                ></ProdCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <ProdCard
+                                    Title={VegetableSpecifications[1].Name}
+                                    Nutrients={VegetableSpecifications[1].Nutrients}
+                                    Vitamins={VegetableSpecifications[1].Vitamins}
+                                    Proteins={VegetableSpecifications[1].Proteins}
+                                    Fats={VegetableSpecifications[1].Fats}
+                                    Description={VegetableSpecifications[1].Description}
+                                    Image={VegetableSpecifications[1].Image}
+
+                                    toggleShow={toggleShowVegetable2}
+                                    optSmModal={optSmModalVegetable2}
+                                    setOptSmModal={setOptSmModalVegetable2}
+                                ></ProdCard>
+                            </MDBCol>
+                            <MDBCol>
+                                <ProdCard
+                                    Title={VegetableSpecifications[2].Name}
+                                    Nutrients={VegetableSpecifications[2].Nutrients}
+                                    Vitamins={VegetableSpecifications[2].Vitamins}
+                                    Proteins={VegetableSpecifications[2].Proteins}
+                                    Fats={VegetableSpecifications[2].Fats}
+                                    Description={VegetableSpecifications[2].Description}
+                                    Image={VegetableSpecifications[2].Image}
+
+                                    toggleShow={toggleShowVegetable3}
+                                    optSmModal={optSmModalVegetable3}
+                                    setOptSmModal={setOptSmModalVegetable3}
+                                ></ProdCard>
+                            </MDBCol>
+                        </MDBRow>
                     </MDBTabsPane>
                 </MDBTabsContent>
             </div>
