@@ -1,19 +1,13 @@
 import React from 'react';
 import {
     MDBBtn,
-    MDBModal,
-    MDBModalDialog,
-    MDBModalContent,
-    MDBModalHeader,
-    MDBModalTitle,
-    MDBModalBody,
-    MDBTable,
-    MDBTableBody,
     MDBCard,
     MDBCardImage,
     MDBCardBody,
     MDBCardTitle,
     MDBCardText,
+    MDBCarousel,
+    MDBCarouselItem,
 
 } from 'mdb-react-ui-kit';
 import './ProdCard.css';
@@ -23,20 +17,33 @@ function ProdCard(props) {
     return (
         <div>
             <MDBCard className='prodcard'>
-                <MDBCardImage
-                    src={props.Image}
-                    alt={props.Title + '-Image'}
-                    position='top'
-                />
+                <MDBCarousel>
+                    <MDBCarouselItem
+                        className='w-100 d-block'
+                        itemId={1}
+                        src={props.Image1}
+                        alt={props.Title + '-Image'}
+                        position='top'
+
+                    />
+                    <MDBCarouselItem
+                        className='w-100 d-block'
+                        itemId={2}
+                        src={props.Image2}
+                        alt={props.Title + '-Image'}
+                        position='top'
+
+                    />
+                </MDBCarousel>
                 <MDBCardBody>
                     <MDBCardTitle className='prodcardtitle fs-3 fw-bold'>{props.Title}</MDBCardTitle>
                     <MDBCardText>
                         {props.Description}
                     </MDBCardText>
-                    <div className='text-center'>
+                    {/* <div className='text-center'>
                         <MDBBtn className='mt-3 togBut modBut text-capitalize' color='dark' onClick={props.toggleShow}>Learn More</MDBBtn>
-                    </div>
-                    <MDBModal show={props.optSmModal} tabIndex='-1' setShow={props.setOptSmModal}>
+                    </div> */}
+                    {/* <MDBModal show={props.optSmModal} tabIndex='-1' setShow={props.setOptSmModal}>
                         <MDBModalDialog size='lg' centered>
                             <MDBModalContent>
                                 <MDBModalHeader>
@@ -45,12 +52,7 @@ function ProdCard(props) {
                                 </MDBModalHeader>
                                 <MDBModalBody>
                                     <MDBTable striped>
-                                        {/* <MDBTableHead>
-                    <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>First</th>
-                    </tr>
-                </MDBTableHead> */}
+                                        
                                         <MDBTableBody>
                                             <tr>
                                                 <th className='fw-bold' scope='row'>Name</th>
@@ -83,7 +85,7 @@ function ProdCard(props) {
                                 </MDBModalBody>
                             </MDBModalContent>
                         </MDBModalDialog>
-                    </MDBModal>
+                    </MDBModal> */}
                 </MDBCardBody>
             </MDBCard>
 

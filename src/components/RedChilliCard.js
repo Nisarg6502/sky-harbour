@@ -10,10 +10,13 @@ import {
     MDBTable,
     MDBTableBody,
     MDBCard,
-    MDBCardImage,
     MDBCardBody,
     MDBCardTitle,
     MDBCardText,
+    MDBCarousel,
+    MDBCarouselItems,
+    MDBCarouselItem
+
 
 } from 'mdb-react-ui-kit';
 
@@ -21,11 +24,29 @@ function RedChilliCard(props) {
     return (
         <div className='flex-grow-1'>
             <MDBCard className='prodcard'>
-                <MDBCardImage
+                {/* <MDBCardImage
                     src={props.Image}
                     alt={props.Title + '-Image'}
                     position='top'
-                />
+                /> */}
+                <MDBCarousel>
+                    <MDBCarouselItem
+                        className='w-100 d-block'
+                        itemId={1}
+                        src={props.Image1}
+                        alt={props.Title + '-Image'}
+                        position='top'
+
+                    />
+                    <MDBCarouselItem
+                        className='w-100 d-block'
+                        itemId={2}
+                        src={props.Image2}
+                        alt={props.Title + '-Image'}
+                        position='top'
+
+                    />
+                </MDBCarousel>
                 <MDBCardBody>
                     <MDBCardTitle className='prodcardtitle fs-3 fw-bold'>{props.Title}</MDBCardTitle>
                     <MDBCardText>

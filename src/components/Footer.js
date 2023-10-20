@@ -33,28 +33,28 @@ function Footer() {
                         <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
                             <img src={Logo} class="img-fluid" />
                             <p>
-                                At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of vegetables, fruits, and spices to global markets, cultivating flavors that transcend borders.
+                                At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of spices, agro, and biodegradable products to global markets, cultivating flavors that transcend borders.
                             </p>
                             <br />
-                            <p><b>CIN NO:</b> U47990KA2023PTC175888<br /><b>GST NO:</b> 29ABLCS2303K1Z4</p>
+                            <p><b>CIN NO:</b> U47990KA2023PTC175888<br /><b>GSTIN NO:</b> 29ABLCS2303K1Z4</p>
                         </MDBCol>
 
                         {/*Products*/}
                         <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
                             <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                             <p className='my-2'>
-                                <a href='#!' className='text-reset link'>
-                                    Fruits
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='#!' className='text-reset link'>
-                                    Vegetables
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='#!' className='text-reset link'>
+                                <a href='#productsection' className='text-reset link'>
                                     Spices
+                                </a>
+                            </p>
+                            <p className='my-2'>
+                                <a href='#productsection' className='text-reset link'>
+                                    Agro Products
+                                </a>
+                            </p>
+                            <p className='my-2'>
+                                <a href='#productsection' className='text-reset link'>
+                                    Biodegradable Products
                                 </a>
                             </p>
                         </MDBCol>

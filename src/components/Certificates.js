@@ -2,7 +2,7 @@ import React from 'react'
 import "./Certificates.css"
 import Apeda from "../images/apeda-logo.png"
 import Spices from "../images/spices-board-logo.png"
-import FedExInd from "../images/federation-of-indian-export-organisations-seeklogo.com.png"
+import MSME from "../images/msme-logo.png"
 import FSSAI from "../images/fssai.png"
 
 import {
@@ -11,12 +11,26 @@ import {
 } from 'mdb-react-ui-kit';
 
 function Certificates() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('certanim');
+            }
+        });
+    });
+
+    const elements = document.querySelectorAll('.cert');
+
+    elements.forEach((element) => {
+        observer.observe(element);
+    });
+
     return (
         <div id='certificates'>
-            <div className='container p-5'>
+            <div className='container p-5 mt-4'>
                 <div class="text-center mb-5 mt-5">
-                    <h1 data-aos="zoom-in-up" data-aos-duration="1000" className='title px-5'>Certificates</h1>
-                    <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 cert-para para">Our commitment to excellence extends beyond the products we offer. We understand the importance of adhering to international standards and regulations to ensure that every shipment meets the highest quality and safety benchmarks.
+                    <h1 className='title px-5 certanim'>Certificates</h1>
+                    <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 cert-para para certanim">Our commitment to excellence extends beyond the products we offer. We understand the importance of adhering to international standards and regulations to ensure that every shipment meets the highest quality and safety benchmarks.
                         <br />
                         <br />
                         Our dedication to transparency and integrity is reflected in the certificates we hold, each a testament to our unwavering commitment to providing you with the best.</p>
@@ -25,11 +39,11 @@ function Certificates() {
                 <hr className='mb-5 w-50 mx-auto horiline' />
 
                 <MDBRow>
-                    <MDBCol data-aos="zoom-in-up" data-aos-duration="1100" lg='3' md='6' className='mb-4'>
+                    <MDBCol lg='3' md='6' className='mb-4 certanim'>
                         <img src={Apeda} className='img-fluid rounded zoom cert-logo' alt='Apeda Logo' />
                     </MDBCol>
 
-                    <MDBCol data-aos="zoom-in-up" data-aos-duration="1100" lg='3' md='6' className='mb-4'>
+                    <MDBCol lg='3' md='6' className='mb-4 certanim'>
                         <img
                             src={Spices}
                             className='img-fluid rounded zoom cert-logo'
@@ -37,14 +51,14 @@ function Certificates() {
                         />
                     </MDBCol>
 
-                    <MDBCol data-aos="zoom-in-up" data-aos-duration="1100" lg='3' md='6' className='mb-4'>
+                    <MDBCol lg='3' md='6' className='mb-4 certanim'>
                         <img
-                            src={FedExInd}
+                            src={MSME}
                             className='img-fluid rounded zoom cert-logo'
-                            alt='FIEO Logo'
+                            alt='MSME Logo'
                         />
                     </MDBCol>
-                    <MDBCol data-aos="zoom-in-up" data-aos-duration="1100" lg='3' md='6' className='mb-4'>
+                    <MDBCol lg='3' md='6' className='mb-4 certanim'>
                         <img
                             src={FSSAI}
                             className='img-fluid rounded zoom cert-logo'

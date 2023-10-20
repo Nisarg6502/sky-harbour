@@ -12,7 +12,7 @@ export default function About() {
                 <div class="container py-24">
                     <div class="text-center mb-5">
                         <h1 data-aos="zoom-in-up" data-aos-duration="1000" className='title px-5'>SkyHarbour</h1>
-                        <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we are the epitome of quality and authenticity in the realm of spices, fruits, and vegetables. With a steadfast dedication to excellence, our expertise lies in sourcing and delivering premium spices that elevate culinary experiences. Based in India, SkyHarbour is on a mission to unite global palates with the most exquisite flavors from our farms. While our roots are deeply grounded in spices, we also export a delightful array of fruits and vegetables, ensuring your table is adorned with the finest nature has to offer.</p>
+                        <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we are the epitome of quality and authenticity in the realm of spices, agro products, and biodegradable products. With a steadfast dedication to excellence, our expertise lies in sourcing and delivering premium spices that elevate culinary experiences. Based in India, SkyHarbour is on a mission to unite global palates with the most exquisite flavors from our farms. While our roots are deeply grounded in spices, we also export a delightful array of agro products and biodegradable products, ensuring your table is adorned with the finest nature has to offer.</p>
                     </div>
                     <hr className='mb-5 w-50 mx-auto horiline' />
                     <center>
@@ -24,7 +24,7 @@ export default function About() {
                                     </div>
                                     <div class="flex-grow">
                                         <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Direct Farm Sourcing</h2>
-                                        <p class="leading-relaxed text-base">We take pride in sourcing our spices, fruits, and vegetables directly from farmers. This not only ensures the freshest produce but also empowers local communities.</p>
+                                        <p class="leading-relaxed text-base">We take pride in sourcing our spices and agro products directly from farmers. This not only ensures the freshest produce but also empowers local communities.</p>
 
                                     </div>
                                 </div>
