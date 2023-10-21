@@ -31,7 +31,7 @@ function Footer() {
                 <MDBContainer className='text-center text-md-start mt-5'>
                     <MDBRow className='mt-3'>
                         <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-                            <img src={Logo} class="img-fluid" />
+                            <img src={Logo} class="img-fluid" alt='Logo of SkyHarbour' />
                             <p>
                                 At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of spices, agro, and biodegradable products to global markets, cultivating flavors that transcend borders.
                             </p>
@@ -111,8 +111,8 @@ function Footer() {
 
             {/* Copyright */}
             <div className='text-center p-4'>
-                © 2023 Copyright: <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-                    SkyHarbour Impex Pvt. Ltd.
+                © 2023 Copyright: <a className='text-reset fw-bold' href=''>
+                    SkyHarbour Impex Private Limited
                 </a>
             </div>
         </MDBFooter >

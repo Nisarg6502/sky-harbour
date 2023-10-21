@@ -10,7 +10,8 @@ import {
     MDBBtn,
     MDBCollapse,
     MDBIcon,
-
+    MDBCarousel,
+    MDBCarouselItem,
 } from 'mdb-react-ui-kit';
 import './Products.css';
 // import { color } from 'framer-motion';
@@ -43,6 +44,19 @@ import Broccoli from '../images/broccoli.jpg';
 import Mushroom from '../images/mushroom.jpg';
 import Capsicum from '../images/ColourCapsicum.jpg';
 import BabyCorn from '../images/babycorn.jpg';
+import Rice from '../images/rice.jpg';
+import FoxNut from '../images/foxnut.jpg';
+import Maize from '../images/maize.jpg';
+import TurDal from '../images/turdal.jpg';
+import Soyabean from '../images/soyabean.jpg';
+import Moringa1 from '../images/moringa1.jpeg';
+import Moringa2 from '../images/moringa2.jpeg';
+import Moringa3 from '../images/moringa3.jpeg';
+import BioCup from '../images/biocup.jpg';
+import Areca from '../images/areca.jpg';
+import KraftPaper from '../images/kraftpaper.jpg';
+import Coconut from '../images/coconut.jpg';
+import Disposable from '../images/disposable.jpg';
 
 export default function Product() {
     const [fillActive, setFillActive] = useState('tab1');
@@ -77,20 +91,6 @@ export default function Product() {
     const [optSmModalRedChilli2, setOptSmModalRedChilli2] = useState(false);
     const [optSmModalRedChilli3, setOptSmModalRedChilli3] = useState(false);
 
-    //ginger modal
-    const [optSmModalGinger1, setOptSmModalGinger1] = useState(false);
-    const [optSmModalGinger2, setOptSmModalGinger2] = useState(false);
-
-
-
-
-    //vegetable modal
-    const [optSmModalVegetable1, setOptSmModalVegetable1] = useState(false);
-    const [optSmModalVegetable2, setOptSmModalVegetable2] = useState(false);
-    const [optSmModalVegetable3, setOptSmModalVegetable3] = useState(false);
-    const [optSmModalVegetable4, setOptSmModalVegetable4] = useState(false);
-
-
 
     //turmeric toggle
     const toggleShowTurmeric1 = () => setOptSmModalTurmeric1(!optSmModalTurmeric1);
@@ -105,18 +105,6 @@ export default function Product() {
     const toggleShowRedChilli1 = () => setOptSmModalRedChilli1(!optSmModalRedChilli1);
     const toggleShowRedChilli2 = () => setOptSmModalRedChilli2(!optSmModalRedChilli2);
     const toggleShowRedChilli3 = () => setOptSmModalRedChilli3(!optSmModalRedChilli3);
-
-    //ginger toggle
-    const toggleShowGinger1 = () => setOptSmModalGinger1(!optSmModalGinger1);
-    const toggleShowGinger2 = () => setOptSmModalGinger2(!optSmModalGinger2);
-
-
-    //vegetables toggle
-    const toggleShowVegetable1 = () => setOptSmModalVegetable1(!optSmModalVegetable1);
-    const toggleShowVegetable2 = () => setOptSmModalVegetable2(!optSmModalVegetable2);
-    const toggleShowVegetable3 = () => setOptSmModalVegetable3(!optSmModalVegetable3);
-    const toggleShowVegetable4 = () => setOptSmModalVegetable4(!optSmModalVegetable4);
-
 
 
 
@@ -260,69 +248,7 @@ export default function Product() {
             "Image2": GunturDried2,
         }
     ]
-
-    //generate specification for vegetables
-    const VegetableSpecifications = [
-        {
-            "id": 1,
-            "Name": "Colour Capsicum",
-            "Nutrients": {
-                "Calories": 77,
-                "Carbs": 17,
-                "Fiber": 2,
-            },
-            "Vitamins": "Vitamin A, Vitamin C",
-            "Proteins": "2g/100g",
-            "Fats": "0.1g/100g",
-            "Description": "Our capsicums are a colorful addition to your culinary creations. Bursting with flavor and nutrients, they're a versatile ingredient that adds a pop of color to your dishes. Whether you're roasting them to perfection or adding them to your favorite stir-fry, our capsicums are a celebration of freshness and flavor. Plus, they're rich in antioxidants, supporting your overall health and well-being.",
-            "Image": Capsicum,
-
-        },
-        {
-            "id": 2,
-            "Name": "Mushroom",
-            "Nutrients": {
-                "Calories": 40,
-                "Carbs": 9,
-                "Fiber": 2,
-            },
-            "Vitamins": "Vitamin A, Vitamin C",
-            "Proteins": "1.1g/100g",
-            "Fats": "0.1g/100g",
-            "Description": "Our mushrooms are a culinary delight, known for their earthy flavor and meaty texture. Whether you're adding them to your favorite pasta or sautéing them with garlic and herbs, our mushrooms are a versatile ingredient that elevates your dishes. Plus, they're rich in antioxidants and nutrients, supporting your overall health and well-being."
-            ,
-            "Image": Mushroom,
-        },
-        {
-            "id": 3,
-            "Name": "Broccoli",
-            "Nutrients": {
-                "Calories": 34,
-                "Carbs": 7,
-                "Fiber": 3,
-            },
-            "Vitamins": "Vitamin A, Vitamin C",
-            "Proteins": "2.8g/100g",
-            "Fats": "0.4g/100g",
-            "Description": "Crisp and vibrant, our broccoli is a nutritional powerhouse. Bursting with vitamins, minerals, and antioxidants, it's a green gem that adds a healthy crunch to your plate. Whether you steam it, roast it, or toss it into your favorite stir-fry, our broccoli supports your immune system and overall well-being, making it a must-have for health-conscious foodies.",
-            "Image": Broccoli,
-        },
-        {
-            "id": 4,
-            "Name": "Baby Corn",
-            "Nutrients": {
-                "Calories": 25,
-                "Carbs": 5,
-                "Fiber": 2,
-            },
-            "Vitamins": "Vitamin A, Vitamin C",
-            "Proteins": "1.9g/100g",
-            "Fats": "0.3g/100g",
-            "Description": "Our baby corn is a culinary delight, known for its delicate flavor and tender texture. Whether you're adding it to your favorite stir-fry or tossing it into a salad, our baby corn is a versatile ingredient that adds a healthy crunch to your dishes. Plus, it's rich in antioxidants and nutrients, supporting your overall health and well-being.",
-            "Image": BabyCorn,
-        }
-
-    ];
+        ;
 
 
     return (
@@ -366,7 +292,7 @@ export default function Product() {
 
                                 Step into our Spice section, and you'll find treasures like our renowned turmeric, celebrated for its vibrant color and the potential health benefits it brings to your table. Joining the ensemble are fiery red chillies, adding a touch of excitement to your culinary creations. And let's not forget ginger, a versatile wonder that weaves its zesty charm through both your dishes and your wellness rituals.<br /><br />
 
-                                We have lab test reports for all our spices, and if required, we can provide them to ensure their quality and purity. SkyHarbour is here to provide you with the necessary support for all your culinary adventures.<br /><br />
+                                We can provide lab test reports if required or on request, tailored to the specific guidelines and standards of your country, ensuring the quality and purity of our products. SkyHarbour is dedicated to offering comprehensive support for all your culinary endeavors, no matter where you are.<br /><br />
 
                                 These spices are not just ingredients; they are the very soul of taste and health. Brought directly from the farms to your spice rack, each spice encapsulates the essence of its origin. Explore our Spice section and elevate your culinary creations to new heights with the authentic flavors of India's spice heartland.<br /><br />
                             </p>
@@ -587,7 +513,7 @@ export default function Product() {
                                 <div className='container mb-5 text-center'>
                                     <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Cardamom</h1>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
-                                        Our Cardamom Collection brings the exquisite fragrance and flavor of this spice right to your kitchen. With a range of varieties to choose from, you can experience the distinct profiles of cardamom, from the bold and aromatic Black Cardamom to the subtly sweet Green Cardamom. <br /><br /> Whether you're spicing up your desserts or curries, our collection has the perfect cardamom for your culinary creations. Beyond its culinary charm, cardamom is also known for its potential health benefits.  <br /><br />Packed with antioxidants, it supports digestion and adds a delightful touch to your well-being. Explore our Cardamom Collection and elevate your dishes and wellness routines.</p>
+                                        Our Cardamom Collection brings the exquisite fragrance and flavor of this spice right to your kitchen. With a range of varieties to choose from, you can experience the distinct profiles of cardamom, from the bold and aromatic to the subtly sweet Cardamom. <br /><br /> Whether you're spicing up your desserts or curries, our collection has the perfect cardamom for your culinary creations. Beyond its culinary charm, cardamom is also known for its potential health benefits.  <br /><br />Packed with antioxidants, it supports digestion and adds a delightful touch to your well-being. Explore our Cardamom Collection and elevate your dishes and wellness routines.</p>
                                 </div>
                                 <div className='xl:w-2/4 lg:w-3/4 mx-auto mb-5'>
                                     <ProdCard
@@ -639,65 +565,165 @@ export default function Product() {
 
                             </MDBTabsPane>
                         </MDBTabsContent>
-
-
-
                     </MDBTabsPane>
+
+                    {/*Agro Products */}
+                    <MDBTabsPane show={fillActive === 'tab2'}>
+                        <div className='container mb-5 text-center'>
+                            <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Agro Products</h1>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-3/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
+                                At SkyHarbour, our commitment to quality transcends spices. Our Agro Products section presents a versatile range of nature's bounty. From hearty cereals and nourishing millets like Foxnut, Rice, and Maize to an array of vibrant vegetables including Onions, Babycorn, Mushrooms, and Broccoli, we've curated a selection that reflects the richness of the soil.<br /><br />
+
+                                To complete your culinary journey, we offer a selection of Edible Oils including Soybean, Sunflower, and Palm oil. Our range extends to include protein-packed Pulses such as Toor Dal, Bengal Gram, and many more, ensuring that your pantry is stocked with only the finest. Additionally, our Toor Dal boasts a prestigious GI tag, signifying its unique quality and heritage.<br /><br />
+
+                                Every product in this section is a testament to our unwavering dedication to quality and authenticity. Sourced directly from the heartland of agriculture, each item embodies the essence of our commitment to your dining experience.<br /><br />
+
+                                Coming to health products, we take pride in introducing our herbal treasures, including the illustrious Moringa leaves. Grown naturally, these vibrant leaves are brimming with an array of nutritional benefits. Harvested at their nutritional peak, our Moringa leaves are meticulously processed to bring you their purest essence. Unleash the potential of nature's bounty with our Moringa leaves and elevate your journey to well-being.<br /><br />
+
+                                From cereals to oils, vegetables to pulses, our Agro Products section is your gateway to the freshest and finest in every category. Discover the true taste of nature with SkyHarbour Impex.</p>
+                        </div>
+                        <MDBCarousel showControls showIndicators dark className='xl:w-1/2 md:w-3/4 mx-auto'>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={1}
+                                src={Rice}
+                                alt='bowl of rice grains'
+                            >
+
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={2}
+                                src={FoxNut}
+                                alt='white bowl containing foxnuts'
+                            >
+
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={3}
+                                src={Maize}
+                                alt='corn and corn kernels on a wooden table'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={4}
+                                src={Soyabean}
+                                alt='sa bag of soyabeans and a spoon on a wooden table'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={5}
+                                src={TurDal}
+                                alt='turdal in a white bowl'
+                            >
+                            </MDBCarouselItem>
+
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={6}
+                                src={BabyCorn}
+                                alt='several white baby corns'
+                            >
+                            </MDBCarouselItem>
+
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={7}
+                                src={Mushroom}
+                                alt='two mushrooms'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={7}
+                                src={Moringa1}
+                                alt='a bowl of powdered moringa leaves'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={7}
+                                src={Moringa2}
+                                alt='moringa leaves and a bowl of powdered moringa leaves'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={7}
+                                src={Moringa3}
+                                alt='bowl and spoon of powdered moringa leaves'
+                            >
+                            </MDBCarouselItem>
+                        </MDBCarousel>
+                    </MDBTabsPane>
+
 
                     {/*Bio-Degradable Cutlery */}
                     <MDBTabsPane show={fillActive === 'tab3'}>
                         <div className='container mb-5 text-center'>
                             <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Bio-Degradable Cutlery</h1>
-                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
-                                SkyHarbour's bio-degradable cutlery collection is a tribute to nature's bounty. Made from 100% natural materials, our cutlery is a sustainable alternative to plastic. <br /><br />From the earthy charm of coconut shells to the rustic elegance of bamboo, our cutlery collection is a celebration of nature's diversity. <br /><br />Whether you're hosting a party or enjoying a picnic, our cutlery collection is a must-have for every occasion. Explore our collection and add a touch of nature to your table.</p>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-3/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
+                                SkyHarbour's biodegradable cutlery collection stands as a testament to our profound connection with the environment. This collection is not just about the elegance of design or the practicality of its use; it's a response to an urgent global need.<br /><br />
+
+                                In a world straining under the weight of plastic waste, our biodegradable cutlery offers a lifeline to the environment. It's vital for reducing the pollution that has marred our landscapes, waterways, and oceans. With every bite you take or every meal you serve, you become an active participant in environmental preservation.<br /><br />
+
+                                The importance of this biodegradable collection lies in its ability to break down naturally, unlike plastics which persist for centuries. As it decomposes, it releases no harmful toxins or microplastics, leaving behind nothing but organic matter. By choosing this eco-friendly option, you're making a statement, saying no to a future littered with plastic waste.<br /><br />
+
+                                Our edible cutlery further exemplifies our commitment to a sustainable, eco-friendly future. These unique products not only reduce plastic pollution but also introduce the concept of an entirely edible alternative that serves both human and animal needs. It's a remarkable intersection of sustainability and innovation, giving you the power to make a positive impact with every meal.<br /><br />
+
+                                Explore our biodegradable collection, and with each piece you choose, you're not just setting your table; you're setting the stage for a cleaner, healthier planet.</p>
                         </div>
-                        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
-                            <MDBCol>
-                                <ProdCard
-                                    Title={VegetableSpecifications[0].Name}
-                                    Nutrients={VegetableSpecifications[0].Nutrients}
-                                    Vitamins={VegetableSpecifications[0].Vitamins}
-                                    Proteins={VegetableSpecifications[0].Proteins}
-                                    Fats={VegetableSpecifications[0].Fats}
-                                    Description={VegetableSpecifications[0].Description}
-                                    Image={VegetableSpecifications[0].Image}
+                        <MDBCarousel showControls showIndicators dark className='w-1/2 mx-auto'>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={1}
+                                src={BioCup}
+                                alt='...'
+                            >
 
-                                    toggleShow={toggleShowVegetable1}
-                                    optSmModal={optSmModalVegetable1}
-                                    setOptSmModal={setOptSmModalVegetable1}
-                                ></ProdCard>
-                            </MDBCol>
-                            <MDBCol>
-                                <ProdCard
-                                    Title={VegetableSpecifications[1].Name}
-                                    Nutrients={VegetableSpecifications[1].Nutrients}
-                                    Vitamins={VegetableSpecifications[1].Vitamins}
-                                    Proteins={VegetableSpecifications[1].Proteins}
-                                    Fats={VegetableSpecifications[1].Fats}
-                                    Description={VegetableSpecifications[1].Description}
-                                    Image={VegetableSpecifications[1].Image}
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={2}
+                                src={Areca}
+                                alt='...'
+                            >
 
-                                    toggleShow={toggleShowVegetable2}
-                                    optSmModal={optSmModalVegetable2}
-                                    setOptSmModal={setOptSmModalVegetable2}
-                                ></ProdCard>
-                            </MDBCol>
-                            <MDBCol>
-                                <ProdCard
-                                    Title={VegetableSpecifications[2].Name}
-                                    Nutrients={VegetableSpecifications[2].Nutrients}
-                                    Vitamins={VegetableSpecifications[2].Vitamins}
-                                    Proteins={VegetableSpecifications[2].Proteins}
-                                    Fats={VegetableSpecifications[2].Fats}
-                                    Description={VegetableSpecifications[2].Description}
-                                    Image={VegetableSpecifications[2].Image}
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={3}
+                                src={KraftPaper}
+                                alt='...'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={4}
+                                src={Coconut}
+                                alt='...'
+                            >
+                            </MDBCarouselItem>
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={5}
+                                src={Disposable}
+                                alt='...'
+                            >
+                            </MDBCarouselItem>
+                        </MDBCarousel>
+                        <div className='container my-5 text-center'>
+                            <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
+                                At SkyHarbour, we take pride in presenting a diverse and eco-friendly product line that transcends traditional cutlery. Our assortment includes a wide array of items crafted from nature's finest materials such as areca leaves, sugarcane bagasse, coconut-based, and kraft paper-based products.<br /><br />
 
-                                    toggleShow={toggleShowVegetable3}
-                                    optSmModal={optSmModalVegetable3}
-                                    setOptSmModal={setOptSmModalVegetable3}
-                                ></ProdCard>
-                            </MDBCol>
-                        </MDBRow>
+                                These sustainable solutions go far beyond the basics. Our collection spans from spoons and forks to robust plates and salad bowls, catering to all your dining requirements. Whether you're enjoying a meal on the move or hosting small parties, catering events, weddings, or special occasions, our biodegradable options seamlessly blend convenience and environmental responsibility.<br /><br />
+
+                                For those coffee enthusiasts, our eco-conscious coffee cups and straws are the perfect companions. Our product range extends further to offer you a vast selection of sustainable choices that not only enhance your dining experience but also contribute to a greener, more sustainable world.
+                            </p>
+                        </div>
                     </MDBTabsPane>
                 </MDBTabsContent>
             </div>

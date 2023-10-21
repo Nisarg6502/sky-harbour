@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCarousel, MDBCarouselItem } fr
 import bg1 from '../images/fruits-vegetables-floating.jpg'
 import FiveSpice from '../images/five-spice-ingredients.jpg'
 import HotSpice from '../images/hot-spices-wooden-spoon.jpg'
+import BioDeg from '../images/biodeg.jpg'
 
 import './Landing.css';
 
@@ -31,6 +32,12 @@ export default function Landing() {
                                 itemId={3}
                                 src={HotSpice}
                                 alt='hot-spices-wooden-spoon'
+                            />
+                            <MDBCarouselItem
+                                className='w-100 d-block'
+                                itemId={4}
+                                src={BioDeg}
+                                alt='biodegrabale-products'
                             />
                         </MDBCarousel>
                     </MDBCol>
