@@ -7,9 +7,6 @@ import {
     MDBTabsPane,
     MDBRow,
     MDBCol,
-    MDBBtn,
-    MDBCollapse,
-    MDBIcon,
     MDBCarousel,
     MDBCarouselItem,
 } from 'mdb-react-ui-kit';
@@ -18,7 +15,6 @@ import './Products.css';
 // import Table from './Table.js'
 import ProdCard from './ProdCard.js';
 import TurmericCard from './TurmericCard';
-import Turmeric from '../images/turmeric-powder.jpg';
 import LakadongPowder from '../images/lakadong-powder.jpg';
 import LakadongDried from '../images/lakadong-dried.jpg';
 import YaingangPowder from '../images/yaingang-powder.jpg';
@@ -26,7 +22,6 @@ import YaingangDried from '../images/yaingang-dried.jpg';
 import TangianPowder from '../images/ta-ngian-powder.jpg';
 import TangianDried from '../images/ta-ngian-dried.jpg';
 import SalemTurmeric from '../images/salem-turmeric.jpg';
-import RedChillies from '../images/red-chili-peppers.jpg';
 import RedChilliCard from './RedChilliCard';
 import ByadgiDried1 from '../images/byadgi-dried1.jpg';
 import ByadgiDried2 from '../images/byadgi-dried2.jpg';
@@ -40,9 +35,7 @@ import BlackPepper1 from '../images/black-pepper.jpg';
 import BlackPepper2 from '../images/black-pepper2.jpg';
 import Cumin1 from '../images/cumin1.jpg';
 import Cumin2 from '../images/cumin2.jpg';
-import Broccoli from '../images/broccoli.jpg';
 import Mushroom from '../images/mushroom.jpg';
-import Capsicum from '../images/ColourCapsicum.jpg';
 import BabyCorn from '../images/babycorn.jpg';
 import Rice from '../images/rice.jpg';
 import FoxNut from '../images/foxnut.jpg';
@@ -83,8 +76,7 @@ export default function Product() {
     const [optSmModalTurmeric2, setOptSmModalTurmeric2] = useState(false);
     const [optSmModalTurmeric3, setOptSmModalTurmeric3] = useState(false);
     const [optSmModalTurmeric4, setOptSmModalTurmeric4] = useState(false);
-    const [optSmModalTurmeric5, setOptSmModalTurmeric5] = useState(false);
-    const [optSmModalTurmeric6, setOptSmModalTurmeric6] = useState(false);
+
 
     //redchillies modal
     const [optSmModalRedChilli1, setOptSmModalRedChilli1] = useState(false);
@@ -97,8 +89,6 @@ export default function Product() {
     const toggleShowTurmeric2 = () => setOptSmModalTurmeric2(!optSmModalTurmeric2);
     const toggleShowTurmeric3 = () => setOptSmModalTurmeric3(!optSmModalTurmeric3);
     const toggleShowTurmeric4 = () => setOptSmModalTurmeric4(!optSmModalTurmeric4);
-    const toggleShowTurmeric5 = () => setOptSmModalTurmeric5(!optSmModalTurmeric5);
-    const toggleShowTurmeric6 = () => setOptSmModalTurmeric6(!optSmModalTurmeric6);
 
 
     //redchillies toggle
@@ -108,13 +98,13 @@ export default function Product() {
 
 
 
-    const [showShow, setShowShow] = useState(false);
-    const [showShow2, setShowShow2] = useState(false);
-    const [showShow3, setShowShow3] = useState(false);
+    // const [showShow, setShowShow] = useState(false);
+    // const [showShow2, setShowShow2] = useState(false);
+    // const [showShow3, setShowShow3] = useState(false);
 
-    const toggleShowCollapse = () => setShowShow(!showShow);
-    const toggleShowCollapse2 = () => setShowShow2(!showShow2);
-    const toggleShowCollapse3 = () => setShowShow3(!showShow3);
+    // const toggleShowCollapse = () => setShowShow(!showShow);
+    // const toggleShowCollapse2 = () => setShowShow2(!showShow2);
+    // const toggleShowCollapse3 = () => setShowShow3(!showShow3);
 
     //generate specification for spices
     const SpiceSpecifications = [
@@ -425,9 +415,9 @@ export default function Product() {
                                             Image1={TurmericSpecifications[3].Image1}
                                             Image2={TurmericSpecifications[3].Image2}
 
-                                            toggleShow={toggleShowTurmeric5}
-                                            optSmModal={optSmModalTurmeric5}
-                                            setOptSmModal={setOptSmModalTurmeric5}
+                                            toggleShow={toggleShowTurmeric4}
+                                            optSmModal={optSmModalTurmeric4}
+                                            setOptSmModal={setOptSmModalTurmeric4}
                                         ></TurmericCard>
                                         {/* </MDBCollapse> */}
                                     </MDBCol>

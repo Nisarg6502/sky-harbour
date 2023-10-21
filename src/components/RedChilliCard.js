@@ -14,7 +14,6 @@ import {
     MDBCardTitle,
     MDBCardText,
     MDBCarousel,
-    MDBCarouselItems,
     MDBCarouselItem
 
 

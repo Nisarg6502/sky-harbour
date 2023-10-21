@@ -10,14 +10,12 @@ import {
     MDBTable,
     MDBTableBody,
     MDBCard,
-    MDBCardImage,
     MDBCardBody,
     MDBCardTitle,
     MDBCardText,
     MDBListGroup,
     MDBListGroupItem,
     MDBCarousel,
-    MDBCarouselItems,
     MDBCarouselItem
 
 

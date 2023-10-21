@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-    MDBBtn,
     MDBCard,
-    MDBCardImage,
     MDBCardBody,
     MDBCardTitle,
     MDBCardText,
