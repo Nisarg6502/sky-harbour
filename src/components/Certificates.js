@@ -29,7 +29,7 @@ function Certificates() {
         <div id='certificates'>
             <div className='container p-5 mt-4'>
                 <div class="text-center mb-5 mt-5">
-                    <h1 className='title px-5 certanim'>Certificates</h1>
+                    <h2 className='title px-5 certanim'>Certificates</h2>
                     <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 cert-para para certanim">Our commitment to excellence extends beyond the products we offer. We understand the importance of adhering to international standards and regulations to ensure that every shipment meets the highest quality and safety benchmarks.
                         <br />
                         <br />

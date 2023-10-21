@@ -245,7 +245,7 @@ export default function Product() {
         <div id='productsection'>
             <div className='container'>
                 <div class="text-center mb-5 mt-5">
-                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title px-5'>Explore Our Exquisite Products</h1>
+                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title px-5'>Explore Our Exquisite Products</h2>
                     <p data-aos="fade-up" data-aos-duration="1000" class="p-4 text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">Explore our product showcase, where each flavor, color, and aroma narrates a tale of quality and authenticity. At SkyHarbour Impex, we're dedicated to presenting an extensive array of premium spices, agro products, and biodegradable goods. These selections redefine culinary experiences and promote sustainable living.</p>
                 </div>
 
@@ -327,14 +327,14 @@ export default function Product() {
                         <MDBTabsContent className='mt-4'>
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab1'}>
                                 <div className='container mb-5 text-center'>
-                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Turmeric</h1>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Turmeric</h2>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Our premium turmeric collection features unique varieties, distinguished by their curcumin content. Hailing from the picturesque landscapes of North-East India, these turmeric varieties are joined by the iconic Finger Turmeric from the vibrant South.<br /><br />You can savor these golden treasures in sliced, dried, or powdered forms, each naturally grown without a trace of chemicals. Besides their captivating earthy flavor and vibrant color, turmeric is renowned for its remarkable health benefits. <br /><br />Rich in curcumin, a powerful antioxidant and anti-inflammatory compound, it bolsters joint health, aids digestion, and may even have positive effects on brain function. Elevate your culinary creations and well-being with the pure goodness of our turmeric.</p>
                                 </div>
                                 <hr className='mb-5 w-50 mx-auto horiline' id='prodhr' />
 
                                 <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
                                     <div className='container mb-4 text-center'>
-                                        <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2 '>Northeast Turmeric Variety:</h1>
+                                        <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2 '>Northeast Turmeric Variety:</h2>
                                         <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Discover the rich diversity of Northeast Indian turmeric with our carefully curated collection. This selection includes renowned varieties like Lakadong Turmeric, Yaingang Turmeric, and Ta-ngian Turmeric. Each of these turmeric varieties reflects the unique terroir of the Northeast, characterized by vibrant flavors and remarkable curcumin content.</p>
                                     </div>
                                     <MDBCol>
@@ -399,7 +399,7 @@ export default function Product() {
 
 
                                     <div className='container my-4 mt-5 text-center'>
-                                        <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2 '>Salem Variety Turmeric:</h1>
+                                        <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2 '>Salem Variety Turmeric:</h2>
                                         <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Indulge in the unmistakable charm of Salem Variety Turmeric, originating from the heart of South India. This selection includes turmeric sourced from Erode, Rajapore, and Sangli. Notably, Salem Turmeric has been awarded the prestigious Geographical Indication (GI) tag in 2019, underlining its exceptional quality and regional distinctiveness. Whether you prefer the Northeast's vibrant curcumin-rich varieties or the time-honored flavors of Salem, our turmeric collection is a treasure trove waiting to elevate your culinary creations.</p>
                                     </div>
                                     <MDBCol>
@@ -430,7 +430,7 @@ export default function Product() {
                             {/*Red Chillies */}
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab2'}>
                                 <div className='container mb-5 text-center'>
-                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Red Chillies</h1>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Red Chillies</h2>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">Journey through the diverse landscapes of India with our red chilli collection. From the spicy dishes of Andhra Pradesh, we bring you Guntur Chilli, known for its fiery heat and exported worldwide. Byadgi chilli, from the charming town of Byadgi in Karnataka, offers a milder, more flavorful experience.  <br /><br /> But what's unique is that each of these red chillies comes with a Scoville Heat Unit (SHU) rating, which measures their spiciness. Our range spans from the milder Byadgi chilli with an SHU of 50,000 to 100,000, similar to a Thai pepper, to the fiery Guntur Chilli with an SHU of 35,000 to 40,000, hotter than cayenne pepper. <br /><br /> So, explore the regions, experience the flavors, and choose the spice level that suits your culinary adventures.</p>
                                 </div>
                                 <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
@@ -478,7 +478,7 @@ export default function Product() {
                             {/*Ginger  */}
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab3'}>
                                 <div className='container mb-5 text-center'>
-                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Ginger</h1>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Ginger</h2>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
                                         Our ginger collection is a celebration of the spice's versatility. From the iconic Cochin Ginger, known for its pungent aroma and flavor, to the milder, more delicate varieties, our ginger collection offers a range of options to suit your culinary needs. <br /><br />Whether you're adding a zesty kick to your stir-fry or brewing a cup of ginger tea, our ginger collection is a must-have for every spice lover. <br /><br />Besides its culinary uses, ginger is also renowned for its potential health benefits. Rich in antioxidants, it supports your immune system and overall well-being. So, explore our ginger collection and add a zesty touch to your culinary creations and wellness rituals.</p>
                                 </div>
@@ -501,7 +501,7 @@ export default function Product() {
                             {/*Cardamom  */}
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab4'}>
                                 <div className='container mb-5 text-center'>
-                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Cardamom</h1>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Cardamom</h2>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
                                         Our Cardamom Collection brings the exquisite fragrance and flavor of this spice right to your kitchen. With a range of varieties to choose from, you can experience the distinct profiles of cardamom, from the bold and aromatic to the subtly sweet Cardamom. <br /><br /> Whether you're spicing up your desserts or curries, our collection has the perfect cardamom for your culinary creations. Beyond its culinary charm, cardamom is also known for its potential health benefits.  <br /><br />Packed with antioxidants, it supports digestion and adds a delightful touch to your well-being. Explore our Cardamom Collection and elevate your dishes and wellness routines.</p>
                                 </div>
@@ -520,7 +520,7 @@ export default function Product() {
                             {/*Black Pepper  */}
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab5'}>
                                 <div className='container mb-5 text-center'>
-                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Black Pepper</h1>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Black Pepper</h2>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
                                         Dive into the bold world of pepper with our Black Pepper Collection. Known for its strong and pungent flavor, black pepper is a staple in kitchens worldwide. Our collection boasts a diverse range of black pepper varieties. Whether you're seasoning your steaks or soups, this collection has you covered. <br /><br />Aside from its culinary uses, black pepper is celebrated for potential health benefits, including its role as a digestion aid and antioxidant-rich properties. So, enhance your culinary experiences and well-being with our Black Pepper Collection.</p>
                                 </div>
@@ -539,7 +539,7 @@ export default function Product() {
                             {/*Cumin  */}
                             <MDBTabsPane show={fillActiveSpices === 'Spicetab6'}>
                                 <div className='container mb-5 text-center'>
-                                    <h1 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Cumin</h1>
+                                    <h2 data-aos="fade-up" data-aos-duration="1000" className='title py-2'>Cumin</h2>
                                     <p data-aos="fade-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s my-3 para prodpara typing-demo">
                                         Our Cumin Collection is a testament to the warm and earthy aroma that cumin brings to your dishes. With vibrant varieties, you can explore a spectrum of flavors. Whether you're seasoning your curries or soups, our collection has the perfect cumin variety for your culinary adventures. <br /><br />Additionally, cumin is well-regarded for its potential health benefits. Rich in antioxidants, it supports digestion and overall wellness. Dive into our Cumin Collection and infuse the authentic essence of cumin into your culinary creations and wellness rituals.</p>
                                 </div>
