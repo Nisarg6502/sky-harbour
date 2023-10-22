@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sky-harbour/static/css/main.ac7c965d.css",
-    "main.js": "/sky-harbour/static/js/main.07d55eee.js",
+    "main.js": "/sky-harbour/static/js/main.26d3cf3e.js",
     "static/js/787.8cb0ef9f.chunk.js": "/sky-harbour/static/js/787.8cb0ef9f.chunk.js",
     "static/media/fa-solid-900.ttf": "/sky-harbour/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/biodeg.jpg": "/sky-harbour/static/media/biodeg.4752ffe0069f14aa610d.jpg",
@@ -52,21 +52,21 @@
     "static/media/apeda-logo.png": "/sky-harbour/static/media/apeda-logo.13fe072a2ca6ecef5391.png",
     "static/media/cardamom2.jpg": "/sky-harbour/static/media/cardamom2.0341ea223473947dcf81.jpg",
     "static/media/fa-regular-400.woff2": "/sky-harbour/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
-    "static/media/Logo.png": "/sky-harbour/static/media/Logo.14b23ba02c4db4e14db5.png",
     "static/media/fssai.png": "/sky-harbour/static/media/fssai.a2efd38e43cf5b28996f.png",
     "static/media/efficiency.png": "/sky-harbour/static/media/efficiency.89cca7d3111333e4c018.png",
     "static/media/quality.png": "/sky-harbour/static/media/quality.882e5a1379c2e565d6cc.png",
     "static/media/farm.png": "/sky-harbour/static/media/farm.45304030534c0eeaebfb.png",
     "static/media/whatsapp.png": "/sky-harbour/static/media/whatsapp.6676f745e01fcbcfd408.png",
+    "static/media/Logo.png": "/sky-harbour/static/media/Logo.38007f22d4464a994cb4.png",
     "static/media/fa-v4compatibility.ttf": "/sky-harbour/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
     "static/media/fa-v4compatibility.woff2": "/sky-harbour/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "index.html": "/sky-harbour/index.html",
     "main.ac7c965d.css.map": "/sky-harbour/static/css/main.ac7c965d.css.map",
-    "main.07d55eee.js.map": "/sky-harbour/static/js/main.07d55eee.js.map",
+    "main.26d3cf3e.js.map": "/sky-harbour/static/js/main.26d3cf3e.js.map",
     "787.8cb0ef9f.chunk.js.map": "/sky-harbour/static/js/787.8cb0ef9f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ac7c965d.css",
-    "static/js/main.07d55eee.js"
+    "static/js/main.26d3cf3e.js"
   ]
 }
