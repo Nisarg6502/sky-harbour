@@ -12,7 +12,7 @@ function Footer() {
                 </div>
 
                 <div className='social-icons px-3'>
-                    <a href='' className='me-5 text-reset '>
+                    <a href='https://www.facebook.com/share/14qmSi6xdcA/' className='me-5 text-reset ' target='_blank' rel='noreferrer'>
                         <MDBIcon fab icon="facebook-f" className='icon' size="xl" />
                     </a>
                     {/* <a href='' className='me-5 text-reset'>
