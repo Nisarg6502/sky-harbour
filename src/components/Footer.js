@@ -18,10 +18,10 @@ function Footer() {
                     {/* <a href='' className='me-5 text-reset'>
                         <MDBIcon fab icon="twitter" className='icon' size="xl" />
                     </a> */}
-                    <a href='' className='me-5 text-reset'>
+                    <a href='https://www.instagram.com/skyharbourimpex' className='me-5 text-reset' target='_blank' rel='noreferrer'>
                         <MDBIcon fab icon="instagram" className='icon' size="xl" />
                     </a>
-                    <a href='' className='me-5 text-reset'>
+                    <a href='https://www.linkedin.com/in/yashrajpatilresydue' className='me-5 text-reset' target='_blank' rel='noreferrer'>
                         <MDBIcon fab icon="linkedin" className='icon' size="xl" />
                     </a>
                 </div>
@@ -78,7 +78,7 @@ function Footer() {
                                 </a>
                             </p>
                             <p className='my-2'>
-                                <a href='https://wa.me/+917899933077' className='text-reset link'>
+                                <a href='https://wa.me/+918530489863' className='text-reset link' target='_blank' rel='noreferrer'>
                                     Contact Us
                                 </a>
                             </p>
@@ -94,14 +94,18 @@ function Footer() {
                             </p>
                             <p className='my-2'>
                                 <MDBIcon icon="envelope" className="me-3" />
-                                <a href="mailto:skyharbour.impex@gmail.com" style={{ textDecoration: "none", color: "inherit" }}>
-                                    skyharbour.impex@gmail.com
+                                <a href="mailto:team@skyharbourimpex.com" style={{ textDecoration: "none", color: "inherit" }}>
+                                    team@skyharbourimpex.com
                                 </a>
                             </p>
                             <p className='my-2'>
                                 <MDBIcon icon="phone" className="me-3" /><a href="tel:+917899933077" style={{
                                     textDecoration: "none", color: "inherit",
                                 }}>+91 7899933077</a>
+                                {' / '}
+                                <a href="tel:+918530489863" style={{
+                                    textDecoration: "none", color: "inherit",
+                                }}>+91 85304 89863</a>
 
                             </p>
                         </MDBCol>

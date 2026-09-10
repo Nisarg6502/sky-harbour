@@ -6,7 +6,7 @@ import "./Whatsapp.css";
 export default function Whatsapp() {
     return (
         <div>
-            <a href="https://wa.me/+917899933077" class="float bounce" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/+918530489863" class="float bounce" target="_blank" rel="noreferrer">
                 <img className='img-fluid' src={WhatsappLogo} alt='Whatsapp Logo' />
             </a>
         </div>
