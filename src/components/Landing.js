@@ -145,6 +145,8 @@ export default function Landing() {
                                 key={index}
                                 src={slides[index].src}
                                 alt={slides[index].alt}
+                                width="801"
+                                height="723"
                                 className="absolute inset-0 h-full w-full object-cover"
                                 initial={{ opacity: 0, scale: 1.03 }}
                                 animate={{ opacity: 1, scale: 1 }}
