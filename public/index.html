@@ -37,7 +37,52 @@
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" />
+  </noscript>
+
+  <style>
+    #initial-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FBF7EF;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    #initial-loader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #initial-loader__spinner {
+      width: 42px;
+      height: 42px;
+      border-radius: 9999px;
+      border: 3px solid rgba(36, 27, 20, 0.12);
+      border-top-color: #4A582B;
+      animation: initial-loader-spin 0.8s linear infinite;
+    }
+
+    @keyframes initial-loader-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #initial-loader__spinner {
+        animation-duration: 1.6s;
+      }
+    }
+  </style>
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -78,6 +123,9 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="initial-loader" aria-hidden="true">
+    <div id="initial-loader__spinner"></div>
+  </div>
   <div id="root"></div>
   <!--
       This HTML file is a template.

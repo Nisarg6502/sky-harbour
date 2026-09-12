@@ -2,7 +2,11 @@ import Logo from "../images/Logo.png";
 import { MapPin, Mail, Phone } from 'lucide-react';
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from './ui/SocialIcons';
 
-const productLinks = ['Spices', 'Agro Products', 'Biodegradable Products'];
+const productLinks = [
+    { label: 'Spices', tab: 'spices' },
+    { label: 'Agro Products', tab: 'agro' },
+    { label: 'Biodegradable Products', tab: 'bio' },
+];
 
 const usefulLinks = [
     { label: 'Home', href: '#top' },
@@ -40,7 +44,7 @@ function Footer() {
 
             <div className="container-page grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
                 <div>
-                    <img src={Logo} className="h-12 w-auto brightness-0 invert opacity-90" alt="Logo of SkyHarbour" loading="lazy" />
+                    <img src={Logo} width="958" height="148" className="h-auto w-48 brightness-0 invert opacity-90" alt="Logo of SkyHarbour" loading="lazy" />
                     <p className="mt-4 text-sm leading-relaxed text-cream/70">
                         At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of spices, agro, and biodegradable products to global markets, cultivating flavors that transcend borders.
                     </p>
@@ -52,11 +56,19 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h6 className="font-display text-base text-cream">Products</h6>
+                    <h3 className="font-display text-base text-cream">Products</h3>
                     <ul className="mt-4 space-y-2.5">
-                        {productLinks.map((label) => (
+                        {productLinks.map(({ label, tab }) => (
                             <li key={label}>
-                                <a href="#productsection" className="text-sm text-cream/70 transition-colors hover:text-cream">
+                                <a
+                                    href="#productsection"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.dispatchEvent(new CustomEvent('sh:select-product-tab', { detail: { tab } }));
+                                        document.getElementById('productsection')?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                    className="text-sm text-cream/70 transition-colors hover:text-cream"
+                                >
                                     {label}
                                 </a>
                             </li>
@@ -65,7 +77,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h6 className="font-display text-base text-cream">Useful Links</h6>
+                    <h3 className="font-display text-base text-cream">Useful Links</h3>
                     <ul className="mt-4 space-y-2.5">
                         {usefulLinks.map((link) => (
                             <li key={link.label}>
@@ -78,7 +90,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h6 className="font-display text-base text-cream">Contact</h6>
+                    <h3 className="font-display text-base text-cream">Contact</h3>
                     <ul className="mt-4 space-y-3 text-sm text-cream/70">
                         <li className="flex gap-3">
                             <MapPin size={18} className="mt-0.5 shrink-0 text-clay-300" />

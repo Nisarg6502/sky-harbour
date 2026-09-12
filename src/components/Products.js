@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Flame, Leaf, Recycle, Sun, Sprout, Gem, CircleDot, Wind } from 'lucide-react';
 import SectionHeading from './ui/SectionHeading';
 import Tabs from './ui/Tabs';
@@ -226,6 +226,17 @@ function panelClass(isActive) {
 export default function Product() {
     const [mainTab, setMainTab] = useState('spices');
     const [spiceTab, setSpiceTab] = useState('turmeric');
+
+    useEffect(() => {
+        const handler = (e) => {
+            const tab = e.detail?.tab;
+            if (mainTabs.some((t) => t.id === tab)) {
+                setMainTab(tab);
+            }
+        };
+        window.addEventListener('sh:select-product-tab', handler);
+        return () => window.removeEventListener('sh:select-product-tab', handler);
+    }, []);
 
     return (
         <section id="productsection" className="bg-olive-50/60 py-24 sm:py-28">
