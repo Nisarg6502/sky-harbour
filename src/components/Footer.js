@@ -1,127 +1,118 @@
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-import Logo from "../images/Logo.png"
-// import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./Footer.css"
+import Logo from "../images/Logo.png";
+import { MapPin, Mail, Phone } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from './ui/SocialIcons';
+
+const productLinks = ['Spices', 'Agro Products', 'Biodegradable Products'];
+
+const usefulLinks = [
+    { label: 'Home', href: '#top' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Products', href: '#productsection' },
+    { label: 'Contact Us', href: 'https://wa.me/+918530489863' },
+];
+
+const socials = [
+    { icon: FacebookIcon, href: 'https://www.facebook.com/share/14qmSi6xdcA/', label: 'Facebook' },
+    { icon: InstagramIcon, href: 'https://www.instagram.com/skyharbourimpex', label: 'Instagram' },
+    { icon: LinkedinIcon, href: 'https://www.linkedin.com/in/yashrajpatilresydue', label: 'LinkedIn' },
+];
 
 function Footer() {
     return (
-        <MDBFooter bgColor='light' className='text-center text-lg-start text-muted footer-whole'>
-            <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom footer-top text-light'>
-                <div className='me-5 d-none d-md-block'>
-                    <span>Get connected with us on social networks:</span>
+        <footer className="border-t border-ink/10 bg-olive-800 text-cream/80">
+            <div className="container-page flex flex-col items-center justify-between gap-4 border-b border-cream/10 py-6 sm:flex-row">
+                <span className="text-sm text-cream/70">Get connected with us on social networks:</span>
+                <div className="flex items-center gap-3">
+                    {socials.map(({ icon: Icon, href, label }) => (
+                        <a
+                            key={label}
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={label}
+                            className="btn-press flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-cream transition-colors hover:bg-clay-400 hover:text-ink"
+                        >
+                            <Icon size={18} />
+                        </a>
+                    ))}
                 </div>
-
-                <div className='social-icons px-3'>
-                    <a href='https://www.facebook.com/share/14qmSi6xdcA/' className='me-5 text-reset ' target='_blank' rel='noreferrer'>
-                        <MDBIcon fab icon="facebook-f" className='icon' size="xl" />
-                    </a>
-                    {/* <a href='' className='me-5 text-reset'>
-                        <MDBIcon fab icon="twitter" className='icon' size="xl" />
-                    </a> */}
-                    <a href='https://www.instagram.com/skyharbourimpex' className='me-5 text-reset' target='_blank' rel='noreferrer'>
-                        <MDBIcon fab icon="instagram" className='icon' size="xl" />
-                    </a>
-                    <a href='https://www.linkedin.com/in/yashrajpatilresydue' className='me-5 text-reset' target='_blank' rel='noreferrer'>
-                        <MDBIcon fab icon="linkedin" className='icon' size="xl" />
-                    </a>
-                </div>
-            </section>
-
-            <section className=''>
-                <MDBContainer className='text-center text-md-start mt-5'>
-                    <MDBRow className='mt-3'>
-                        <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-                            <img src={Logo} class="img-fluid" alt='Logo of SkyHarbour' />
-                            <p>
-                                At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of spices, agro, and biodegradable products to global markets, cultivating flavors that transcend borders.
-                            </p>
-                            <br />
-                            <p><b>CIN NO:</b> U47990KA2023PTC175888<br /><b>GSTIN NO:</b> 29ABLCS2303K1Z4</p>
-                        </MDBCol>
-
-                        {/*Products*/}
-                        <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-                            <p className='my-2'>
-                                <a href='#productsection' className='text-reset link'>
-                                    Spices
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='#productsection' className='text-reset link'>
-                                    Agro Products
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='#productsection' className='text-reset link'>
-                                    Biodegradable Products
-                                </a>
-                            </p>
-                        </MDBCol>
-
-                        {/*Useful Links */}
-                        <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>Useful Links</h6>
-                            <p className='my-2'>
-                                <a href='' className='text-reset link'>
-                                    Home
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='#about' className='text-reset link'>
-                                    About Us
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='#productsection' className='text-reset link'>
-                                    Products
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <a href='https://wa.me/+918530489863' className='text-reset link' target='_blank' rel='noreferrer'>
-                                    Contact Us
-                                </a>
-                            </p>
-                        </MDBCol>
-
-                        {/*Contact Details*/}
-                        <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-                            <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-                            <p className='my-2'>
-                                <MDBIcon icon="map-marker-alt" size='lg' className="me-3" />
-                                No.1-1165/1, Aiwan-E-Shahi, GB court, Gulbarga pincode - 585102 <br />State: Karnataka
-                                <br />Country: India
-                            </p>
-                            <p className='my-2'>
-                                <MDBIcon icon="envelope" className="me-3" />
-                                <a href="mailto:team@skyharbourimpex.com" style={{ textDecoration: "none", color: "inherit" }}>
-                                    team@skyharbourimpex.com
-                                </a>
-                            </p>
-                            <p className='my-2'>
-                                <MDBIcon icon="phone" className="me-3" /><a href="tel:+917899933077" style={{
-                                    textDecoration: "none", color: "inherit",
-                                }}>+91 7899933077</a>
-                                {' / '}
-                                <a href="tel:+918530489863" style={{
-                                    textDecoration: "none", color: "inherit",
-                                }}>+91 85304 89863</a>
-
-                            </p>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>
-            </section>
-
-            {/* Copyright */}
-            <div className='text-center p-4'>
-                © 2023 Copyright: <a className='text-reset fw-bold' href=''>
-                    SkyHarbour Impex Private Limited
-                </a>
             </div>
-        </MDBFooter >
-    );
 
+            <div className="container-page grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <img src={Logo} className="h-12 w-auto brightness-0 invert opacity-90" alt="Logo of SkyHarbour" loading="lazy" />
+                    <p className="mt-4 text-sm leading-relaxed text-cream/70">
+                        At SkyHarbour Impex, we are passionate about delivering the freshest and finest selection of spices, agro, and biodegradable products to global markets, cultivating flavors that transcend borders.
+                    </p>
+                    <p className="mt-4 text-xs leading-relaxed text-cream/50">
+                        <b className="text-cream/70">CIN NO:</b> U47990KA2023PTC175888
+                        <br />
+                        <b className="text-cream/70">GSTIN NO:</b> 29ABLCS2303K1Z4
+                    </p>
+                </div>
+
+                <div>
+                    <h6 className="font-display text-base text-cream">Products</h6>
+                    <ul className="mt-4 space-y-2.5">
+                        {productLinks.map((label) => (
+                            <li key={label}>
+                                <a href="#productsection" className="text-sm text-cream/70 transition-colors hover:text-cream">
+                                    {label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <h6 className="font-display text-base text-cream">Useful Links</h6>
+                    <ul className="mt-4 space-y-2.5">
+                        {usefulLinks.map((link) => (
+                            <li key={link.label}>
+                                <a href={link.href} className="text-sm text-cream/70 transition-colors hover:text-cream">
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div>
+                    <h6 className="font-display text-base text-cream">Contact</h6>
+                    <ul className="mt-4 space-y-3 text-sm text-cream/70">
+                        <li className="flex gap-3">
+                            <MapPin size={18} className="mt-0.5 shrink-0 text-clay-300" />
+                            <span>
+                                No.1-1165/1, Aiwan-E-Shahi, GB court, Gulbarga pincode - 585102
+                                <br />
+                                State: Karnataka
+                                <br />
+                                Country: India
+                            </span>
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <Mail size={18} className="shrink-0 text-clay-300" />
+                            <a href="mailto:team@skyharbourimpex.com" className="hover:text-cream">
+                                team@skyharbourimpex.com
+                            </a>
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <Phone size={18} className="shrink-0 text-clay-300" />
+                            <span>
+                                <a href="tel:+917899933077" className="hover:text-cream">+91 7899933077</a>
+                                {' / '}
+                                <a href="tel:+918530489863" className="hover:text-cream">+91 85304 89863</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div className="border-t border-cream/10 pb-20 pt-6 sm:py-6 text-center text-xs text-cream/50">
+                © {new Date().getFullYear()} Copyright: <span className="font-semibold text-cream/70">SkyHarbour Impex Private Limited</span>
+            </div>
+        </footer>
+    );
 }
 
 export default Footer;

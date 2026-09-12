@@ -1,76 +1,64 @@
 import React from 'react';
-import './About.css';
-import Farm from '../images/farm.png';
-import Quality from '../images/quality.png';
-import Handshake from '../images/handshake1.png';
-import Efficiency from '../images/efficiency.png';
+import { motion } from 'framer-motion';
+import { Sprout, ShieldCheck, Handshake, Gauge } from 'lucide-react';
+import SectionHeading from './ui/SectionHeading';
+import { RevealGroup, revealItem } from './ui/Reveal';
+
+const features = [
+    {
+        icon: Sprout,
+        title: 'Direct Farm Sourcing',
+        description:
+            'We take pride in sourcing our spices and agro products directly from farmers. This not only ensures the freshest produce but also empowers local communities.',
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Quality Assurance',
+        description:
+            'Our commitment to quality surpasses industry standards. Rigorous quality control measures guarantee that every product we offer meets the highest international benchmarks.',
+    },
+    {
+        icon: Handshake,
+        title: 'Reliability and Transparency',
+        description:
+            'Trust is paramount in international trade. Our commitment to reliability ensures a seamless export experience, allowing you to focus on your core business.',
+    },
+    {
+        icon: Gauge,
+        title: 'Unlocking Efficiency',
+        description:
+            'Navigating the complexities of international markets can be both time-consuming and costly. By choosing SkyHarbour, you are tapping into our expertise, saving valuable resources.',
+    },
+];
 
 export default function About() {
     return (
-        <div id='about'>
-            <section class="text-gray-600 body-font ab">
-                <div class="container py-24">
-                    <div class="text-center mb-5">
-                        <h2 data-aos="zoom-in-up" data-aos-duration="1000" className='title px-5'>SkyHarbour</h2>
-                        <p data-aos="zoom-in-up" data-aos-duration="1000" class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s mt-3 para">At SkyHarbour, we are the epitome of quality and authenticity in the realm of spices, agro products, and biodegradable products. With a steadfast dedication to excellence, our expertise lies in sourcing and delivering premium spices that elevate culinary experiences. Based in India, SkyHarbour is on a mission to unite global palates with the most exquisite flavors from our farms. While our roots are deeply grounded in spices, we also export a delightful array of agro products and biodegradable products, ensuring your table is adorned with the finest nature has to offer.</p>
-                    </div>
-                    <hr className='mb-5 w-50 mx-auto horiline' />
-                    <center>
-                        <div id='abcontainer' class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 abcard">
-                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
-                                <div className='abitem'>
-                                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
-                                        <img src={Farm} alt='farm' />
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Direct Farm Sourcing</h2>
-                                        <p class="leading-relaxed text-base">We take pride in sourcing our spices and agro products directly from farmers. This not only ensures the freshest produce but also empowers local communities.</p>
+        <section id="about" className="bg-olive-50/60 py-24 sm:py-28">
+            <div className="container-page">
+                <SectionHeading
+                    eyebrow="Who we are"
+                    title="Quality and authenticity, from farm to table"
+                    description="At SkyHarbour, we are the epitome of quality and authenticity in the realm of spices, agro products, and biodegradable products. With a steadfast dedication to excellence, our expertise lies in sourcing and delivering premium spices that elevate culinary experiences. Based in India, SkyHarbour is on a mission to unite global palates with the most exquisite flavors from our farms."
+                />
 
-                                    </div>
-                                </div>
+                <RevealGroup className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    {features.map(({ icon: Icon, title, description }) => (
+                        <motion.div
+                            key={title}
+                            variants={revealItem}
+                            whileHover={{ y: -4 }}
+                            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+                            className="group rounded-xl2 bg-cream-50 p-8 text-center shadow-card transition-shadow duration-200 hover:shadow-card-hover sm:text-left"
+                        >
+                            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-olive-100 text-olive-700 transition-colors duration-200 group-hover:bg-olive-600 group-hover:text-cream sm:mx-0">
+                                <Icon size={26} strokeWidth={1.75} />
                             </div>
-                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
-                                <div className='abitem'>
-                                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
-                                        <img src={Quality} alt='Quality' />
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Quality Assurance</h2>
-                                        <p class="leading-relaxed text-base">Our commitment to quality surpasses industry standards. Rigorous quality control measures guarantee that every product we offer meets the highest international benchmarks.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
-                                <div className='abitem'>
-                                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
-                                        <img src={Handshake} alt='Handshake' />
-
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Reliability and Transparency</h2>
-                                        <p class="leading-relaxed text-base">Trust is paramount in international trade. Our commitment to reliability ensures a seamless export experience, allowing you to focus on your core business.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-aos="zoom-in-up" data-aos-duration="1000" class="p-4 md:w-1/2 flex flex-col text-center items-center">
-                                <div className='abitem'>
-                                    <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-3 flex-shrink-0">
-                                        <img src={Efficiency} alt='Efficiency' />
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Unlocking Efficiency</h2>
-                                        <p class="leading-relaxed text-base">Navigating the complexities of international markets can be both time-consuming and costly. By choosing SkyHarbour, you are tapping into our expertise, saving valuable resources.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-            </section>
-        </div>
-    )
+                            <h3 className="mt-5 font-display text-xl text-ink">{title}</h3>
+                            <p className="mt-3 text-sm leading-relaxed text-ink-muted">{description}</p>
+                        </motion.div>
+                    ))}
+                </RevealGroup>
+            </div>
+        </section>
+    );
 }
