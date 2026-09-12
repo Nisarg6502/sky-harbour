@@ -7,12 +7,12 @@ import Certificates from '../components/Certificates';
 
 function Home() {
     return (
-        <div>
+        <main>
             <Landing></Landing>
             <About></About>
             <Product></Product>
             <Certificates></Certificates>
-        </div>
+        </main>
     )
 }
 

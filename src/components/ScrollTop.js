@@ -1,48 +1,38 @@
-import React from 'react';
-import { MDBBtn, MDBContainer, MDBIcon } from 'mdb-react-ui-kit';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowUp } from 'lucide-react';
 
 function ScrollTop() {
-    let mybutton;
+    const [visible, setVisible] = useState(false);
 
-    window.onscroll = function () {
-        mybutton = document.getElementById("btn-back-to-top");
-        scrollFunction(mybutton);
+    useEffect(() => {
+        const onScroll = () => setVisible(window.scrollY > 400);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    const backToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    function scrollFunction(mybutton) {
-        if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-        ) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    function backToTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-
     return (
-        <MDBContainer fluid>
-
-            <MDBBtn
-                onClick={backToTop}
-                id='btn-back-to-top'
-                style={{
-                    position: "fixed",
-                    bottom: "40px",
-                    left: "40px",
-                    display: "none",
-                }}
-                className='btn-floating'
-                color='dark'
-                size='lg'>
-                <MDBIcon fas icon="arrow-up" />
-            </MDBBtn>
-        </MDBContainer>
+        <AnimatePresence>
+            {visible && (
+                <motion.button
+                    onClick={backToTop}
+                    aria-label="Back to top"
+                    className="btn-press fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-ink text-cream shadow-card-hover"
+                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                    transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+                    whileHover={{ scale: 1.06 }}
+                >
+                    <ArrowUp size={20} />
+                </motion.button>
+            )}
+        </AnimatePresence>
     );
 }
 
