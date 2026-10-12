@@ -1,76 +1,72 @@
 /** @type {import('tailwindcss').Config} */
 
+// Palette is named after what SkyHarbour actually ships:
+// paper/kraft for packaging, harbour teal (the original site's brand colour),
+// and the three hero spices — turmeric, chilli and cardamom.
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        cream: {
-          DEFAULT: "#FBF7EF",
-          50: "#FEFDFB",
-          100: "#FBF7EF",
-          200: "#F5EDDC",
-        },
-        clay: {
-          50: "#FCF5EE",
-          100: "#F5E4D3",
-          200: "#E8C7A6",
-          300: "#D9A97A",
-          400: "#C67B5C",
-          500: "#B5651D",
-          600: "#96541C",
-          700: "#733F16",
-        },
-        olive: {
-          50: "#F3F5EB",
-          100: "#E1E6CC",
-          200: "#C2CC98",
-          300: "#9FAD6C",
-          400: "#7D8F4C",
-          500: "#5E6E37",
-          600: "#4A582B",
-          700: "#374220",
-          800: "#242C15",
+        paper: {
+          DEFAULT: "#F3EDE2",
+          50: "#FBF8F2",
+          100: "#F3EDE2",
+          200: "#E9DFCD",
+          300: "#D9CAAE",
         },
         ink: {
-          DEFAULT: "#241B14",
-          soft: "#4A3E33",
-          muted: "#786A5C",
+          DEFAULT: "#1C1A16",
+          soft: "#3E3A32",
+          muted: "#6F685B",
+        },
+        harbour: {
+          50: "#EEF3F2",
+          100: "#D6E3E1",
+          200: "#A9C3C0",
+          300: "#7AA19E",
+          400: "#4C7C7E",
+          500: "#2A545B",
+          600: "#22474D",
+          700: "#1B3A40",
+          800: "#142D32",
+          900: "#0E2125",
+          950: "#091719",
+        },
+        turmeric: {
+          100: "#FAEFD2",
+          200: "#F5DC9C",
+          300: "#EFC55E",
+          400: "#E6AE2E",
+          500: "#CF951A",
+          600: "#A87613",
+        },
+        chilli: {
+          300: "#DA7A66",
+          400: "#C4472F",
+          500: "#A63421",
+          600: "#842818",
+        },
+        cardamom: {
+          100: "#E4EAD6",
+          300: "#A9BB86",
+          400: "#819A5C",
+          500: "#627C43",
+          600: "#4B6133",
         },
       },
       fontFamily: {
-        display: ["'Fraunces'", "Georgia", "serif"],
-        sans: ["'Inter'", "-apple-system", "sans-serif"],
+        sans: ["'Jost'", "'Century Gothic'", "-apple-system", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 2px 8px rgba(36, 27, 20, 0.06)",
-        card: "0 8px 30px rgba(36, 27, 20, 0.08)",
-        "card-hover": "0 16px 40px rgba(36, 27, 20, 0.14)",
-        glow: "0 0 0 1px rgba(94, 110, 55, 0.08)",
-      },
-      borderRadius: {
-        xl2: "1.25rem",
+        soft: "0 1px 2px rgba(28, 26, 22, 0.06), 0 4px 12px rgba(28, 26, 22, 0.05)",
+        lift: "0 2px 4px rgba(28, 26, 22, 0.06), 0 18px 40px -12px rgba(28, 26, 22, 0.22)",
       },
       transitionTimingFunction: {
         out: "cubic-bezier(0.23, 1, 0.32, 1)",
         "in-out": "cubic-bezier(0.77, 0, 0.175, 1)",
       },
-      keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-6px)" },
-        },
-      },
-      animation: {
-        marquee: "marquee 30s linear infinite",
-        float: "float 3s ease-in-out infinite",
-      },
     },
   },
-  darkMode: "class",
   plugins: [],
 };

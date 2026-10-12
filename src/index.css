@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  /* Fine paper grain, tinted with ink so it reads like unbleached kraft. */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .11 0 0 0 0 .1 0 0 0 0 .09 .4 0 0 0 -.23'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -9,19 +16,24 @@
   }
 
   body {
-    @apply bg-cream text-ink font-sans antialiased;
+    @apply bg-paper text-ink font-sans antialiased;
+    background-image: var(--grain);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    @apply bg-clay-300/50 text-ink;
+    @apply bg-turmeric-300 text-ink;
   }
 }
 
 @layer utilities {
   .container-page {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+    @apply mx-auto w-full max-w-[84rem] px-5 sm:px-8 lg:px-12;
+  }
+
+  .grain {
+    background-image: var(--grain);
   }
 
   .btn-press {
@@ -32,6 +44,10 @@
     text-wrap: balance;
   }
 
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
   .scrollbar-none {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -39,15 +55,102 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  /* Postage-stamp perforation for the certificate frames. The solid layer
+     fills the content box; the dotted layer only shows in the 10px padding
+     ring, where its holes land exactly on the edges. Keep the element's size
+     a multiple of 12px so holes also land on the corners. */
+  .perforated {
+    padding: 10px;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      radial-gradient(circle, transparent 4px, #000 4.5px) -6px -6px / 12px 12px;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      radial-gradient(circle, transparent 4px, #000 4.5px) -6px -6px / 12px 12px;
+  }
+}
+
+/* Catalogue panels replay this each time they are un-hidden. `backwards`
+   (not `both`) so no transform lingers to interfere with sticky children. */
+.panel-in {
+  animation: panel-in 0.7s var(--ease-out) backwards;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero entrance. Runs as CSS so it stays smooth while the bundle is   */
+/* still hydrating; it starts when <html> gets .sh-ready (set as the   */
+/* intro curtain lifts, see App.js).                                   */
+/* ------------------------------------------------------------------ */
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.hero-rise {
+  display: block;
+  transform: translateY(110%);
+}
+
+.hero-fade {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.sh-ready .hero-rise {
+  animation: hero-rise 1.05s var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+.sh-ready .hero-fade {
+  animation: hero-fade 0.9s var(--ease-out) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes hero-rise {
+  to { transform: translateY(0); }
+}
+
+@keyframes hero-fade {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
   }
+
+  /* Keep the reveal as a gentle fade; drop the movement. */
+  .hero-rise,
+  .hero-fade {
+    transform: none;
+    opacity: 0;
+  }
+  .sh-ready .hero-rise,
+  .sh-ready .hero-fade {
+    animation: hero-fade-only 0.5s ease forwards;
+  }
+
+  .panel-in {
+    animation-name: panel-fade;
+    animation-duration: 0.3s;
+  }
+}
+
+@keyframes hero-fade-only {
+  to { opacity: 1; }
+}
+
+@keyframes panel-fade {
+  from { opacity: 0; }
 }
