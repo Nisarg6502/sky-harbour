@@ -199,9 +199,9 @@ const bioItems = [
 ];
 
 const mainTabs = [
-    { id: 'spices', label: 'Spices' },
-    { id: 'agro', label: 'Agro Products' },
-    { id: 'bio', label: 'Biodegradable Products' },
+    { id: 'spices', label: 'Spices', thumb: SalemTurmeric },
+    { id: 'agro', label: 'Agro Products', thumb: Maize },
+    { id: 'bio', label: 'Biodegradable Products', thumb: BioCup },
 ];
 
 // Each variety carries its own photo, used as the thumbnail in the index.
@@ -226,9 +226,11 @@ function panelClass(isActive) {
     return isActive ? 'panel-in' : 'hidden';
 }
 
+// Phones: three equal tiles, each with a product photo; the chosen one fills in.
+// Larger screens: editorial text tabs with a sliding bar. All options always visible.
 function CategoryTabs({ active, onChange }) {
     return (
-        <div role="tablist" aria-label="Product categories" className="grid grid-cols-1 border-t border-ink/15 sm:grid-cols-3">
+        <div role="tablist" aria-label="Product categories" className="grid grid-cols-3 gap-2 sm:gap-0 sm:border-t sm:border-ink/15">
             {mainTabs.map((tab) => {
                 const isActive = tab.id === active;
                 return (
@@ -237,17 +239,28 @@ function CategoryTabs({ active, onChange }) {
                         role="tab"
                         aria-selected={isActive}
                         onClick={() => onChange(tab.id)}
-                        className="group relative border-b border-ink/15 py-5 text-left sm:border-b-0 sm:pr-6 sm:pt-6"
+                        className="btn-press group relative flex flex-col items-center gap-2 rounded-2xl px-1.5 pb-3 pt-2 text-center sm:block sm:rounded-none sm:px-0 sm:pb-5 sm:pr-6 sm:pt-6 sm:text-left"
                     >
                         {isActive && (
                             <motion.span
+                                layoutId="category-tile"
+                                className="absolute inset-0 rounded-2xl bg-ink sm:hidden"
+                                transition={{ type: 'spring', duration: 0.45, bounce: 0.15 }}
+                            />
+                        )}
+                        {!isActive && <span className="absolute inset-0 rounded-2xl ring-1 ring-ink/15 sm:hidden" aria-hidden="true" />}
+                        {isActive && (
+                            <motion.span
                                 layoutId="category-bar"
-                                className="absolute inset-x-0 -top-px h-[3px] bg-turmeric-400 sm:right-6"
+                                className="absolute inset-x-0 -top-px hidden h-[3px] bg-turmeric-400 sm:right-6 sm:block"
                                 transition={{ type: 'spring', duration: 0.5, bounce: 0.15 }}
                             />
                         )}
+                        <span className="relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-paper-200 sm:hidden">
+                            <img src={tab.thumb} alt="" loading="lazy" className={`h-full w-full object-cover mix-blend-multiply transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-75'}`} />
+                        </span>
                         <span
-                            className={`block text-[clamp(1.5rem,2.3vw,2.15rem)] font-light leading-tight tracking-[-0.03em] transition-colors duration-200 ${isActive ? 'text-ink' : 'text-ink/35 [@media(hover:hover)]:group-hover:text-ink/70'}`}
+                            className={`relative block text-[0.8125rem] font-medium leading-tight transition-colors duration-200 sm:text-[clamp(1.5rem,2.3vw,2.15rem)] sm:font-light sm:tracking-[-0.03em] ${isActive ? 'text-paper sm:text-ink' : 'text-ink/70 sm:text-ink/35 [@media(hover:hover)]:sm:group-hover:text-ink/70'}`}
                         >
                             {tab.label}
                         </span>
