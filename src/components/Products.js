@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Flame, Leaf, Recycle, Sun, Sprout, Gem, CircleDot, Wind } from 'lucide-react';
+import { motion } from 'framer-motion';
 import SectionHeading from './ui/SectionHeading';
-import Tabs from './ui/Tabs';
-import UnderlineTabs from './ui/UnderlineTabs';
-import Carousel from './ui/Carousel';
-import { RevealGroup } from './ui/Reveal';
+import { Reveal, RevealGroup, revealItem } from './ui/Reveal';
+import ImageDuo from './ui/ImageDuo';
 import ProductCard from './ProductCard';
 
 import LakadongPowder from '../images/lakadong-powder.jpg';
@@ -180,47 +178,140 @@ const singleSpices = {
     },
 };
 
-const agroImages = [
-    { src: Rice, alt: 'Bowl of rice grains' },
-    { src: FoxNut, alt: 'White bowl containing foxnuts' },
-    { src: Maize, alt: 'Corn and corn kernels on a wooden table' },
-    { src: Soyabean, alt: 'A bag of soyabeans and a spoon on a wooden table' },
-    { src: TurDal, alt: 'Turdal in a white bowl' },
-    { src: BabyCorn, alt: 'Several white baby corns' },
-    { src: Mushroom, alt: 'Two mushrooms' },
-    { src: Moringa1, alt: 'A bowl of powdered moringa leaves' },
-    { src: Moringa2, alt: 'Moringa leaves and a bowl of powdered moringa leaves' },
-    { src: Moringa3, alt: 'Bowl and spoon of powdered moringa leaves' },
+
+const agroItems = [
+    { name: 'Rice', images: [Rice], alt: 'Bowl of rice grains' },
+    { name: 'Foxnut', images: [FoxNut], alt: 'White bowl containing foxnuts' },
+    { name: 'Maize', images: [Maize], alt: 'Corn and corn kernels on a wooden table' },
+    { name: 'Soyabean', images: [Soyabean], alt: 'A bag of soyabeans and a spoon on a wooden table' },
+    { name: 'Toor Dal', images: [TurDal], alt: 'Toor dal in a white bowl' },
+    { name: 'Baby Corn', images: [BabyCorn], alt: 'Several white baby corns' },
+    { name: 'Mushroom', images: [Mushroom], alt: 'Two mushrooms' },
+    { name: 'Moringa', images: [Moringa1, Moringa2, Moringa3], alt: 'Powdered moringa leaves in a bowl' },
 ];
 
-const bioImages = [
-    { src: BioCup, alt: 'Biodegradable cup' },
-    { src: Areca, alt: 'Areca leaf plates' },
-    { src: KraftPaper, alt: 'Kraft paper products' },
-    { src: Coconut, alt: 'Coconut-based products' },
-    { src: Disposable, alt: 'Disposable cutlery' },
+const bioItems = [
+    { name: 'Biodegradable cups', src: BioCup, alt: 'Biodegradable cup', span: 'lg:col-span-3', aspect: 'aspect-[4/3]' },
+    { name: 'Areca leaf plates', src: Areca, alt: 'Areca leaf plates', span: 'lg:col-span-3', aspect: 'aspect-[4/3]' },
+    { name: 'Kraft paper products', src: KraftPaper, alt: 'Kraft paper products', span: 'lg:col-span-2', aspect: 'aspect-square' },
+    { name: 'Coconut-based products', src: Coconut, alt: 'Coconut-based products', span: 'lg:col-span-2', aspect: 'aspect-square' },
+    { name: 'Disposable cutlery', src: Disposable, alt: 'Disposable cutlery', span: 'col-span-2 lg:col-span-2', aspect: 'aspect-[16/9] lg:aspect-square' },
 ];
 
 const mainTabs = [
-    { id: 'spices', label: 'Spices', icon: Flame },
-    { id: 'agro', label: 'Agro Products', icon: Leaf },
-    { id: 'bio', label: 'Biodegradable Products', icon: Recycle },
+    { id: 'spices', label: 'Spices' },
+    { id: 'agro', label: 'Agro Products' },
+    { id: 'bio', label: 'Biodegradable Products' },
 ];
 
+// Each variety carries its own photo, used as the thumbnail in the index.
 const spiceTabs = [
-    { id: 'turmeric', label: 'Turmeric', icon: Sun },
-    { id: 'redchilli', label: 'Red Chillies', icon: Flame },
-    { id: 'ginger', label: 'Ginger', icon: Sprout },
-    { id: 'cardamom', label: 'Cardamom', icon: Gem },
-    { id: 'pepper', label: 'Black Pepper', icon: CircleDot },
-    { id: 'cumin', label: 'Cumin', icon: Wind },
+    { id: 'turmeric', label: 'Turmeric', thumb: SalemTurmeric },
+    { id: 'redchilli', label: 'Red Chillies', thumb: GunturDried1 },
+    { id: 'ginger', label: 'Ginger', thumb: Ginger },
+    { id: 'cardamom', label: 'Cardamom', thumb: Cardamom1 },
+    { id: 'pepper', label: 'Black Pepper', thumb: BlackPepper1 },
+    { id: 'cumin', label: 'Cumin', thumb: Cumin1 },
 ];
+
+// "6% - 9%" / "35,000–40,000 SHU" -> [6, 9] / [35000, 40000]
+const parseRange = (text) => (text.match(/[\d,.]+/g) || []).map((n) => Number(n.replace(/,/g, '')));
+const fmt = (n) => n.toLocaleString('en-US');
 
 // Every panel below is always present in the DOM (toggled with the `hidden`
 // utility, not conditionally rendered) so the full catalog stays crawlable
-// even though only one tab is visually active at a time.
+// even though only one tab is visually active at a time. `panel-in` replays
+// its entrance each time a panel is un-hidden.
 function panelClass(isActive) {
-    return isActive ? '' : 'hidden';
+    return isActive ? 'panel-in' : 'hidden';
+}
+
+function CategoryTabs({ active, onChange }) {
+    return (
+        <div role="tablist" aria-label="Product categories" className="grid grid-cols-1 border-t border-ink/15 sm:grid-cols-3">
+            {mainTabs.map((tab) => {
+                const isActive = tab.id === active;
+                return (
+                    <button
+                        key={tab.id}
+                        role="tab"
+                        aria-selected={isActive}
+                        onClick={() => onChange(tab.id)}
+                        className="group relative border-b border-ink/15 py-5 text-left sm:border-b-0 sm:pr-6 sm:pt-6"
+                    >
+                        {isActive && (
+                            <motion.span
+                                layoutId="category-bar"
+                                className="absolute inset-x-0 -top-px h-[3px] bg-turmeric-400 sm:right-6"
+                                transition={{ type: 'spring', duration: 0.5, bounce: 0.15 }}
+                            />
+                        )}
+                        <span
+                            className={`block text-[clamp(1.5rem,2.3vw,2.15rem)] font-light leading-tight tracking-[-0.03em] transition-colors duration-200 ${isActive ? 'text-ink' : 'text-ink/35 [@media(hover:hover)]:group-hover:text-ink/70'}`}
+                        >
+                            {tab.label}
+                        </span>
+                    </button>
+                );
+            })}
+        </div>
+    );
+}
+
+// Variety picker: each row carries the spice's own photo; a soft card slides
+// behind the selected row and its photo comes into full colour.
+function SpiceIndex({ active, onChange }) {
+    return (
+        <ul className="flex flex-wrap gap-2 lg:block lg:space-y-1">
+            {spiceTabs.map((tab) => {
+                const isActive = tab.id === active;
+                return (
+                    <li key={tab.id}>
+                        <button
+                            onClick={() => onChange(tab.id)}
+                            aria-pressed={isActive}
+                            className={`btn-press relative flex w-full items-center gap-3 rounded-full py-1.5 pl-1.5 pr-4 text-left transition-colors duration-200 lg:gap-4 lg:rounded-2xl lg:p-2 lg:pr-4 ${isActive ? 'text-ink' : 'text-ink/60 hover:text-ink'}`}
+                        >
+                            {isActive && (
+                                <motion.span
+                                    layoutId="spice-highlight"
+                                    className="absolute inset-0 rounded-full bg-paper-50 shadow-[0_1px_2px_rgba(28,26,22,0.06),0_8px_20px_-10px_rgba(28,26,22,0.25)] ring-1 ring-ink/[0.06] lg:rounded-2xl"
+                                    transition={{ type: 'spring', duration: 0.5, bounce: 0.18 }}
+                                />
+                            )}
+                            {!isActive && (
+                                <span className="absolute inset-0 rounded-full ring-1 ring-ink/10 lg:hidden" aria-hidden="true" />
+                            )}
+                            <span className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full bg-paper-200 lg:h-12 lg:w-12 lg:rounded-xl">
+                                <img
+                                    src={tab.thumb}
+                                    alt=""
+                                    loading="lazy"
+                                    className={`h-full w-full object-cover mix-blend-multiply transition-[filter,opacity,transform] duration-500 ease-out ${isActive ? 'scale-110 opacity-100' : 'scale-100 opacity-60 grayscale'}`}
+                                />
+                            </span>
+                            <span className="relative text-[0.9375rem] lg:text-lg">{tab.label}</span>
+                        </button>
+                    </li>
+                );
+            })}
+        </ul>
+    );
+}
+
+function PanelIntro({ children, className = '' }) {
+    return <p className={`max-w-2xl text-base leading-relaxed text-ink-muted text-pretty ${className}`}>{children}</p>;
+}
+
+function Tile({ name, images, alt, aspect = 'aspect-[4/5]', className = '' }) {
+    return (
+        <motion.figure variants={revealItem} className={`group ${className}`}>
+            <div className={`relative overflow-hidden rounded-[6px] bg-paper-200 ${aspect}`}>
+                <ImageDuo images={images} alt={alt} className="absolute inset-0" blend />
+            </div>
+            <figcaption className="mt-3 text-lg tracking-[-0.01em] text-ink">{name}</figcaption>
+        </motion.figure>
+    );
 }
 
 export default function Product() {
@@ -239,105 +330,114 @@ export default function Product() {
     }, []);
 
     return (
-        <section id="productsection" className="bg-olive-50/60 py-24 sm:py-28">
+        <section id="productsection" className="py-28 sm:py-36">
             <div className="container-page">
                 <SectionHeading
                     eyebrow="Our Catalog"
-                    title="Explore our exquisite products"
+                    title={['Explore our', 'exquisite products']}
                     description="Explore our product showcase, where each flavor, color, and aroma narrates a tale of quality and authenticity. At SkyHarbour Impex, we're dedicated to presenting an extensive array of premium spices, agro products, and biodegradable goods."
                 />
 
-                <div className="mt-12 flex justify-center">
-                    <Tabs tabs={mainTabs} active={mainTab} onChange={setMainTab} layoutId="main-tab-pill" />
-                </div>
+                <Reveal className="mt-16 sm:mt-20" y={24}>
+                    <CategoryTabs active={mainTab} onChange={setMainTab} />
+                </Reveal>
 
-                <div className="mt-14">
+                <div className="mt-12 sm:mt-16">
                     {/* Spices */}
                     <div className={panelClass(mainTab === 'spices')}>
-                        <div className="mx-auto max-w-3xl text-center">
-                            <h3 className="font-display text-2xl text-ink sm:text-3xl">Spices</h3>
-                            <p className="mt-4 text-base leading-relaxed text-ink-muted">
-                                Welcome to our Spices section, where we unlock a world of flavor, color, and
-                                health benefits that only the finest spices can provide. Our treasury of
-                                spices includes offerings from the lush North-Eastern corners to the vibrant
-                                South of India.
-                            </p>
-                        </div>
+                        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+                            <aside className="lg:sticky lg:top-28 lg:col-span-3 lg:self-start">
+                                <PanelIntro className="text-[0.9375rem]">
+                                    Welcome to our Spices section, where we unlock a world of flavor, color, and
+                                    health benefits that only the finest spices can provide. Our treasury of
+                                    spices includes offerings from the lush North-Eastern corners to the
+                                    vibrant South of India.
+                                </PanelIntro>
+                                <p className="mb-3 mt-8 hidden text-base font-medium text-turmeric-600 lg:block">Spice Varieties</p>
+                                <div className="mt-8 lg:mt-0">
+                                    <SpiceIndex active={spiceTab} onChange={setSpiceTab} />
+                                </div>
+                            </aside>
 
-                        <div className="relative mt-10 overflow-hidden rounded-2xl border border-ink/10 bg-cream-50 p-6 shadow-soft sm:p-10">
-                            <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clay-400 via-olive-500 to-clay-400" />
-
-                            <div className="flex flex-col items-center gap-1 text-center">
-                                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-clay-500">
-                                    Spice Varieties
-                                </span>
-                                <h4 className="font-display text-lg text-ink">Pick a variety to explore</h4>
-                            </div>
-
-                            <UnderlineTabs
-                                tabs={spiceTabs}
-                                active={spiceTab}
-                                onChange={setSpiceTab}
-                                layoutId="spice-tab-underline"
-                                className="mx-auto mt-6 max-w-2xl"
-                            />
-
-                            <div className="mt-10">
+                            <div className="lg:col-span-9">
                                 {/* Turmeric */}
                                 <div className={panelClass(spiceTab === 'turmeric')}>
-                                    <p className="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
+                                    <h3 className="text-3xl font-light tracking-[-0.03em] text-ink">Turmeric</h3>
+                                    <PanelIntro className="mt-3">
                                         Our premium turmeric collection features unique varieties,
                                         distinguished by their curcumin content — from the picturesque
                                         landscapes of North-East India to the iconic Finger Turmeric from
                                         the vibrant South.
-                                    </p>
-                                    <RevealGroup className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                                        {turmericSpecs.map((t) => (
-                                            <ProductCard
-                                                key={t.id}
-                                                title={t.Name}
-                                                intro={t.Intro}
-                                                description={t.Description}
-                                                benefits={t.Benefits}
-                                                image1={t.Image1}
-                                                image2={t.Image2}
-                                                badge={`${t.Curcumin} Curcumin`}
-                                                details={[
-                                                    { label: 'Origin', value: t.Origin },
-                                                    { label: 'Curcumin', value: t.Curcumin },
-                                                ]}
-                                            />
-                                        ))}
+                                    </PanelIntro>
+                                    <RevealGroup className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
+                                        {turmericSpecs.map((t) => {
+                                            const [lo, hi] = parseRange(t.Curcumin);
+                                            return (
+                                                <ProductCard
+                                                    key={t.id}
+                                                    title={t.Name}
+                                                    intro={t.Intro}
+                                                    description={t.Description}
+                                                    benefits={t.Benefits}
+                                                    image1={t.Image1}
+                                                    image2={t.Image2}
+                                                    details={[
+                                                        { label: 'Origin', value: t.Origin },
+                                                        { label: 'Curcumin', value: t.Curcumin },
+                                                    ]}
+                                                    meter={{
+                                                        label: 'Curcumin',
+                                                        value: `${lo}–${hi}%`,
+                                                        min: 0,
+                                                        max: 10,
+                                                        from: lo,
+                                                        to: hi,
+                                                    }}
+                                                />
+                                            );
+                                        })}
                                     </RevealGroup>
                                 </div>
 
                                 {/* Red Chillies */}
                                 <div className={panelClass(spiceTab === 'redchilli')}>
-                                    <p className="mx-auto mb-8 max-w-3xl text-center text-sm leading-relaxed text-ink-muted">
-                                        Journey through the diverse landscapes of India with our red
-                                        chilli collection — each variety rated by its Scoville Heat Unit
-                                        (SHU), so you can choose the spice level that suits your
-                                        culinary adventures.
-                                    </p>
-                                    <RevealGroup className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2">
-                                        {redChilliSpecs.map((c) => (
-                                            <ProductCard
-                                                key={c.id}
-                                                title={c.Name}
-                                                intro={c.Intro}
-                                                description={c.Description}
-                                                image1={c.Image1}
-                                                image2={c.Image2}
-                                                badge={c.Flavour}
-                                                details={[
-                                                    { label: 'Origin', value: c.Origin },
-                                                    { label: 'Color', value: c.Color },
-                                                    { label: 'Flavour', value: c.Flavour },
-                                                    { label: 'Pungency', value: c.Pungency },
-                                                    { label: 'Styles', value: c.Styles },
-                                                ]}
-                                            />
-                                        ))}
+                                    <h3 className="text-3xl font-light tracking-[-0.03em] text-ink">Red Chillies</h3>
+                                    <PanelIntro className="mt-3">
+                                        Journey through the diverse landscapes of India with our red chilli
+                                        collection — each variety rated by its Scoville Heat Unit (SHU), so you
+                                        can choose the spice level that suits your culinary adventures.
+                                    </PanelIntro>
+                                    <RevealGroup className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2">
+                                        {redChilliSpecs.map((c) => {
+                                            const [lo, hi] = parseRange(c.Pungency);
+                                            return (
+                                                <ProductCard
+                                                    key={c.id}
+                                                    title={c.Name}
+                                                    intro={c.Intro}
+                                                    description={c.Description}
+                                                    image1={c.Image1}
+                                                    image2={c.Image2}
+                                                    badge={c.Flavour}
+                                                    details={[
+                                                        { label: 'Origin', value: c.Origin },
+                                                        { label: 'Color', value: c.Color },
+                                                        { label: 'Flavour', value: c.Flavour },
+                                                        { label: 'Pungency', value: c.Pungency },
+                                                        { label: 'Styles', value: c.Styles },
+                                                    ]}
+                                                    meter={{
+                                                        label: 'Heat',
+                                                        value: `${fmt(lo)}–${fmt(hi)} SHU`,
+                                                        min: 0,
+                                                        max: 50000,
+                                                        from: lo,
+                                                        to: hi,
+                                                        tone: 'chilli',
+                                                    }}
+                                                />
+                                            );
+                                        })}
                                     </RevealGroup>
                                 </div>
 
@@ -348,16 +448,17 @@ export default function Product() {
                                     { id: 'pepper', spice: singleSpices['Black Pepper'] },
                                     { id: 'cumin', spice: singleSpices.Cumin },
                                 ].map(({ id, spice }) => (
-                                    <div key={id} className={`mx-auto max-w-2xl ${panelClass(spiceTab === id)}`}>
-                                        <p className="mb-8 text-center text-sm leading-relaxed text-ink-muted">
-                                            {spice.Copy}
-                                        </p>
-                                        <ProductCard
-                                            title={spice.Name}
-                                            description={spice.Description}
-                                            image1={spice.Image1}
-                                            image2={spice.Image2}
-                                        />
+                                    <div key={id} className={panelClass(spiceTab === id)}>
+                                        <RevealGroup>
+                                            <ProductCard
+                                                layout="wide"
+                                                title={spice.Name}
+                                                intro={spice.Copy}
+                                                description={spice.Description}
+                                                image1={spice.Image1}
+                                                image2={spice.Image2}
+                                            />
+                                        </RevealGroup>
                                     </div>
                                 ))}
                             </div>
@@ -365,35 +466,48 @@ export default function Product() {
                     </div>
 
                     {/* Agro Products */}
-                    <div className={`mx-auto max-w-3xl text-center ${panelClass(mainTab === 'agro')}`}>
-                        <h3 className="font-display text-2xl text-ink sm:text-3xl">Agro Products</h3>
-                        <p className="mt-4 text-base leading-relaxed text-ink-muted">
+                    <div className={panelClass(mainTab === 'agro')}>
+                        <h3 className="text-3xl font-light tracking-[-0.03em] text-ink">Agro Products</h3>
+                        <PanelIntro className="mt-3">
                             At SkyHarbour, our commitment to quality transcends spices. Our Agro Products
                             section presents a versatile range of nature's bounty — cereals and millets,
                             vegetables, edible oils, and protein-packed pulses, alongside herbal treasures
                             like Moringa leaves. Our Toor Dal proudly carries a GI tag.
-                        </p>
-                        <div className="mt-8 mx-auto max-w-xl">
-                            <Carousel items={agroImages} />
-                        </div>
+                        </PanelIntro>
+                        <RevealGroup className="mt-12 grid grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-8 md:grid-cols-4" stagger={0.07}>
+                            {agroItems.map((item) => (
+                                <Tile key={item.name} {...item} />
+                            ))}
+                        </RevealGroup>
                     </div>
 
                     {/* Biodegradable Products */}
-                    <div className={`mx-auto max-w-3xl text-center ${panelClass(mainTab === 'bio')}`}>
-                        <h3 className="font-display text-2xl text-ink sm:text-3xl">Bio-Degradable Cutlery</h3>
-                        <p className="mt-4 text-base leading-relaxed text-ink-muted">
+                    <div className={panelClass(mainTab === 'bio')}>
+                        <h3 className="text-3xl font-light tracking-[-0.03em] text-ink">Bio-Degradable Cutlery</h3>
+                        <PanelIntro className="mt-3">
                             SkyHarbour's biodegradable cutlery collection is a response to an urgent global
-                            need — crafted from areca leaves, sugarcane bagasse, coconut, and kraft paper.
-                            It breaks down naturally, releasing no harmful toxins or microplastics.
-                        </p>
-                        <div className="mt-8 mx-auto max-w-xl">
-                            <Carousel items={bioImages} />
-                        </div>
-                        <p className="mt-8 text-sm leading-relaxed text-ink-muted">
-                            From spoons and forks to plates, salad bowls, coffee cups, and straws — our
-                            range enhances your dining experience while contributing to a greener, more
-                            sustainable world.
-                        </p>
+                            need — crafted from areca leaves, sugarcane bagasse, coconut, and kraft paper. It
+                            breaks down naturally, releasing no harmful toxins or microplastics.
+                        </PanelIntro>
+                        <RevealGroup className="mt-12 grid grid-cols-2 gap-x-5 gap-y-10 sm:gap-x-8 lg:grid-cols-6" stagger={0.08}>
+                            {bioItems.map((item) => (
+                                <Tile
+                                    key={item.name}
+                                    name={item.name}
+                                    images={[item.src]}
+                                    alt={item.alt}
+                                    aspect={item.aspect}
+                                    className={item.span}
+                                />
+                            ))}
+                        </RevealGroup>
+                        <Reveal className="mt-12">
+                            <PanelIntro>
+                                From spoons and forks to plates, salad bowls, coffee cups, and straws — our
+                                range enhances your dining experience while contributing to a greener, more
+                                sustainable world.
+                            </PanelIntro>
+                        </Reveal>
                     </div>
                 </div>
             </div>

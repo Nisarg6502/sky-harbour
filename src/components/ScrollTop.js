@@ -22,7 +22,7 @@ function ScrollTop() {
                 <motion.button
                     onClick={backToTop}
                     aria-label="Back to top"
-                    className="btn-press fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-ink text-cream shadow-card-hover"
+                    className="btn-press fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-6 z-40 hidden h-12 w-12 items-center justify-center rounded-full bg-ink text-paper shadow-lift sm:flex"
                     initial={{ opacity: 0, y: 10, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.9 }}
